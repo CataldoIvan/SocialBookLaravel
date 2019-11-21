@@ -1,0 +1,111 @@
+div .bd-example {
+    width:100%;
+    height: 50%;
+}
+
+.carousel-item img{
+    width: 100%;
+    height: 50%;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.setting{
+    padding: 5%;
+    display: flex;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+/* Aca arranca el Style que tenia el home */
+
+body {
+     background-image: url(/img/bg8.jpg);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     height:100%;
+   }
+   }
+   .title{
+     font-family: 'Hepta Slab', serif;
+   }
+   *{
+     font-family: 'Source Sans Pro', sans-serif;
+   }
+
+   .btn:hover{
+     background: rgba(14,128, 156, 0.7);
+     transition-property: background;
+     transition-property: 2.0s;
+   }
+   #jumbo {
+   /* IE8 and below */
+   background: rgb(200, 54, 54);
+   /* all other browsers */
+   background: rgba(0,0,0,.40);
+   }
+   u{
+     font-family: 'Hepta Slab', serif;
+   }
+   #op{
+   /* IE8 and below */
+   background: rgb(200, 54, 54);
+   /* all other browsers */
+   background: rgba(0,0,0,.40);
+   }
+   .card-img-top{
+     width: 50%;
+     margin: auto;
+   }
+
+   /* Aca termina el Style que tenia el home */
+
+
+   /* Aca arranca el Style que tenia el header */
+
+   .logo {
+     width: 200px;
+     height: 200px;
+   }
+   .navbar-nav {
+     /* IE8 and below */
+     background: rgb(200, 54, 54);
+     /* all other browsers */
+     background: rgba(0,0,0,.40);
+     }
+     /* ******* Animacion del Menu desplegable**/
+     nav li:hover{
+       background: rgba(243,246, 249, 0.2);
+       border-right: 5px solid ;
+       border-color: #fff;
+       transition-property: background,border;
+       transition-timing-function: steps();
+       transition-duration: 1s;
+       border-radius: 5px;
+     }
+     .navbar a{
+       text-decoration: none;
+       color: white;
+     }
+
+   /* Aca termina el Style que tenia el header */
+
+
+
+   /* Aca arranca el Style que tenia el footer */
+
+   footer{
+   color:white;
+   background: black;
+   }
+
+
+
+   /* Aca termina el Style que tenia el footer */
