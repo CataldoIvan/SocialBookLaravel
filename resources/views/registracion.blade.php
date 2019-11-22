@@ -15,7 +15,7 @@
                         <h2 class="text-center">Registrate</h2>
                         <p class="pb-5 text-center">Por favor, llena este formulario para obtener tu cuenta</p>
                         <div class="form-group">
-                            <i class="fa fa-user icon"></i>
+                            {{-- <i class="fa fa-user icon"></i> --}}
                             <input type="text" class="form-control   border-top-0 border-right-0 border-left-0 "  name="nombre" placeholder="Ingrese su Nombre" value="">
                         </div>
                         <div class="form-group">

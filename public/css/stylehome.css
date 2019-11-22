@@ -106,6 +106,39 @@ body {
    background: black;
    }
 
-
-
    /* Aca termina el Style que tenia el footer */
+
+
+
+   /* Aca arranca el Style que tenia la registracion */
+
+    .title{
+      font-family: 'Hepta Slab', serif;
+    }
+
+    *{
+      font-family: 'Source Sans Pro', sans-serif;
+      padding: 0;
+    }
+
+    .btn{
+      background: #51ec9c;
+
+    }
+        /* ******* Animacion del boton de "REGISTRARSE" **/
+    .btn:hover{
+      background: rgba(14,128, 156, 0.7);
+      transition-property: background;
+      transition-property: 2.0s;
+    }
+    .contenedor-inicio{
+      /* IE8 and below */
+      background: rgb(200, 54, 54);
+      /* all other browsers */
+      background: rgba(0,0,0,.40);
+    }
+    form-control{
+      border-radius: 100px;
+    }
+
+   /* Aca termina el Style que tenia el registracion */

@@ -26,3 +26,7 @@ Route::get("/faq", function(){
 Route::get("/registracion", function(){
   return view("registracion");
 });
+
+Route::get("/login", function(){
+  return view("login");
+});

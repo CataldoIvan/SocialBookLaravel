@@ -4,12 +4,13 @@
 
     <meta charset="utf-8">
     <title>@yield('titulo')</title>
+    <!-- **** css nuestro !-->
     <link rel="stylesheet" href="/css/stylehome.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- **** carga la tipografia de goggle fonts !-->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:600|Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Hepta+Slab&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -39,7 +40,7 @@
                   <li class="nav-item py-3 ml-3 align-content-end" ><span class="border-bottom"><a href="home" class="navbar-link" style="">HOME</a></span></li>
                   <li class="nav-item  py-3 ml-3 align-content-end"><span class="border-bottom"><a href="faq" class="navbar-link">FAQ</a></span></li>
                   <li class="nav-item  py-3 ml-3 align-content-end"><span class="border-bottom"><a href="registracion" class="navbar-link">REGISTRACION</a></span></li>
-                  <li class="nav-item  py-3 mx-3 align-content-end"><span class="border-bottom"><a href="loginpdo.php" class="navbar-link">LOGIN</a></span></li>
+                  <li class="nav-item  py-3 mx-3 align-content-end"><span class="border-bottom"><a href="login" class="navbar-link">LOGIN</a></span></li>
               </ul>
           </div>
         </nav>
@@ -51,7 +52,7 @@
 
 
 
-      <footer class="   m-0 py-3">
+      <footer class="m-0 py-3">
 	       <div class="w-100  m-0 text-center text-white" id="copyright">Copyright&copy; 2019 - Página creada por Brenda, Gaston e Ivan - Todos los derechos reservados</div>
 	    </footer>
 
