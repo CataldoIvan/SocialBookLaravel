@@ -15,18 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/home", function(){
-  return view("home");
-});
+Route::get("/home","HomeController@index");
 
-Route::get("/faq", function(){
-  return view("faq");
-});
+Route::get("/faq", "FaqController@index");
 
-Route::get("/registracion", function(){
-  return view("registracion");
-});
+Route::get("/registracion", "RegistracionController@index");
 
-Route::get("/login", function(){
-  return view("login");
-});
+Route::get("/login", "LoginController@index");
