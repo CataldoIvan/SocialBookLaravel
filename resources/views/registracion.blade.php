@@ -25,10 +25,10 @@
                             <input type="email" class="form-control border-top-0 border-right-0 border-left-0" name="usuario" placeholder="Ingrese su email" value="">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control border-top-0 border-right-0 border-left-0" name="password" value="" placeholder="Contrasena" >
+                            <input type="password" class="form-control border-top-0 border-right-0 border-left-0" name="contrasenia" value="" placeholder="Contrasenia" >
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control border-top-0 border-right-0 border-left-0" name="passwordConfirmed" value="" placeholder="Confirmar Contrasena" >
+                            <input type="password" class="form-control border-top-0 border-right-0 border-left-0" name="contraseniaConfirmada" value="" placeholder="Confirmar Contrasenia" >
                         </div>
                         <div class="remember">
                             <input type="checkbox" name="recordarme" value="recordar"> <span>Recordar mi cuenta</span>
@@ -47,12 +47,12 @@
                                 <option name="">Elige una de las preguntas</option>
                                 <option name="apellidoMama">Cual es el apellido de soltera de tu mama?</option>
                                 <option name="nombreMascota">Cual es el nombre de tu primer mascota?</option>
-                                <option name="anoAbuelo">En que anio nacio tu abuelo?</option>
+                                <option name="anioAbuelo">En que anio nacio tu abuelo?</option>
                               </select>
-                              <small  class="  text-nowrap  ">
-                             Con esto, podremos recuperar tu contrasena en el caso que te la olvides!
+                              <small  class="text-nowrap">
+                             Con esto, podremos recuperar tu contrasenia en el caso que te la olvides!
                               </small>
-                              <input  class="form-control  px-3 mb-2 " name="respuesta" placeholder="Ingresa tu respuesta">
+                              <input  class="form-control  px-3 mb-2" name="respuesta" placeholder="Ingresa tu respuesta">
 
                            </section>
 
