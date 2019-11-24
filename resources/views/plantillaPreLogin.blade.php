@@ -52,7 +52,7 @@
 
 
 
-      <footer class="m-0 py-3">
+      <footer class="m-0 py-3 ">
 	       <div class="w-100  m-0 text-center text-white" id="copyright">Copyright&copy; 2019 - Página creada por Brenda, Gaston e Ivan - Todos los derechos reservados</div>
 	    </footer>
 

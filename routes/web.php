@@ -14,10 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+/* 
 Route::get("/home", function(){
     return view("home");
-});
+}); */
 
 Route::get("/faq", function(){
     return view("faq");
@@ -26,4 +26,8 @@ Route::get("/faq", function(){
 Route::get("/registracion", "RegistracionController@index");
 Route::post("/registracion", "RegistracionController@store");
 
-Route::get("/login", "LoginController@index");
+/* Route::get("/login", "LoginController@index"); */
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
