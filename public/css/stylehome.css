@@ -125,6 +125,18 @@ body {
       background: #51ec9c;
 
     }
+      /* ******* Style de login **/
+    .card-header {
+      /* IE8 and below */
+      background: rgb(200, 54, 54);
+      /* all other browsers */
+      background: rgba(0,0,0,.40);
+    }
+    .col-md-8 {
+      margin-top: 50px;
+    }
+
+
         /* ******* Animacion del boton de "REGISTRARSE" **/
     .btn:hover{
       background: rgba(14,128, 156, 0.7);
