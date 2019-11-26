@@ -305,6 +305,7 @@
         </div>
       </div>
     </div>
+<!-- solo es a para -->
 
     <!-- Modal Bootstrap para confirmar el borrado de la cuenta -->
 
