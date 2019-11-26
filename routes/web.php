@@ -31,3 +31,10 @@ Route::post("/registracion", "RegistracionController@store");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get("/muro", function(){
+    return view("muro");
+});
+Route::get("/perfil", function(){
+    return view("perfil");
+});
+

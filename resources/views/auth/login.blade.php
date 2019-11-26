@@ -9,10 +9,10 @@
 
 
 <div class="container">
-    <div class="row justify-content-center contenedor-inicio shadow-lg rounded">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+    <div class="row justify-content-center  rounded mb-5 pb-5">
+        <div class="col-md-8" >
+            <div class="card" style="background:rgba(0,0,0,0.3); color:white;">
+                <div class="card-header m-auto" style="font-size:25px;">{{ __('Login') }}</div>
 
                 <div class="card-body contenedor-inicio bg-sm-red rounded">
                     <form method="POST" action="{{ route('login') }}">
