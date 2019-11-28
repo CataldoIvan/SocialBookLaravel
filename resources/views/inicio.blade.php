@@ -1,7 +1,7 @@
 @extends('plantillaPreLogin')
 
 @section("titulo")
-Home - SocialBook
+Inicio - SocialBook
 @endsection
 
 @section("principal")

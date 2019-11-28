@@ -14,17 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
-/* 
-Route::get("/home", function(){
-    return view("home");
-}); */
+
+Route::get("/inicio", function(){
+    return view("inicio");
+});
 
 Route::get("/faq", function(){
     return view("faq");
 });
 
-Route::get("/registracion", "RegistracionController@index");
-Route::post("/registracion", "RegistracionController@store");
+// Route::get("/registracion", "RegistracionController@index");
+// Route::post("/registracion", "RegistracionController@store");
 
 /* Route::get("/login", "LoginController@index"); */
 
@@ -37,4 +37,3 @@ Route::get("/muro", function(){
 Route::get("/perfil", function(){
     return view("perfil");
 });
-

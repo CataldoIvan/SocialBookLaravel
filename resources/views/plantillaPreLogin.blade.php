@@ -37,9 +37,9 @@
 
           <div class="collapse navbar-collapse  justify-content-end offset-lg-3 offset-md-1 offset-xl-5"  id="uno">
               <ul class="navbar-nav w-md-100 text-left my-3">
-                  <li class="nav-item py-3 ml-3 align-content-end" ><span class="border-bottom"><a href="home" class="navbar-link" style="">HOME</a></span></li>
+                  <li class="nav-item py-3 ml-3 align-content-end" ><span class="border-bottom"><a href="inicio" class="navbar-link" style="">INICIO</a></span></li>
                   <li class="nav-item  py-3 ml-3 align-content-end"><span class="border-bottom"><a href="faq" class="navbar-link">FAQ</a></span></li>
-                  <li class="nav-item  py-3 ml-3 align-content-end"><span class="border-bottom"><a href="registracion" class="navbar-link">REGISTRACION</a></span></li>
+                  <li class="nav-item  py-3 ml-3 align-content-end"><span class="border-bottom"><a href="register" class="navbar-link">REGISTRACION</a></span></li>
                   <li class="nav-item  py-3 mx-3 align-content-end"><span class="border-bottom"><a href="login" class="navbar-link">LOGIN</a></span></li>
               </ul>
           </div>
@@ -52,7 +52,7 @@
 
 
 
-      <footer class="m-0 py-3 ">
+      <footer class="mt-3 py-3">
 	       <div class="w-100  m-0 text-center text-white" id="copyright">Copyright&copy; 2019 - Página creada por Brenda, Gaston e Ivan - Todos los derechos reservados</div>
 	    </footer>
 
