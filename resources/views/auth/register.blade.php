@@ -81,6 +81,13 @@
                             </div>
                         </div>
 
+                        <section class="imagenPerfil row my-5 ">
+                             <h5 class="text-center col-12">Elegi tu imagen de perfil</h5>
+                               <div class="col-12 text-center">
+                                 <input type="file" name="foto" value="Enviar">
+                               </div>
+                           </section>
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4 pb-4">
