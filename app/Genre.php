@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Editorial extends Model
+class Genre extends Model
 {
-    public $table='editorials';
+    public $table='genres';
     public $primaryKey='id';
     public $guarded=[];
     public $timestamps=true;

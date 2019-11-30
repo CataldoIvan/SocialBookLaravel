@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Editorial extends Model
+class Comment extends Model
 {
-    public $table='editorials';
-    public $primaryKey='id';
+    
+    public $table='comments';
+    public $primarykey='id';
     public $guarded=[];
     public $timestamps=true;
 }

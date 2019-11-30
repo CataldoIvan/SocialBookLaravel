@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Autor extends Model
 {
-    public $table='autores';
-    public $primaryKey='id_autor';
+    public $table='authors';
+    public $primaryKey='id';
     public $guarded=[];
-    public $timestamps=false;
+    public $timestamps=true;
 }
