@@ -83,6 +83,7 @@ class CreateTodaBaseDatosTable extends Migration
         });
 
 
+
     }
     
     public function down()
