@@ -26,7 +26,7 @@ Route::get("/faq", function(){
 // Route::get("/registracion", "RegistracionController@index");
 // Route::post("/registracion", "RegistracionController@store");
 
-/* Route::get("/login", "LoginController@index"); */
+ Route::get("/login", "LoginController@index"); 
 
 Auth::routes();
 
@@ -37,3 +37,6 @@ Route::get("/muro", function(){
 Route::get("/perfil", function(){
     return view("perfil");
 });
+
+Route::POST("/userPrueba", 'userController@agregarFoto');
+

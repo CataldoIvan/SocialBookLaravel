@@ -12,7 +12,7 @@ class CreateTodaBaseDatosTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {/*
         //creo la tabla autores
         Schema::create('authors', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -80,48 +80,8 @@ class CreateTodaBaseDatosTable extends Migration
             $table->integer('user_id');
             $table->integer('post_id');
             $table->boolean('active')->default(true);
-        });
- /////////// aca empiezo a definir las delaciones entre tabls con foreng key//////////
-    /*  Schema::table('users',function(Blueprint $table){
-            $table->unsignedInteger('nationality_id');
-            $table->foreign('nationality_id')->references('id')->on('nationalities');
-        });
-
-        Schema::table('authors',function(Blueprint $table){
-            $table->unsignedInteger('book_id');
-            $table->unsignedInteger('nationality_id');
-            $table->foreign('book_id')->references('id')->on('books');
-            $table->foreign('nationality_id')->references('id')->on('nationalities');
-
-        });
-        Schema::table('books',function(Blueprint $table){
-            $table->unsignedInteger('genre_id');
-            $table->unsignedInteger('author_id');
-            $table->unsignedInteger('languaje_id');
-            $table->unsignedInteger('editorial_id');
-            $table->foreign('genre_id')->references('id')->on('genres');
-            $table->foreign('author_id')->references('id')->on('authors');
-            $table->foreign('languaje_id')->references('id')->on('languajes');
-            $table->foreign('editorial_id')->references('id')->on('editorials');
-        
-        
-        });
-        Schema::table('posts',function(Blueprint $table){
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('book_id');
-            $table->unsignedInteger('commment_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('book_id')->references('id')->on('books');
-            $table->foreign('commment_id')->references('id')->on('comments');
-
-        });
-        Schema::table('comments',function(Blueprint $table){
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('post_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('post_id')->references('id')->on('posts');
-           
         });*/
+
 
 
     }

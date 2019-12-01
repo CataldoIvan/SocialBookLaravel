@@ -63,42 +63,34 @@
 
         <!-- ***** CONFIGURACION DE LAS ANIMACIONES  CON JS Y SCROLLREVEAL *** !-->
         <script >
-
         window.sr = ScrollReveal();
         sr.reveal('.navbar',{
           duration: 1000,
           origin:'top',
           distance:"100px",
         });
-
         sr.reveal('.jumbotron',{
           duration: 2000,
           origin:'left',
           distance:"100px"
         });
-
         sr.reveal('footer',{
           duration: 1000,
           origin:'left',
         });
-
         sr.reveal('.row',{
           duration:2000,
           distance:"100px"
         });
-
         //- Smooth Scrolling es para hacer el intercambio entre pagina mas despacio
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
-
         </script>
 
      </div>
