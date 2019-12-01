@@ -211,7 +211,7 @@
                 <div class="container-fluid container-posts">
                     <div class="card-post">
                         <ul class="profile-data">
-                            <li><b>Nombre y apellido: </b>   {{Auth::user()->name}} {{Auth::user()->surname}} </li>
+                            <li><b>Nombre y apellido: </b> <input type="text">  {{Auth::user()->name}} {{Auth::user()->surname}} </li>
                             <li><b>Email: </b> {{Auth::user()->email}}   </li>
                             <li><b>Hobbies:</b> </li>
                             <li><b>Mis libros favoritos:</b> </li>
@@ -251,60 +251,40 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+        <form action="/user" method='POST'>
+            @csrf
           <div class="modal-body">
             <div class="row modal-row">
               <div class="col-sm-3">
-                <label>Nombre: </label>
-              </div>
-              <div class="col-sm-6">
-                {{Auth::user()->name}}
-              </div>
-              <div class="col-sm-3">
-                <a href="#" title="Editar nombre"><i class="fa fa-pencil" aria-hidden="true"></i> <i>Edit</i></a>
+                <label>Nombre: <input type="text" name='name' value='{{Auth::user()->name}}'> </label> 
               </div>
             </div>
+
             <div class="row modal-row">
               <div class="col-sm-3">
                 <p>
-                 <label>Apellido: </label>
-                </p>
-              </div>
-              <div class="col-sm-6">
-                <p>
-                {{Auth::user()->surname}}
-                </p>
-              </div>
-              <div class="col-sm-3">
-                <p>
-                  <a href="#" title="Editar apellidp"><i class="fa fa-pencil" aria-hidden="true"></i> <i>Edit</i></a>
+                 <label>Apellido: <input type="text" name='surname' value='{{Auth::user()->surname}}'> </label> 
                 </p>
               </div>
             </div>
             <div class="row modal-row">
               <div class="col-sm-3">
                 <p>
-                 <label>Email: </label>
-                </p>
-              </div>
-              <div class="col-sm-6">
-                <p>
-                {{Auth::user()->email}}
-                </p>
-              </div>
-              <div class="col-sm-3">
-                <p>
-                  <a href="#" title="Editar Email"><i class="fa fa-pencil" aria-hidden="true"></i> <i>Edit</i></a>
+                 <label>Email: <input type="text" name='email' value='{{Auth::user()->email}}'> </label> 
                 </p>
               </div>
             </div>
             
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Guardar</button>
+            <input type="hidden" name="id" value="{{Auth::user()->id}}">
+            <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
           </div>
+         </form>
         </div>
       </div>
     </div>
+    
 <!-- solo es a para -->
 
     <!-- Modal Bootstrap para confirmar el borrado de la cuenta -->

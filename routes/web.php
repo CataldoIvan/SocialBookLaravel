@@ -37,3 +37,4 @@ Route::get("/muro", function(){
 Route::get("/perfil", function(){
     return view("perfil");
 });
+Route::post('/user', 'userController@edit');
