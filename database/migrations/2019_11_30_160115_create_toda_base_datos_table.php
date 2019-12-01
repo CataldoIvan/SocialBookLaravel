@@ -30,12 +30,14 @@ class CreateTodaBaseDatosTable extends Migration
             $table->bigIncrements('id');
             $table->string('languajes');
             $table->boolean('active')->default(true);
+            $table->timestamps();
         });
         //creo la tabla nacionalidades
         Schema::create('nationalities',function(Blueprint $table){
             $table->bigIncrements('id');
             $table->string('country');
             $table->boolean('active')->default(true);
+            $table->timestamps();
         });
         //creo la tabla libros(no se si hay que agregar el campo de la foto)
         Schema::create('books',function(Blueprint $table){
@@ -48,18 +50,21 @@ class CreateTodaBaseDatosTable extends Migration
             $table->unsignedBigInteger('languaje_id')->nullable();
             $table->unsignedBigInteger('editorial_id')->nullable();
             $table->boolean('active')->default(true);
+            $table->timestamps();
         });
         //creo la tabla generos
         Schema::create('genres',function(Blueprint $table){
             $table->bigIncrements('id');
             $table->string('type');
             $table->boolean('active')->default(true);
+            $table->timestamps();
         });
         //creo la tabla editoriales
         Schema::create('editorials',function(Blueprint $table){
             $table->bigIncrements('id');
             $table->string('name');
             $table->boolean('active')->default(true);
+            $table->timestamps();
         });
         //creo la tabla posteos
         Schema::create('posts',function(Blueprint $table){
@@ -69,6 +74,7 @@ class CreateTodaBaseDatosTable extends Migration
             $table->unsignedBigInteger('book_id')->nullable();
             $table->unsignedBigInteger('comment_id')->nullable();
             $table->boolean('active')->default(true);
+            $table->timestamps();
         });
         //creo la tabla comentarios
         Schema::create('comments',function(Blueprint $table){
@@ -77,6 +83,7 @@ class CreateTodaBaseDatosTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->unsignedBigInteger('post_id')->nullable();
             $table->boolean('active')->default(true);
+            $table->timestamps();
         });
 
     }
