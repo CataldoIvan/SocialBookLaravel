@@ -52,6 +52,7 @@
                 </ul>
             </div>
         </div>
+        
         <div class="second-icon dropdown menu-icon">
             <span class="dropdown-toggle" role="button" id="dropdownNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         <span class=".d-none .d-md-block .d-lg-none">Notificaciones</span> <i class="fa fa-bell-o" aria-hidden="true"></i> <span class="badge">2</span>
@@ -75,7 +76,7 @@
             </span>
         </div>
         <div class="second-icon menu-icon">
-            <span><a href="muro.php" title="Wall"><span class="hidden-xs hidden-sm">Muro</span> <i class="fa fa-database" aria-hidden="true"></i></a>
+            <span><a href="muro" title="Wall"><span class="hidden-xs hidden-sm">Muro</span> <i class="fa fa-database" aria-hidden="true"></i></a>
             </span>
         </div>
     </header>
@@ -83,7 +84,7 @@
     <!--Barra de costado con el Perfil -->
     <div class="sidebar-nav">
         <a href="perfil" title="Perfil">
-            <img alt="ImagenPerfil" class="img-circle img-user" src="">
+            <img alt="ImagenPerfil" class="img-circle img-user" src="/img/avatar.png">
         </a>
         <h2 class="text-center hidden-xs"><a href="perfil-personal.php" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
         <p class="text-center user-description hidden-xs">
@@ -118,6 +119,8 @@
         });
 
     </script>
+    
+    
 
 </body>
 
