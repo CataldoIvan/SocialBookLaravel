@@ -37,4 +37,10 @@ Route::get("/muro", function(){
 Route::get("/perfil", function(){
     return view("perfil");
 });
+<<<<<<< HEAD
 Route::post('/user', 'userController@edit');
+=======
+
+Route::POST("/userPrueba", 'userController@agregarFoto');
+
+>>>>>>> prueba_subida_fotos

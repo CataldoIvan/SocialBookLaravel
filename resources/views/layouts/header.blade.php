@@ -84,8 +84,14 @@
     <!--Barra de costado con el Perfil -->
     <div class="sidebar-nav">
         <a href="perfil" title="Perfil">
-            <img alt="ImagenPerfil" class="img-circle img-user" src="/img/avatar.png">
+            <img alt="ImagenPerfil" class="img-circle img-user" src="/storage/{{Auth::user()->foto_perfil}}">
         </a>
+        <form action="/userPrueba" method='POST' enctype='multipart/form-data'>
+            @csrf
+            <input type='hidden' name='id' value='{{Auth::user()->id}}'>
+            <input type="file" name='foto_perfil' '> Cambia tu foro de Perfil
+            <button type='submit'>Cambiar</button>
+        </form>
         <h2 class="text-center hidden-xs"><a href="perfil-personal.php" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
         <p class="text-center user-description hidden-xs">
             <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>

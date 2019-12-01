@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateTodaBaseDatosTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+   
     public function up()
     {
         //creo la tabla autores
@@ -86,12 +82,9 @@ class CreateTodaBaseDatosTable extends Migration
             $table->timestamps();
         });
 
+
     }
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('authors');

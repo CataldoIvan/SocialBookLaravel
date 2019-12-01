@@ -15,7 +15,7 @@
                 <h2 class="text-center">Registrate</h2>
                     <p class="pb-5 text-center">Por favor, llena este formulario para obtener tu cuenta</p>
 
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -84,8 +84,13 @@
                         <section class="imagenPerfil row my-5 ">
                              <h5 class="text-center col-12">Elegi tu imagen de perfil</h5>
                                <div class="col-12 text-center">
-                                 <input type="file" name="foto" value="Enviar">
+                                 <input type="file" name="foto_perfil" >
                                </div>
+                               @error('foto_perfil')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                            </section>
 
 
