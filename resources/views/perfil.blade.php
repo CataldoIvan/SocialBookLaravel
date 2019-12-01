@@ -1,6 +1,6 @@
 @extends('layouts.header')
 
-@section('muro')
+@section('perfil')
 
 
     <div class="content-posts profile-content">
@@ -137,7 +137,7 @@
                 <div class="container-fluid container-posts">
                     <div class="card-post">
                         <ul class="profile-data">
-                            <li><b>Nombre y apellido: </b> <input type="text">  {{Auth::user()->name}} {{Auth::user()->surname}} </li>
+                            <li><b>Nombre y apellido: </b>{{Auth::user()->name}} {{Auth::user()->surname}} </li>
                             <li><b>Email: </b> {{Auth::user()->email}}   </li>
                             <li><b>Hobbies:</b> </li>
                             <li><b>Mis libros favoritos:</b> </li>
@@ -167,7 +167,7 @@
 
   </div><!--Se cierra el content posts-->
 
-            <!-- Modal Bootstrap para Editar Perfil -->
+            {{-- <!-- Modal Bootstrap para Editar Perfil. Lo dejo comentado para no borrarlo hasta estae seguro que haya quedado bien escrito en HEADER.BLADE.PHP-->
     <div class="modal fade" id="settingsmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -177,30 +177,30 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-        <form action="/user" method='POST'>
+        <form action="" method='POST'>
             @csrf
           <div class="modal-body">
             <div class="row modal-row">
               <div class="col-sm-3">
-                <label>Nombre: <input type="text" name='name' value='{{Auth::user()->name}}'> </label> 
+                <label>Nombre: <input type="text" name='name' value='{{Auth::user()->name}}'> </label>
               </div>
             </div>
 
             <div class="row modal-row">
               <div class="col-sm-3">
                 <p>
-                 <label>Apellido: <input type="text" name='surname' value='{{Auth::user()->surname}}'> </label> 
+                 <label>Apellido: <input type="text" name='surname' value='{{Auth::user()->surname}}'> </label>
                 </p>
               </div>
             </div>
             <div class="row modal-row">
               <div class="col-sm-3">
                 <p>
-                 <label>Email: <input type="text" name='email' value='{{Auth::user()->email}}'> </label> 
+                 <label>Email: <input type="text" name='email' value='{{Auth::user()->email}}'> </label>
                 </p>
               </div>
             </div>
-            
+
           <div class="modal-footer">
             <input type="hidden" name="id" value="{{Auth::user()->id}}">
             <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -209,9 +209,9 @@
          </form>
         </div>
       </div>
-    </div>
-    
-<!-- solo es a para -->
+    </div> Cerrado del modal boostrap de editar perfil--}}
+
+
 
     <!-- Modal Bootstrap para confirmar el borrado de la cuenta -->
 
@@ -257,6 +257,6 @@
          $('a[href="' + activeTab + '"]').tab('show');
       }
   </script>
-    
+
 
 @endsection

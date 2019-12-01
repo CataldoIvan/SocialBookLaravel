@@ -52,7 +52,7 @@
                 </ul>
             </div>
         </div>
-        
+            <!-- Esta solapa es la de Notificaciones de nuevos comentarios. Hay que ver como hacerla dinamica sin complicarnos mucho -->
         <div class="second-icon dropdown menu-icon">
             <span class="dropdown-toggle" role="button" id="dropdownNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         <span class=".d-none .d-md-block .d-lg-none">Notificaciones</span> <i class="fa fa-bell-o" aria-hidden="true"></i> <span class="badge">2</span>
@@ -81,6 +81,71 @@
         </div>
     </header>
 
+    <!-- Modal Bootstrap para Editar Perfil -->
+<div class="modal fade" id="settingsmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar perfil</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="" method='POST'>
+          @csrf
+      <div class="modal-body">
+        <div class="row modal-row">
+          <div class="col-sm-3">
+          <label>Nombre y apellido:</label>
+          </div>
+          <div class="col-sm-6">
+            {{Auth::user()->name}} {{Auth::user()->surname}}
+          </div>
+          <div class="col-sm-3">
+            <a href="#" title="Editar Usuario"><i class="fa fa-pencil" aria-hidden="true"></i> <i>Edit</i></a>
+          </div>
+        </div>
+        <div class="row modal-row">
+          <div class="col-sm-3">
+            <p>
+             <label>Email: </label>
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <p>
+              {{Auth::user()->email}}
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <p>
+              <a href="#" title="Editar Email"><i class="fa fa-pencil" aria-hidden="true"></i> <i>Edit</i></a>
+            </p>
+          </div>
+        </div>
+        <div class="row modal-row">
+          <div class="col-sm-3">
+            <p>
+              <label for="password">Cambiar contrasenia: </label>
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <p>*********</p>
+          </div>
+          <div class="col-sm-3">
+            <a href="#" title="Editar Password"><i class="fa fa-pencil" aria-hidden="true"></i> <i>Edit</i></a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+          <input type="hidden" name="id" value="{{Auth::user()->id}}">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
     <!--Barra de costado con el Perfil -->
     <div class="sidebar-nav">
         <a href="perfil" title="Perfil">
@@ -98,9 +163,13 @@
         </p>
     </div>
 
-    <!--Muro con posteos -->
-    <section class="muro">
-        @yield("muro")
+    <section>
+      @yield('perfil')
+    </section>
+
+    {{-- Muro con posteos de mentira --}}
+    <section>
+        @yield('muro')
     </section>
 
     <!-- **** SCRIPTS y JQUERY *** !-->
@@ -110,7 +179,7 @@
 
     <script >
 
-        
+
 
         //- Smooth Scrolling es para hacer el intercambio entre pagina mas despacio
 
@@ -125,8 +194,8 @@
         });
 
     </script>
-    
-    
+
+
 
 </body>
 
