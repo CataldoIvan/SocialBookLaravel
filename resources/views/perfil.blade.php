@@ -29,12 +29,12 @@
                     <div class="card-post">
                         <div class="row">
                             <div class="col-xs-3 col-sm-2">
-                                <a href="personal-profile.html" title="Profile">
-                                    <img src="img/user.jpg" alt="User name" class="img-circle img-user">
+                                <a href="perfil" title="Profile">
+                                    <img src="/storage/{{Auth::user()->foto_perfil}}" alt="User name" class="img-circle img-user">
                                 </a>
                             </div>
                             <div class="col-xs-9 col-sm-10 info-user">
-                                <h3><a href="personal-profile.html" title="Profile">My User</a></h3>
+                                <h3><a href="perfil" title="Profile"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h3>
                                 <p><i>2h</i></p>
                             </div>
                         </div>
@@ -61,12 +61,12 @@
                     <div class="card-post">
                         <div class="row">
                             <div class="col-xs-3 col-sm-2">
-                                <a href="personal-profile.html" title="Profile">
-                                    <img src="img/user.jpg" alt="My User" class="img-circle img-user">
+                                <a href="perfil" title="Profile">
+                                    <img src="/storage/{{Auth::user()->foto_perfil}}" alt="My User" class="img-circle img-user">
                                 </a>
                             </div>
                             <div class="col-xs-9 col-sm-10 info-user">
-                                <h3><a href="personal-profile.html" title="Profile">My User</a></h3>
+                                <h3><a href="perfil" title="Profile"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h3>
                                 <p><i>2h</i></p>
                             </div>
                         </div>
@@ -94,12 +94,12 @@
                     <div class="card-post">
                         <div class="row">
                             <div class="col-xs-3 col-sm-2">
-                                <a href="personal-profile.html" title="Profile">
-                                    <img src="img/user.jpg" alt="User name" class="img-circle img-user">
+                                <a href="perfil" title="Profile">
+                                    <img src="/storage/{{Auth::user()->foto_perfil}}" alt="User name" class="img-circle img-user">
                                 </a>
                             </div>
                             <div class="col-xs-9 col-sm-10 info-user">
-                                <h3><a href="personal-profile.html" title="Profile">My User</a></h3>
+                                <h3><a href="perfil" title="Profile"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h3>
                                 <p><i>2h</i></p>
                             </div>
                         </div>

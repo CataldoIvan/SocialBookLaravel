@@ -98,12 +98,12 @@
           <div class="col-sm-3">
           <label>Nombre y apellido:</label>
           </div>
-          <div class="col-sm-6">
-            {{Auth::user()->name}} {{Auth::user()->surname}}
+          <div class="col-sm-9">
+          <input type="text" name='name' value='{{Auth::user()->name}} {{Auth::user()->surname}}'>
           </div>
-          <div class="col-sm-3">
+          {{-- <div class="col-sm-3">
             <a href="#" title="Editar Usuario"><i class="fa fa-pencil" aria-hidden="true"></i> <i>Edit</i></a>
-          </div>
+          </div> --}}
         </div>
         <div class="row modal-row">
           <div class="col-sm-3">
@@ -111,16 +111,16 @@
              <label>Email: </label>
             </p>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-9">
             <p>
-              {{Auth::user()->email}}
+            <input type="text" name='name' value='{{Auth::user()->email}}'>
             </p>
           </div>
-          <div class="col-sm-3">
+          {{-- <div class="col-sm-3">
             <p>
               <a href="#" title="Editar Email"><i class="fa fa-pencil" aria-hidden="true"></i> <i>Edit</i></a>
             </p>
-          </div>
+          </div> --}}
         </div>
         <div class="row modal-row">
           <div class="col-sm-3">
@@ -128,12 +128,12 @@
               <label for="password">Cambiar contrasenia: </label>
             </p>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-9">
             <p>*********</p>
           </div>
-          <div class="col-sm-3">
+          {{-- <div class="col-sm-3">
             <a href="#" title="Editar Password"><i class="fa fa-pencil" aria-hidden="true"></i> <i>Edit</i></a>
-          </div>
+          </div> --}}
         </div>
       </div>
       <div class="modal-footer">
@@ -157,7 +157,7 @@
             <input type="file" name='foto_perfil' '> Cambia tu foto de Perfil
             <button type='submit'>Cambiar</button>
         </form> --}}
-        <h2 class="text-center hidden-xs"><a href="perfil-personal.php" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
+        <h2 class="text-center hidden-xs"><a href="perfil" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
         <p class="text-center user-description hidden-xs">
             <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>
         </p>
