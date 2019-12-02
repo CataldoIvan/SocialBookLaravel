@@ -61,7 +61,7 @@ class CreateTodaBaseDatosTable extends Migration
             $table->string('name');
             $table->boolean('active')->default(true);
             $table->timestamps();
-        });
+               });
         //creo la tabla posteos
         Schema::create('posts',function(Blueprint $table){
             $table->bigIncrements('id');

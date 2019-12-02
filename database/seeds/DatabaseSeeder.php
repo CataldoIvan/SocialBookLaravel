@@ -11,7 +11,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-        factory(App\Genre::class,10)->create();
+   
+        factory(App\Genre::class,2)->create();
+        $this->call(lenguajesSeeder::class);
+        $this->call(nationalitiesSeeder::class);  
+         factory(App\Editorial::class,4)->create(); 
+         factory(App\User::class,2)->create();  
+        /* 
+        No he logrado hacer que funcionen todas, algo paso con una clave foranea
+        que no me deja generar
+        factory(App\Author::class,4)->create();  
+        
+        factory(App\Book::class,3)->create();
+        factory(App\Post::class,2)->create(); 
+        factory(App\Comment::class,2)->create(); */
+        
     }
 }

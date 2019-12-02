@@ -2,11 +2,12 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Nationality;
-use Faker\Generator as Faker;
 
-$factory->define(Nationality::class, function (Faker $faker) {
+use Faker\Generator as Faker;
+use App\Genre;
+
+$factory->define(Genre::class, function (Faker $faker) {
     return [
-        //
+        'type'=>$faker->firstName()
     ];
 });

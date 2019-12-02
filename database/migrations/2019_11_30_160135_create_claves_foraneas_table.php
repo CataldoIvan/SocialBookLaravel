@@ -7,11 +7,6 @@ use Illuminate\Support\Facades\Schema;
 class CreateClavesForaneasTable extends Migration
 {
 
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
 /////////// aca empiezo a definir las delaciones entre tabls con foreng key//////////
@@ -58,7 +53,7 @@ class CreateClavesForaneasTable extends Migration
     {
        //borrado de las claves foraneas
        
-       Schema::dropForeign('users_nationality_id_foreign') ;
+       Schema::dropForeign('users_nationality_id_foreign') ; 
         Schema::dropForeign('authors_book_id_foreign');
         Schema::dropForeign('authors_nationality_id_foreign');
         Schema::dropForeign('books_genre_id_foreign');
@@ -69,7 +64,7 @@ class CreateClavesForaneasTable extends Migration
         Schema::dropForeign('posts_book_id_foreign');
         Schema::dropForeign('posts_comment_id_foreign');
         Schema::dropForeign('comments_user_id_foreign');
-        Schema::dropForeign('comments_post_id_foreign');
+        Schema::dropForeign('comments_post_id_foreign'); 
 
     }
     

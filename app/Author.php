@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Autor extends Model
+class Author extends Model
 {
     public $table='authors';
     public $primaryKey='id';

@@ -6,27 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 class AddFotoPerfilTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
+    
+     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('foto_perfil');
+            $table->string('foto_perfil')->default('');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+   
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('foto_perfil')->nullable();
          });
-    }
+    } 
 }
