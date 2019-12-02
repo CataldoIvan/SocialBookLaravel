@@ -48,16 +48,17 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {   
-        
+    {
+
         return Validator::make($data, [
-            
+
             'name' => ['required', 'string', 'max:255'],
             'surname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            
-            
+            'foto_perfil' => ['sometimes','file','image'],
+
+
         ]);
     }
 
@@ -68,15 +69,21 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {   
-        
-        
-        
+    {
+      $request = app('request');
+
+    if($request->hasfile('foto_perfil')){
+        $ruta = $request->file('foto_perfil')->store('public');
+        $nombreArchivo = basename($ruta);
+      }
+
         return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'foto_perfil' => $nombreArchivo,
+
         ]);
     }
-}
+  }
