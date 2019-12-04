@@ -150,22 +150,71 @@
 </div>
 </form>
 
-    <!--Barra de costado con el Perfil -->
-    <div class="sidebar-nav">
-        <a href="perfil" title="Perfil">
-            <img alt="ImagenPerfil" class="img-circle img-user" src="/storage/{{Auth::user()->foto_perfil}}">
-        </a>
-        {{-- <form action="/userPrueba" method='POST' enctype='multipart/form-data'>
-            @csrf
-            <input type='hidden' name='id' value='{{Auth::user()->id}}'>
-            <input type="file" name='foto_perfil' '> Cambia tu foto de Perfil
-            <button type='submit'>Cambiar</button>
-        </form> --}}
-        <h2 class="text-center hidden-xs"><a href="perfil" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
-        <p class="text-center user-description hidden-xs">
-            <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>
-        </p>
+<!--Barra de costado con el Perfil -->
+<div class="sidebar-nav">
+    <a href="perfil" title="Perfil">
+        <img alt="ImagenPerfil" class="img-circle img-user" src="/storage/{{Auth::user()->foto_perfil}}">
+    </a>
+    {{-- <form action="/userPrueba" method='POST' enctype='multipart/form-data'>
+        @csrf
+        <input type='hidden' name='id' value='{{Auth::user()->id}}'>
+        <input type="file" name='foto_perfil' '> Cambia tu foto de Perfil
+        <button type='submit'>Cambiar</button>
+    </form> --}}
+    <h2 class="text-center hidden-xs"><a href="perfil" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
+    <p class="text-center user-description hidden-xs">
+        <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>
+    </p>
+    <div class="resenia mb-1">
+      <button data-target="#crearPosteo" type="button" class="btn btn-primary" data-toggle="modal">Crear resenia sin spoiler</button>
     </div>
+    <div class="spoiler mb-1">
+      <button data-target="#" type="button" class="btn btn-primary" data-toggle="modal">Crear resenia con spoiler</button>
+    </div>
+    <div class="posteoImagen mb-1">
+    <button data-target="#" type="button" class="btn btn-primary" data-toggle="modal">Crear posteo con imagen</button>
+    </div>
+</div>
+<!-- Modal Bootstrap para Crear Posteo -->
+<div class="modal fade" id="crearPosteo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header bg-info">
+      <h5 class="modal-title" id="exampleModalLabel">Nuevo Posteo</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="recipient-name" class="col-form-label">Titulo:</label>
+          <input type="text" class="form-control" id="recipient-name">
+        </div>
+        <div class="form-group">
+          <label for="recipient-name" class="col-form-label">¿Contiene spoiler?</label>
+          <input type="text" class="form-control" id="recipient-name"  placeholder="Si, tiene!.... No, no estoy espoileando!">
+        </div>
+        <div class="form-group">
+          <label for="message-text" class="col-form-label">Tu mensaje:</label>
+          <textarea class="form-control" id="message-text"></textarea>
+        </div>
+        <div class="adjuntarImagen">
+             <h5 class="text-center col-12">Adjuntar imagen</h5>
+               <div class="col-12 text-center">
+                 <input type="file" name="imagen" >
+              </div>
+        </div>
+      </form>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+      <button type="button" class="btn btn-primary">Postear!</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
 
     <section>
       @yield('perfil')

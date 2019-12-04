@@ -108,10 +108,11 @@
                   </div>
               </div>
       </div>
-                <!--Esto es un gif que tiene que aparecer antes de seguir cargando posteos-->
-          <div id="loading">
-              <img src="img/loader.gif" alt="loader">
+      <!--Esto es un spinner que tiene que aparecer antes de seguir cargando posteos-->
+        <div class="d-flex justify-content-center">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
           </div>
-      </div>
+        </div>
 
 @endsection
