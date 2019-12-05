@@ -186,10 +186,11 @@
       </button>
     </div>
     <div class="modal-body">
-      <form>
+      <form action="{{ route('post.create') }}" method="post">
+        @csrf
         <div class="form-group">
           <label for="recipient-name" class="col-form-label">Titulo:</label>
-          <input type="text" class="form-control" id="recipient-name">
+          <input name="title" type="text" class="form-control" id="recipient-name">
         </div>
         <div class="form-group">
           <label for="recipient-name" class="col-form-label">¿Contiene spoiler?</label>
@@ -197,7 +198,7 @@
         </div>
         <div class="form-group">
           <label for="message-text" class="col-form-label">Tu mensaje:</label>
-          <textarea class="form-control" id="message-text"></textarea>
+          <textarea name="review" id="new-post" class="form-control" id="message-text"></textarea>
         </div>
         <div class="adjuntarImagen">
              <h5 class="text-center col-12">Adjuntar imagen</h5>
@@ -205,15 +206,24 @@
                  <input type="file" name="imagen" >
               </div>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Postear!</button>
+          <input type="hidden" name="_token" value="{{ Session::token() }}">
+        </div>
       </form>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-      <button type="button" class="btn btn-primary">Postear!</button>
-    </div>
+      {{-- donde corno meto el codigo de mensajes de error y mensaje exitoso? --}}
+      @if (Session::has('message'))
+            {{Session::get('message')}}
+          </div>
+        </div>
+      @endif
+      {{-- donde corno meto el codigo de mensajes de error y mensaje exitoso? --}}
   </div>
 </div>
 </div>
 </div>
+
 
 
     <section>

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Post;
+use App\User;
 
 use Illuminate\Http\Request;
 
@@ -21,8 +23,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('muro');
-    }
+     // lo comento porque lo voy a usar en PostController
+    // public function index()
+    // {
+    //     return view('muro');
+    // }
 }

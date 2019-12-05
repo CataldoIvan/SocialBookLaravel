@@ -30,7 +30,7 @@ Route::get("/faq", function(){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PostController@index')->name('home');
 
 Route::get("/muro", function(){
     return view("muro");
@@ -47,3 +47,8 @@ Route::post('/user', 'userController@destroy');
 
 
 Route::POST("/userPrueba", 'userController@agregarFoto');
+
+Route::post('/createpost',[
+  'uses' => 'PostController@CreatePost',
+  'as' => 'post.create'
+]);

@@ -10,4 +10,10 @@ class Post extends Model
     public $primaryKey='id';
     public $guarded=[];
     public $timestamps=true;
+
+    public function user() {
+      return $this->belongsTo('App\User');
+    }
+
+
 }
