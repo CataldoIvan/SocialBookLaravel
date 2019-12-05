@@ -32,9 +32,9 @@ Auth::routes();
 
 Route::get('/home', 'PostController@index')->name('home');
 
-Route::get("/muro", function(){
-    return view("muro");
-});
+/* Route::get("/home", function(){
+    return view("home");
+}); */
 
 Route::get("/perfil", function(){
     return view("perfil");

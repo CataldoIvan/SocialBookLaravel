@@ -80,7 +80,7 @@
             </span>
         </div>
         <div class="second-icon menu-icon">
-            <span><a href="muro" title="Wall"><span class="hidden-xs hidden-sm">Muro</span> <i class="fa fa-database" aria-hidden="true"></i></a>
+            <span><a href="home" title="Wall"><span class="hidden-xs hidden-sm">Home</span> <i class="fa fa-database" aria-hidden="true"></i></a>
             </span>
         </div>
     </header>

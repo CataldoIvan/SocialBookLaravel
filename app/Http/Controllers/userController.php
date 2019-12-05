@@ -46,7 +46,9 @@ class userController extends Controller
   
    public function destroy($id)
    {
-       //
+           
+
+
    }
    //creo la funcion para controlar el guardado de la imagen
    public function agregarFoto(Request $request){

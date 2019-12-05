@@ -11,6 +11,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'user_id'=>$faker->numberBetween(1,App\User::count()),
         'book_id'=>$faker->numberBetween(1,App\Book::count()),
         'comment_id'=>$faker->numberBetween(1,App\Comment::count()),
+        'title'=>$faker->realText(30)
         
     ];
 });
