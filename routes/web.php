@@ -46,3 +46,8 @@ Route::post('/user', 'userController@edit');
 
 
 Route::POST("/userPrueba", 'userController@agregarFoto');
+
+Route::post('/createpost',[
+  'uses' => 'PostController@CreatePost',
+  'as' => 'post.create'
+]);
