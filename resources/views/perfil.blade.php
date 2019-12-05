@@ -228,7 +228,11 @@
         <p>¿ Estas seguro de querer borrar tu cuenta de SocialBook ?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Si, estoy seguro</button>
+        <form action="user" method="post">
+          <input type="text">
+          <button type="submmit" class="btn btn-primary">Si, estoy seguro</button>
+        </form>
+        
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
       </div>
     </div>

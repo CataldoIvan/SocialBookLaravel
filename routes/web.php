@@ -43,6 +43,7 @@ Route::get("/perfil", function(){
 
 
 Route::post('/user', 'userController@edit');
+Route::post('/user', 'userController@destroy');
 
 
 Route::POST("/userPrueba", 'userController@agregarFoto');
