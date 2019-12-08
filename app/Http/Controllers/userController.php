@@ -44,8 +44,13 @@ class userController extends Controller
    }
 
   
-   public function destroy($id)
+   public function destroy(Request $id)
    {
+    $usuario=User::find($id->userid);
+    
+    $usuario->delete();
+    
+    return redirect('inicio');
            
 
 

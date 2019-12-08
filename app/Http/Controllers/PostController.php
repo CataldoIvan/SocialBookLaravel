@@ -4,14 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use DB;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
      public function index()
      {
          $posts = Post::all();
@@ -85,14 +83,14 @@ class PostController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+   
+    public function destroy(Request $id)
+    {  
+       $post=Post::find($id['id']);
+       $post->delete();
+        
+   
+        return redirect()->back();
+
     }
 }

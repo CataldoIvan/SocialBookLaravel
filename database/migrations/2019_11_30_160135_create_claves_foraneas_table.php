@@ -54,7 +54,7 @@ class CreateClavesForaneasTable extends Migration
        //borrado de las claves foraneas
        
        $table->dropForeign('users_nationality_id_foreign') ; 
-        /*Schema::dropForeign('authors_book_id_foreign');
+        Schema::dropForeign('authors_book_id_foreign');
         Schema::dropForeign('authors_nationality_id_foreign');
         Schema::dropForeign('books_genre_id_foreign');
         Schema::dropForeign('books_author_id_foreign');
@@ -65,7 +65,7 @@ class CreateClavesForaneasTable extends Migration
         Schema::dropForeign('posts_comment_id_foreign');
         Schema::dropForeign('comments_user_id_foreign');
         Schema::dropForeign('comments_post_id_foreign'); 
-*/
+
     }
     
 }

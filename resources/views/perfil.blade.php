@@ -228,8 +228,9 @@
         <p>¿ Estas seguro de querer borrar tu cuenta de SocialBook ?</p>
       </div>
       <div class="modal-footer">
-        <form action="user" method="post">
-          <input type="text">
+        <form action="perfil" method="POST">
+          @csrf
+          <input type="text" hidden name='userid' value='{{Auth::user()->id}}'>
           <button type="submmit" class="btn btn-primary">Si, estoy seguro</button>
         </form>
         

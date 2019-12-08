@@ -8,7 +8,7 @@
           <div id="posts-container" class="container-fluid container-posts">
 
             @foreach ($posts as $post)
-
+                
                 <div class="card-post">
                     <div class="row">
                         <div class="col-xs-3 col-sm-2">
@@ -17,11 +17,20 @@
                             </a>
                         </div>
 
-                        <div class="col-xs-9 col-sm-10 info-user">
+                        <div class="col-xs-9 col-sm-8 info-user">
                             <h3><a href="perfilDelUsuario.php" title="Profile"></a></h3>
-                            <p>{{$post->user->name}}</p>
+                            <p>{{$post->user->name??"Este es un usuario Borrado"}}</p>
                             <p><i>{{$post->created_at}}</i></p>
                         </div>
+                        <!-- Este es el boton de borrar comentario -->
+                        <div class="borrarPost">
+                            <form action="/home" method="POST">
+                            @csrf
+                                <input type="text" name="id" hidden value="{{$post->id}}">
+                                <button type="submit " class="btn btn-primary">Borrar</button>
+                            </form>
+                        </div>
+                        <!-- Termina el boton -->
                     </div>
                     <div class="col-xs-3 col-sm-2">
                       <h3>{{$post->title}}</h3>
