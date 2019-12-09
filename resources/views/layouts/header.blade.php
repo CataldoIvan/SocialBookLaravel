@@ -5,10 +5,9 @@
 
 <head>
     <title>Muro - SocialBook</title>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700" rel="stylesheet">
@@ -25,7 +24,7 @@
         <div class="menu-icon">
             <div class="dropdown">
                 <span class="dropdown-toggle" role="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  <span class="hidden-xs hidden-sm">Configuracion</span> <i class="fa fa-cogs" aria-hidden="true"></i>
+                  <span class="d-none d-lg-block">Configuracion</span><i class="fa fa-cogs" aria-hidden="true"></i>
                 </span>
                 <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSettings">
                     <li>
@@ -59,7 +58,7 @@
             <!-- Esta solapa es la de Notificaciones de nuevos comentarios. Hay que ver como hacerla dinamica sin complicarnos mucho -->
         <div class="second-icon dropdown menu-icon">
             <span class="dropdown-toggle" role="button" id="dropdownNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        <span class=".d-none .d-md-block .d-lg-none">Notificaciones</span> <i class="fa fa-bell-o" aria-hidden="true"></i> <span class="badge">2</span>
+        <span class="d-none d-lg-block">Notificaciones</span> <i class="fa fa-bell-o" aria-hidden="true"></i> <span class="badge">2</span>
             </span>
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownNotification">
                 <li class="new-not">
@@ -76,11 +75,11 @@
             </ul>
         </div>
         <div class="second-icon menu-icon">
-            <span><a href="perfil" title="Perfil"><span class="hidden-xs hidden-sm">Perfil</span> <i class="fa fa-user" aria-hidden="true"></i></a>
+            <span><a href="perfil" title="Perfil"><span class="d-none d-lg-block">Perfil</span> <i class="fa fa-user" aria-hidden="true"></i></a>
             </span>
         </div>
         <div class="second-icon menu-icon">
-            <span><a href="home" title="Wall"><span class="hidden-xs hidden-sm">Home</span> <i class="fa fa-database" aria-hidden="true"></i></a>
+            <span><a href="home" title="Wall"><span class="d-none d-lg-block">Home</span> <i class="fa fa-database" aria-hidden="true"></i></a>
             </span>
         </div>
     </header>
@@ -161,18 +160,12 @@
         <input type="file" name='foto_perfil' '> Cambia tu foto de Perfil
         <button type='submit'>Cambiar</button>
     </form> --}}
-    <h2 class="text-center hidden-xs"><a href="perfil" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
-    <p class="text-center user-description hidden-xs">
+    <h2 class="text-center d-none d-lg-block"><a href="perfil" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
+    <p class="text-center user-description d-none d-lg-block">
         <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>
     </p>
     <div class="resenia mb-1">
       <button data-target="#crearPosteo" type="button" class="btn btn-primary" data-toggle="modal">Crear resenia sin spoiler</button>
-    </div>
-    <div class="spoiler mb-1">
-      <button data-target="#" type="button" class="btn btn-primary" data-toggle="modal">Crear resenia con spoiler</button>
-    </div>
-    <div class="posteoImagen mb-1">
-    <button data-target="#" type="button" class="btn btn-primary" data-toggle="modal">Crear posteo con imagen</button>
     </div>
 </div>
 <!-- Modal Bootstrap para Crear Posteo -->
@@ -236,11 +229,15 @@
     </section>
 
     <!-- **** SCRIPTS y JQUERY *** !-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> --}}
 
-    <script >
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script>
 
 
 

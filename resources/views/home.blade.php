@@ -8,12 +8,12 @@
           <div id="posts-container" class="container-fluid container-posts">
 
             @foreach ($posts as $post)
-                
+
                 <div class="card-post">
                     <div class="row">
                         <div class="col-xs-3 col-sm-2">
                             <a href="Perfil del usuario" title="Perfil">
-                                <img src="/storage/{{Auth::user()->foto_perfil}}" alt="Imagen de perfil del usuario" class="img-circle img-user">
+                                <img src="/storage/{{$post->user->foto_perfil}}" alt="Imagen de perfil del usuario" class="img-circle img-user">
                             </a>
                         </div>
 
@@ -22,15 +22,6 @@
                             <p>{{$post->user->name??"Este es un usuario Borrado"}}</p>
                             <p><i>{{$post->created_at}}</i></p>
                         </div>
-                        <!-- Este es el boton de borrar comentario -->
-                        <div class="borrarPost">
-                            <form action="/home" method="POST">
-                            @csrf
-                                <input type="text" name="id" hidden value="{{$post->id}}">
-                                <button type="submit " class="btn btn-primary">Borrar</button>
-                            </form>
-                        </div>
-                        <!-- Termina el boton -->
                     </div>
                     <div class="col-xs-3 col-sm-2">
                       <h3>{{$post->title}}</h3>
@@ -50,6 +41,15 @@
                                 <form>
                                     <input type="text" class="form-control" placeholder="Comentar">
                                 </form>
+                                <!-- Este es el boton de borrar comentario -->
+                                <div class="borrarPost mt-1">
+                                    <form action="/home" method="POST">
+                                    @csrf
+                                        <input type="text" name="id" hidden value="{{$post->id}}">
+                                        <button type="submit " class="btn btn-primary">Borrar comentario</button>
+                                    </form>
+                                </div>
+                                <!-- Termina el boton -->
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
      </div>
 
       <!--Esto es un spinner que tiene que aparecer antes de seguir cargando posteos-->
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center mt-3">
           <div class="spinner-border" role="status">
             <span class="sr-only">Loading...</span>
           </div>

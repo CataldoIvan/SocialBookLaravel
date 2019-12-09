@@ -250,9 +250,9 @@ header .badge {
 -----------------------------------------------------------------*/
 
 .banner-profile {
-    height: 160px;
+    height: 200px;
     width: 100%;
-    background-image: url('/img/miback.jpg');
+    background-image: url('../img/wallp1.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -463,5 +463,9 @@ textarea.post-textarea {
 
                                           .form-box  {width: 310px;
                                                       margin-top: -225px;}
+
+                                                      *, ::after, ::before {
+                                                          box-sizing: border-box;
+                                                      }
 
                                       }

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class PostController extends Controller
 {
-    
+
      public function index()
      {
          $posts = Post::all();
@@ -83,13 +83,13 @@ class PostController extends Controller
         //
     }
 
-   
+
     public function destroy(Request $id)
-    {  
+    {
        $post=Post::find($id['id']);
        $post->delete();
-        
-   
+
+
         return redirect()->back();
 
     }
