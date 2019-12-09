@@ -18,7 +18,10 @@ Color principal
 html, body, .sidebar-nav, .content-posts {
     height: 100%;
 }
+.container{
+    margin:0px;
 
+}
 body {
     background: #edf1f5;
     font-family: Poppins, sans-serif;
@@ -108,14 +111,14 @@ header .fa {
     font-size: 18px;
 }
 
-header div {
+/* header div {
     float: right;
-}
+} */
 
-header .second-icon {
+/* header .second-icon {
     margin-right: 60px;
 }
-
+ */
 header .menu-icon { margin-top:3px; }
 
 header .dropdown-menu, header .dropdown-menu a, header .dropdown-menu a:link, header .dropdown-menu a:focus, header .dropdown-menu a:visited {
@@ -129,7 +132,7 @@ header .dropdown-menu {
 }
 
 header .dropdown-menu li, header .dropdown-menu li a { display: block;
-                                                       overflow: hidden;}
+                                                       overflow: hidden;} 
 
 .dropdown-menu>li>a  {  padding: 8px 20px; }
 
@@ -169,6 +172,7 @@ header .badge {
     position: fixed;
     width: 240px;
     top: 0px;
+    bottom:0px;
     padding: 50px 10px 0px 10px;
     background: #e1e8f0;
     z-index: 99;
@@ -372,15 +376,15 @@ textarea.post-textarea {
 8. Small Devices
 -----------------------------------------------------------------*/
 
-@media screen and (max-width:1199px)  {   header { padding: 15px 30px 10px 220px;  }
+ @media screen and (max-width:1199px)  {    header { padding: 15px 30px 10px 220px;   }
 
-                                          .sidebar-nav {  width:190px;  }
+                                          
 
                                           .content-posts {  margin-left:190px;}
 
                                           .container-posts { padding:0px 30px;  }
                                       }
-
+/*
 @media screen and (max-width:991px) {  .img-user { width: 100%;
                                                    margin: 0px;}
 
@@ -393,7 +397,7 @@ textarea.post-textarea {
 
   header { padding:0px;
            min-height: 104px;
-           padding-left:125px;}
+           padding-left:125px;} */
 
   header .search, header .search input, header .dropdown { width:100%; }
 
@@ -415,10 +419,10 @@ textarea.post-textarea {
   .card-post .chat-row .img-user  { width:100%;
                                     margin:0px;}
 
-  header .menu-icon { margin:0px;
+   header .menu-icon { margin:0px;
                       margin-top:25px;
-                      width:25%;
-                      text-align: center;}
+                     /*  width:25%; */
+                      /* text-align: center; */} 
 
   header .menu-icon .fa  {  font-size: 20px;  }
 
