@@ -5,11 +5,12 @@
   <!--Muro con posteos -->
 
       <div class="content-posts active" id="posts">
-          <div id="posts-container" class="container-fluid container-posts">
+          <div id="posts-container" class="container-fluid container-posts py-5">
 
             @foreach ($posts as $post)
-
-                <div class="card-post">
+            
+        
+                <div class="card-post py-5">
                     <div class="row">
                         <div class="col-xs-3 col-sm-2">
                             <a href="Perfil del usuario" title="Perfil">
@@ -19,7 +20,7 @@
 
                         <div class="col-xs-9 col-sm-8 info-user">
                             <h3><a href="perfilDelUsuario.php" title="Profile"></a></h3>
-                            <p>{{$post->user->name??"Este es un usuario Borrado"}}</p>
+                            <p>{{$post->user->name??"usuario Anonimo"}}</p>
                             <p><i>{{$post->created_at}}</i></p>
                         </div>
                     </div>
@@ -34,12 +35,18 @@
                             </div>
                             <div class="comments">
                                 <div class="more-comments">Ver mas comentarios</div>
-                                <ul>
-                                    <li><b>Amigo1</b> Lorem Ipsum Dolor si amet</li>
-                                    <li><b>Amigo2</b> Lorem Ipsum Dolor si amet <img draggable="false" class="emoji" alt="😂" src="https://twemoji.maxcdn.com/16x16/1f602.png"></li>
-                                </ul>
-                                <form>
-                                    <input type="text" class="form-control" placeholder="Comentar">
+                                 @foreach($post->comment as $comment ) 
+                                    <ul>
+                                        <li>{{$comment['comment']}}</li>
+                                    </ul>
+                                @endforeach
+                                <form action="/home" method="POST">
+                                    @csrf
+                                    <input type="text" name="post_id" value="{{$post->id}}" hidden>
+                                    <input type="text" name="user_id" value="{{$post->user->id}}" hidden>
+                                    <input type="text" name="comment" placeholder="Comentar">
+                                    <button type="submit">comentar</button>
+
                                 </form>
                                 <!-- Este es el boton de borrar comentario -->
                                 <div class="borrarPost mt-1">

@@ -154,12 +154,12 @@
     <a href="perfil" title="Perfil">
         <img alt="ImagenPerfil" class="img-circle img-user" src="/storage/{{Auth::user()->foto_perfil}}">
     </a>
-    {{-- <form action="/userPrueba" method='POST' enctype='multipart/form-data'>
+     <form action="/userPrueba" method='POST' enctype='multipart/form-data'>
         @csrf
         <input type='hidden' name='id' value='{{Auth::user()->id}}'>
         <input type="file" name='foto_perfil' '> Cambia tu foto de Perfil
         <button type='submit'>Cambiar</button>
-    </form> --}}
+    </form> 
     <h2 class="text-center d-none d-lg-block"><a href="perfil" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
     <p class="text-center user-description d-none d-lg-block">
         <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>

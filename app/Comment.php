@@ -11,4 +11,14 @@ class Comment extends Model
     public $primarykey='id';
     public $guarded=[];
     public $timestamps=true;
+    protected $date=['deleted_at'];
+
+
+    public function post() {
+        return $this->belongsTo('App\Post');
+      }
+
+      public function user() {
+        return $this->belongsTo('App\User');
+      }
 }
