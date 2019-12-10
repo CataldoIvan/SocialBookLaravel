@@ -162,22 +162,33 @@
 
 <!--Barra de costado con el Perfil -->
 <div class="sidebar-nav">
-    <a href="perfil" title="Perfil">
-        <img alt="ImagenPerfil" class="img-thumbnail img-fluid" src="/storage/{{Auth::user()->foto_perfil}}">
-    </a>
-     <form action="/userPrueba" method='POST' enctype='multipart/form-data'>
-        @csrf
-        <input type='hidden' name='id' value='{{Auth::user()->id}}'>
-        <input type="file" name='foto_perfil' style="color: transparent"> Cambia tu foto de Perfil
-        <button type='submit'>Cambiar</button>
-    </form>
-    <h2 class="text-center d-none d-lg-block"><a href="perfil" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
-    <p class="text-center user-description d-none d-lg-block">
-        <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>
-    </p>
-    <div class="resenia mb-1">
+
+    <div class="ImagenPerfil">
+      <a href="perfil" title="Perfil">
+          <img alt="ImagenPerfil" class="img-thumbnail img-fluid" src="/storage/{{Auth::user()->foto_perfil}}">
+      </a>
+    </div>
+
+    <div class="cambiarImagen">
+      <form action="/userPrueba" method='POST' enctype='multipart/form-data'>
+         @csrf
+         <input type='hidden' name='id' value='{{Auth::user()->id}}'>
+         <input type="file" name='foto_perfil' style="color: transparent"> Cambia tu foto de Perfil
+         <button type='submit'>Cambiar</button>
+     </form>
+    </div>
+
+    <div class="nombreYBio">
+      <h2 class="text-center d-none d-lg-block"><a href="perfil" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
+      <p class="text-center user-description d-none d-lg-block">
+          <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>
+      </p>
+    </div>
+
+    <div class="resenia mb-3">
       <button data-target="#crearPosteo" type="button" class="btn btn-primary" data-toggle="modal">Crear resenia sin spoiler</button>
     </div>
+
 </div>
 
 <!-- Modal Bootstrap para Crear Posteo -->
