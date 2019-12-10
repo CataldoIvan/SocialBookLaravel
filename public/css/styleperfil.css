@@ -20,7 +20,8 @@ html, body, .sidebar-nav, .content-posts {
 }
 
 body {
-    background: #edf1f5;
+    background: url('/img/bg8.jpg');
+    background-size: cover;
     font-family: Poppins, sans-serif;
 }
 
