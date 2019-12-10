@@ -233,7 +233,7 @@
           <input type="text" hidden name='userid' value='{{Auth::user()->id}}'>
           <button type="submmit" class="btn btn-primary">Si, estoy seguro</button>
         </form>
-        
+
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
       </div>
     </div>

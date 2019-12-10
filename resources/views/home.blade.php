@@ -5,7 +5,7 @@
   <!--Muro con posteos -->
 
       <div class="content-posts active" id="posts">
-          <div id="posts-container" class="container-fluid container-posts py-5">
+          <div id="posts-container" class="container-fluid container-posts py-3">
 
             @foreach ($posts as $post)
             

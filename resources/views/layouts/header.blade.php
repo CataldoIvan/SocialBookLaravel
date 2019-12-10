@@ -157,16 +157,16 @@
      <form action="/userPrueba" method='POST' enctype='multipart/form-data'>
         @csrf
         <input type='hidden' name='id' value='{{Auth::user()->id}}'>
-        <input type="file" name='foto_perfil' '> Cambia tu foto de Perfil
+        <input type="file" name='foto_perfil'> Cambia tu foto de Perfil
         <button type='submit'>Cambiar</button>
     </form> 
     <h2 class="text-center d-none d-lg-block"><a href="perfil" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
     <p class="text-center user-description d-none d-lg-block">
         <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>
     </p>
-    <div class="resenia mb-1">
+    {{-- <div class="resenia mb-1">
       <button data-target="#crearPosteo" type="button" class="btn btn-primary" data-toggle="modal">Crear resenia sin spoiler</button>
-    </div>
+    </div> --}}
 </div>
 <!-- Modal Bootstrap para Crear Posteo -->
 <div class="modal fade" id="crearPosteo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
