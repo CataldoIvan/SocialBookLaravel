@@ -8,8 +8,8 @@
           <div id="posts-container" class="container-fluid container-posts py-3">
 
             @foreach ($posts as $post)
-            
-        
+
+
                 <div class="card-post py-5">
                     <div class="row">
                         <div class="col-xs-3 col-sm-2">
@@ -20,7 +20,7 @@
 
                         <div class="col-xs-9 col-sm-8 info-user">
                             <h3><a href="perfilDelUsuario.php" title="Profile"></a></h3>
-                            <p>{{$post->user->name??"usuario Anonimo"}}</p>
+                            <p>{{Auth::user()->name }} {{Auth::user()->surname??"usuario Anonimo"}}</p>
                             <p><i>{{$post->created_at}}</i></p>
                         </div>
                     </div>
@@ -35,9 +35,13 @@
                             </div>
                             <div class="comments">
                                 <div class="more-comments">Ver mas comentarios</div>
-                                 @foreach($post->comment as $comment ) 
+                                 @foreach($post->comment as $comment )
                                     <ul>
-                                        <li>{{$comment['comment']}}</li>
+                                        <li>
+                                          {{-- <img src="/storage/{{$post->user->foto_perfil}}" alt="Imagen de perfil del usuario" class="img-circle img-user" height="42" width="42"> --}}
+                                          <b>{{Auth::user()->name}} {{Auth::user()->surname??"usuario Anonimo"}} Comentó:</b> <br>
+                                          {{$comment['comment']}}
+                                        </li>
                                     </ul>
                                 @endforeach
                                 <form action="/home" method="POST">

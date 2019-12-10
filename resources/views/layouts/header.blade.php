@@ -24,7 +24,8 @@
         <div class="menu-icon">
             <div class="dropdown">
                 <span class="dropdown-toggle" role="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  <span class="d-none d-lg-block">Configuracion</span><i class="fa fa-cogs" aria-hidden="true"></i>
+                  <span class="d-none d-md-block">Configuracion</span>
+                  <i class="fa fa-cogs d-block d-xs-none d-sm-none" aria-hidden="true"></i>
                 </span>
                 <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSettings">
                     <li>
@@ -57,9 +58,11 @@
         </div>
             <!-- Esta solapa es la de Notificaciones de nuevos comentarios. Hay que ver como hacerla dinamica sin complicarnos mucho -->
         <div class="second-icon dropdown menu-icon">
-            <span class="dropdown-toggle" role="button" id="dropdownNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        <span class="d-none d-lg-block">Notificaciones</span> <i class="fa fa-bell-o" aria-hidden="true"></i> <span class="badge">2</span>
-            </span>
+              <span class="dropdown-toggle" role="button" id="dropdownNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <span class="d-none d-md-block">Notificaciones</span>
+          <i class="fa fa-bell-o d-block d-xs-none d-sm-none" aria-hidden="true"></i>
+          <span class="badge">2</span>
+              </span>
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownNotification">
                 <li class="new-not">
                     <a href="#" title="Nombre de usuario comment"><img src="img/Amigo2.jpg" alt="Imagen de perfil del usuario" class="img-circle img-user-mini"> User comments your post</a>
@@ -75,11 +78,19 @@
             </ul>
         </div>
         <div class="second-icon menu-icon">
-            <span><a href="perfil" title="Perfil"><span class="d-none d-lg-block">Perfil</span> <i class="fa fa-user" aria-hidden="true"></i></a>
+            <span>
+              <a href="perfil" title="Perfil">
+                <span class="d-none d-md-block">Perfil</span>
+                <i class="fa fa-user d-block d-xs-none d-sm-none" aria-hidden="true"></i>
+              </a>
             </span>
         </div>
         <div class="second-icon menu-icon">
-            <span><a href="home" title="Wall"><span class="d-none d-lg-block">Home</span> <i class="fa fa-database" aria-hidden="true"></i></a>
+            <span>
+              <a href="home" title="Wall">
+                <span class="d-none d-md-block">Home</span>
+                <i class="fa fa-database d-block d-xs-none d-sm-none" aria-hidden="true"></i>
+              </a>
             </span>
         </div>
     </header>
@@ -152,22 +163,23 @@
 <!--Barra de costado con el Perfil -->
 <div class="sidebar-nav">
     <a href="perfil" title="Perfil">
-        <img alt="ImagenPerfil" class="img-circle img-user" src="/storage/{{Auth::user()->foto_perfil}}">
+        <img alt="ImagenPerfil" class="img-thumbnail img-fluid" src="/storage/{{Auth::user()->foto_perfil}}">
     </a>
      <form action="/userPrueba" method='POST' enctype='multipart/form-data'>
         @csrf
         <input type='hidden' name='id' value='{{Auth::user()->id}}'>
-        <input type="file" name='foto_perfil'> Cambia tu foto de Perfil
+        <input type="file" name='foto_perfil' style="color: transparent"> Cambia tu foto de Perfil
         <button type='submit'>Cambiar</button>
-    </form> 
+    </form>
     <h2 class="text-center d-none d-lg-block"><a href="perfil" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
     <p class="text-center user-description d-none d-lg-block">
         <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>
     </p>
-    {{-- <div class="resenia mb-1">
+    <div class="resenia mb-1">
       <button data-target="#crearPosteo" type="button" class="btn btn-primary" data-toggle="modal">Crear resenia sin spoiler</button>
-    </div> --}}
+    </div>
 </div>
+
 <!-- Modal Bootstrap para Crear Posteo -->
 <div class="modal fade" id="crearPosteo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
@@ -205,6 +217,7 @@
           <input type="hidden" name="_token" value="{{ Session::token() }}">
         </div>
       </form>
+
       {{-- donde corno meto el codigo de mensajes de error y mensaje exitoso? --}}
       @if (Session::has('message'))
             {{Session::get('message')}}
@@ -212,6 +225,7 @@
         </div>
       @endif
       {{-- donde corno meto el codigo de mensajes de error y mensaje exitoso? --}}
+
   </div>
 </div>
 </div>
