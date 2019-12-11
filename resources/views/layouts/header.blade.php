@@ -185,9 +185,9 @@
       </p>
     </div>
 
-    <div class="resenia mb-3">
+    {{-- <div class="resenia mb-3">
       <button data-target="#crearPosteo" type="button" class="btn btn-primary" data-toggle="modal">Crear resenia sin spoiler</button>
-    </div>
+    </div> --}}
 
 </div>
 

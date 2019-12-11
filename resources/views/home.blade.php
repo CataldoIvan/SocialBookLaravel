@@ -7,8 +7,12 @@
       <div class="content-posts active" id="posts">
           <div id="posts-container" class="container-fluid container-posts py-3">
 
+            <div class="resenia mb-3">
+              <button data-target="#crearPosteo" type="button" class="btn btn-primary" data-toggle="modal">¿Ganas de escribir algo?</button>
+            </div>
+
             @foreach ($posts as $post)
-                
+
 
                 <div class="card-post py-5">
                     <div class="row">
@@ -36,10 +40,10 @@
                             <div class="comments">
                                 <div class="more-comments">Ver mas comentarios</div>
                                  @foreach($post->comment as $comentario )
-                                 
+
                                     <ul>
                                         <li>
-                                         <img src="/storage/{{$comentario->user->foto_perfil}}" id="foto_comentario"alt="Imagen de perfil del usuario" class="img"  style=" width: 60px; height: 60px;border-radius: 50%;"> 
+                                         <img src="/storage/{{$comentario->user->foto_perfil}}" id="foto_comentario"alt="Imagen de perfil del usuario" class="img"  style=" width: 60px; height: 60px;border-radius: 50%;">
                                           <b>{{$comentario->user->name}} {{$comentario->user->surname??"usuario Anonimo"}} Comentó:</b> <br>
                                           {{$comentario['comment']}}
                                         </li>
