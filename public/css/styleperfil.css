@@ -192,10 +192,18 @@ header .badge {
 .container-posts {
     padding: 0 130px;
 }
+/* #foto_comentario{
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+} */
 
-.img-post {
-    width: 100%;
-}
+/* .img {
+   width: 300px; 
+   height: 300px;
+   border-radius: 50%;
+
+}  */
 
 .info-user i { color:#929292; }
 
@@ -407,11 +415,11 @@ textarea.post-textarea {
                   height: auto;
                   padding: 10px;}
 
-  .img-user   { width:80%;
+  /* .img-user   { width:80%;
                 margin-left:10%;  }
 
   .card-post .img-user { width:70%;
-                        margin-left:15%; }
+                        margin-left:15%; } */
 
   .card-post .chat-row .img-user  { width:100%;
                                     margin:0px;}

@@ -165,7 +165,7 @@
 
     <div class="ImagenPerfil">
       <a href="perfil" title="Perfil">
-          <img alt="ImagenPerfil" class="img-thumbnail img-fluid" src="/storage/{{Auth::user()->foto_perfil}}">
+          <img alt="ImagenPerfil" class="img-thumbnail img-fluid" src="/storage/{{Auth::user()->foto_perfil}}"style=" width: 300px; height: 200px;border-radius: 50%;">
       </a>
     </div>
 

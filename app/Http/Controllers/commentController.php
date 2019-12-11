@@ -15,7 +15,7 @@ class commentController extends Controller
 
   
    public function create(Request $request)
-   {
+   {   
        $comment=new Comment();
         $comment->comment=$request['comment'];
         $comment->user_id=$request['user_id'];
