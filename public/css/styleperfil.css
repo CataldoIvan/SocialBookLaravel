@@ -199,7 +199,7 @@ header .badge {
 } */
 
 /* .img {
-   width: 300px; 
+   width: 300px;
    height: 300px;
    border-radius: 50%;
 
@@ -252,6 +252,10 @@ header .badge {
 
 .primary-content .container-posts {
     padding: 0 40px;
+}
+
+.fa-database {
+  
 }
 
 /*----------------------------------------------------------------
