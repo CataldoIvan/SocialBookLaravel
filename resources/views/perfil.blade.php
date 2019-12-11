@@ -243,8 +243,7 @@
 
 
 
-    <!-- **** SCRIPT DE JS TOMADO DE LA WEB PARA MANTENER LA TAB ACTIVA AL REFRESCAR *** !-->
-    <!-- **** COMO DICE GUIDO KACZKA... ESTA MAL...(robar codigo) PERO NO ESTA TAAAAN MAL *** !-->
+    <!-- **** SCRIPT DE JS PARA MANTENER LA TABS ACTIVAS EN EL PERFIL CUANDO SELECCIONAMOS ALGUNA DE LAS SOLAPAS*** !-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
     <script type="text/javascript">
           $("a").click(function() {
