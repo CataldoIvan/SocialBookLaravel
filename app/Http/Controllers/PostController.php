@@ -6,6 +6,7 @@ use App\Post;
 use Illuminate\Http\Request;
 use DB;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Comment;
 
 class PostController extends Controller
 {
@@ -63,7 +64,9 @@ class PostController extends Controller
 
     public function destroy(Request $id)
     {
+      
        $post=Post::find($id['id']);
+       $post->comment->delete();
        $post->delete();
 
 

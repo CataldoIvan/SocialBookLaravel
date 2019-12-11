@@ -44,11 +44,11 @@ class commentController extends Controller
 
    public function destroy(Request $id)
    {
-      /* $post=Post::find($id['id']);
-      $post->delete();
+       $comment=Comment::find($id['id']);
+      $comment->delete();
 
 
-       return redirect()->back(); */
+       return redirect()->back();
 
    }
 }
