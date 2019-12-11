@@ -8,13 +8,13 @@
         </div>
         <!-- Tab Panel -->
         <ul class="nav nav-tabs" role="tablist">
-            <li class="active">
-              <a href="#posts" role="tab" id="postsTab" data-toggle="tab" aria-controls="posts" aria-expanded="true">Mis ultimos posteos</a>
+            <li class="">
+              <a href="#posts" role="tab" id="postsTab" data-toggle="tab" aria-controls="posts" aria-expanded="true" style="background-color:white;">Mis ultimos posteos</a>
             </li>
-            <li class="active">
+            <li class="">
               <a href="#profile" role="tab" id="profileTab" data-toggle="tab" aria-controls="profile" aria-expanded="true">Mi informacion</a>
             </li>
-            <li class="active">
+            <li class="">
               <a href="#profileDelete" role="tab" id="profileTab" data-toggle="tab" aria-controls="profileDelete" aria-expanded="true">Borrar mi cuenta</a>
             </li>
         </ul>
@@ -245,22 +245,12 @@
 
     <!-- **** SCRIPT DE JS TOMADO DE LA WEB PARA MANTENER LA TAB ACTIVA AL REFRESCAR *** !-->
     <!-- **** COMO DICE GUIDO KACZKA... ESTA MAL...(robar codigo) PERO NO ESTA TAAAAN MAL *** !-->
-    <script>
-          $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
-          localStorage.setItem('activeTab', $(e.target).attr('href'));
-      });
-
-      // Acá guarda el index al cual corresponde la tab. Lo podés ver en el dev tool de chrome.
-      var activeTab = localStorage.getItem('activeTab');
-
-      // En la consola te va a mostrar la pestaña donde hiciste el último click y lo
-      // guarda en "activeTab". Te dejo el console para que lo veas. Y cuando refresques
-      // el browser, va a quedar activa la última donde hiciste el click.
-      console.log(activeTab);
-
-      if (activeTab) {
-         $('a[href="' + activeTab + '"]').tab('show');
-      }
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
+    <script type="text/javascript">
+          $("a").click(function() {
+            $("a").css("background-color","");
+            $(this).css("background-color","white");
+          });
   </script>
 
 

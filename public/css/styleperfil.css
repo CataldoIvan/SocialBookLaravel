@@ -255,7 +255,7 @@ header .badge {
 }
 
 .fa-database {
-  
+
 }
 
 /*----------------------------------------------------------------
@@ -355,13 +355,11 @@ textarea.post-textarea {
     background-color: #fff;
     border: 1px solid #ddd;
     border-bottom-color: transparent;
-} */
+}
 
 .nav-tabs>li.active>a:hover {
   background-color: #fff;
-}
-
-
+} */
 
 /*----------------------------------------------------------------
  Scrollbar
