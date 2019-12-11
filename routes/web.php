@@ -45,6 +45,7 @@ Route::post('/home', 'commentController@create');
 Route::get("/perfil", function(){
     return view("perfil");
 });
+
 //Ruta para el borrado de el perfil
 Route::post("/perfil",'userController@destroy');
 

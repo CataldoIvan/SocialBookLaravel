@@ -163,21 +163,23 @@
       </a>
     </div>
 
-    {{-- <div class="cambiarImagen">
-      <form action="/userPrueba" method='POST' enctype='multipart/form-data'>
-         @csrf
-         <input type='hidden' name='id' value='{{Auth::user()->id}}'>
-         <input type="file" name='foto_perfil' style="color: transparent"> Cambia tu foto de Perfil
-         <button type='submit'>Cambiar</button>
-     </form>
-    </div> --}}
 
     <div class="nombreYBio">
       <h2 class="text-center d-none d-lg-block"><a href="perfil" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
       <p class="text-center user-description d-none d-lg-block">
-          <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i>
+          <i>{{Auth::user()->bio}}</i>
       </p>
     </div>
+
+    {{-- <div class="cambiarImagen my-3">
+      <form action="/userPrueba" method='POST' enctype='multipart/form-data'>
+         @csrf
+         <input type='hidden' name='id' value='{{Auth::user()->id}}'>
+         <input type="file" name='foto_perfil' style="color: transparent;width:100%;" >
+          <label for="">Cambia tu foto de Perfil</label>
+         <button type='submit'>Cambiar</button>
+     </form>
+    </div> --}}
 
     {{-- <div class="resenia mb-3">
       <button data-target="#crearPosteo" type="button" class="btn btn-primary" data-toggle="modal">Crear resenia sin spoiler</button>
