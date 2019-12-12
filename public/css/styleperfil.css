@@ -263,11 +263,18 @@ header .badge {
 -----------------------------------------------------------------*/
 
 .banner-profile {
+    position: relative ;
     height: 200px;
     width: 100%;
-    background-image: url('../img/wallp1.jpg');
+    /* background-image: url('../img/wallp1.jpg'); */
     background-size: cover;
     background-position: center;
+}
+.texto_sobre_img{
+    position: absolute ;
+    bottom:10%;
+    right:10%;
+    background-color:white;
 }
 
 .profile-content {

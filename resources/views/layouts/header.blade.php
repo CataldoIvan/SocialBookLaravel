@@ -107,7 +107,7 @@
           <label>Nombre y apellido:</label>
           </div>
           <div class="col-sm-9">
-          <input type="text" name='name' value='{{Auth::user()->name}} {{Auth::user()->surname}}'>
+          <input type="text" name='name' value='{{Auth::user()->name??"Usuario"}} {{Auth::user()->surname??"anonimo"}}'>
           </div>
           {{-- <div class="col-sm-3">
             <a href="#" title="Editar Usuario"><i class="fa fa-pencil" aria-hidden="true"></i> <i>Edit</i></a>
@@ -121,7 +121,7 @@
           </div>
           <div class="col-sm-9">
             <p>
-            <input type="text" name='name' value='{{Auth::user()->email}}'>
+            <input type="text" name='name' value='{{Auth::user()->email??"dadodebaja@email.com"}}'>
             </p>
           </div>
           {{-- <div class="col-sm-3">
@@ -145,7 +145,7 @@
         </div>
       </div>
       <div class="modal-footer">
-          <input type="hidden" name="id" value="{{Auth::user()->id}}">
+          <input type="hidden" name="id" value="{{Auth::user()->id??null}}">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-primary">Guardar</button>
       </div>
@@ -159,22 +159,25 @@
 
     <div class="ImagenPerfil">
       <a href="perfil" title="Perfil">
-          <img alt="ImagenPerfil" class="img-thumbnail img-fluid" src="/storage/{{Auth::user()->foto_perfil}}"style=" width: 100%;border-radius: 50%;">
+          <img alt="ImagenPerfil" class="img-thumbnail img-fluid" src="/storage/{{Auth::user()->foto_perfil??null}}"style=" width: 100%;border-radius: 50%;">
       </a>
     </div>
+    <a href="#" title="Editar usuario" data-toggle="modal" data-target="#modifyPhotoBio">
+       Edite su foto de perfil y/o bio
+    </a>
 
 
     <div class="nombreYBio">
-      <h2 class="text-center d-none d-lg-block"><a href="perfil" title="Perfil"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h2>
+      <h2 class="text-center d-none d-lg-block"><a href="perfil" title="Perfil"></a>{{Auth::user()->name??"Usuario" }} {{Auth::user()->surname??"anonimo" }}</h2>
       <p class="text-center user-description d-none d-lg-block">
-          <i>{{Auth::user()->bio}}</i>
+          <i>{{Auth::user()->bio??"Ingrese una Bio para su perfil"}}</i>
       </p>
     </div>
 
     {{-- <div class="cambiarImagen my-3">
       <form action="/userPrueba" method='POST' enctype='multipart/form-data'>
          @csrf
-         <input type='hidden' name='id' value='{{Auth::user()->id}}'>
+         <input type='hidden' name='id' value='{{Auth::user()->id??null}}'>
          <input type="file" name='foto_perfil' style="color: transparent;width:100%;" >
           <label for="">Cambia tu foto de Perfil</label>
          <button type='submit'>Cambiar</button>
@@ -186,6 +189,35 @@
     </div> --}}
 
 </div>
+
+ <!-- Modal Bootstrap para Editar bio o la foto de perfil -->
+ <div class="modal fade" id="modifyPhotoBio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="modal-title" id="exampleModalLabel">Modifique su Bio y/o Foto de perfil</p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="cambiarImagen my-3">
+          <form action="/perfil" method='POST' enctype='multipart/form-data'>
+              @csrf
+              <h4>Elige tu foto de Peril:</h4>
+              <input type='hidden' name='id' value='{{Auth::user()->id}}'>
+              <input type="file" name='foto_perfil' value="" >
+              <br>
+              <h4>Biografia:</h4>
+              <textarea name="bio" rows="6">{{Auth::user()->bio??"Ingrese su nueva Bio"}}</textarea>
+               <br>
+              <button type='submit'>Guardar Cambios</button>
+          </form>
+      </div>
+      
+    </div>
+  </div>
+ </div>
+
 
 <!-- Modal Bootstrap para Crear Posteo -->
 <div class="modal fade" id="crearPosteo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

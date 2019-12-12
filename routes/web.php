@@ -52,8 +52,11 @@ Route::post("/perfil",'userController@destroy');
 Route::post('/user', 'userController@edit');
 Route::post('/user', 'userController@destroy');
 
+//ruta para cambiar foto de perfil o bio
+Route::POST("/perfil", 'userController@agregarFotoyBio');
 
-Route::POST("/userPrueba", 'userController@agregarFoto');
+//ruta para cambiar foto de portada
+Route::POST("/perfil", 'userController@agregarFotoPortada');
 
 Route::post('/createpost',[
   'uses' => 'PostController@CreatePost',

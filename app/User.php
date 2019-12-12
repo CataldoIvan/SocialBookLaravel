@@ -15,7 +15,7 @@ class User extends Authenticatable
 
 
     protected $fillable = [
-        'name','surname',  'email', 'password','foto_perfil'
+        'name','surname',  'email', 'password','foto_perfil','foto_portada'
     ];
     //agrego el aatributo para borrado logico
     protected $date=['deleted_at'];

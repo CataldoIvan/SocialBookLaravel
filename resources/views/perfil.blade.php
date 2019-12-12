@@ -4,7 +4,11 @@
 
 
     <div class="content-posts profile-content">
-      <div class="banner-profile">
+      <div >
+      <img  class="banner-profile" src="/storage/{{Auth::user()->foto_portada??'../img/wallp1.jpg'}}" alt="">
+      <div class="texto_sobre_img"> <a href="#" title="Editar portada" data-toggle="modal" data-target="#modifyPhotoPort">
+       Edite su foto portada
+    </a></div>
         </div>
         <!-- Tab Panel -->
         <ul class="nav nav-tabs" role="tablist">
@@ -131,6 +135,30 @@
                     <img src="img/load.gif" alt="loader">
                 </div>
             </div><!-- fin del Tab Posts -->
+       <!-- Modal Bootstrap para Editar la foto de portada -->
+      <div class="modal fade" id="modifyPhotoPort" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <p class="modal-title" id="exampleModalLabel">Modifique su Foto de Portada</p>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="cambiarImagen my-3">
+                <form action="/perfil" method='POST' enctype='multipart/form-data'>
+                    @csrf
+                    <h4>Elige tu foto de Portada:</h4>
+                    <input type='hidden' name='id' value='{{Auth::user()->id}}'>
+                    <input type="file" name='foto_portada' value="" >
+                    <br>
+                    <button type='submit'>Guardar Cambios</button>
+                </form>
+            </div>
+            
+          </div>
+        </div>
+      </div>
 
             <!--Empieza el Tab Profile-->
             <div class="tab-pane fade" role="tabpanel" id="profile" aria-labelledby="profileTab">

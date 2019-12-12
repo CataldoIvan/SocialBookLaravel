@@ -51,8 +51,8 @@
                                 @endforeach
                                 <form action="/home" method="POST">
                                     @csrf
-                                    <input type="text" name="post_id" value="{{$post->id}}" hidden>
-                                    <input type="text" name="user_id" value="{{Auth::user()->id}}" hidden>
+                                    <input type="text" name="post_id" value="{{$post->id??'Anonimo'}}" hidden>
+                                    <input type="text" name="user_id" value="{{Auth::user()->id??'Anonimo'}}" hidden>
                                     <input type="text" name="comment" placeholder="Comentar">
                                     <button type="submit">comentar</button>
 
