@@ -64,6 +64,9 @@
           <span class="badge">2</span>
               </span>
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownNotification">
+            @if (Session::has('message'))
+            <li> {{Session::get('message')}} </li>  
+              @endif
                 <li class="new-not">
                     <a href="#" title="Nombre de usuario comment"><img src="img/Amigo2.jpg" alt="Imagen de perfil del usuario" class="img-circle img-user-mini"> User comments your post</a>
                 </li>

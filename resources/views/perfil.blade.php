@@ -5,11 +5,11 @@
 
     <div class="content-posts profile-content">
       <div >
-      <img  class="banner-profile" src="/storage/{{Auth::user()->foto_portada??'../img/wallp1.jpg'}}" alt="">
-      <div class="texto_sobre_img"> <a href="#" title="Editar portada" data-toggle="modal" data-target="#modifyPhotoPort">
-       Edite su foto portada
-    </a></div>
-        </div>
+        <img  class="banner-profile" src="/storage/{{Auth::user()->foto_portada??'../img/wallp1.jpg'}}" alt="">
+        <div class="texto_sobre_img fixed"> <a href="#" title="Editar portada" data-toggle="modal" data-target="#modifyPhotoPort">
+        Edite su foto portada
+        </a></div>
+     </div>
         <!-- Tab Panel -->
         <ul class="nav nav-tabs" role="tablist">
             <li class="">

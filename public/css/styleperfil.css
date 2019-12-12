@@ -264,16 +264,19 @@ header .badge {
 
 .banner-profile {
     position: relative ;
-    height: 200px;
-    width: 100%;
-    /* background-image: url('../img/wallp1.jpg'); */
     background-size: cover;
-    background-position: center;
+    height: 200px;
+    overflow: hidden;
+    
+    width: 100%;
+     background-image: url('../img/wallp1.jpg'); 
+    
 }
 .texto_sobre_img{
     position: absolute ;
-    bottom:10%;
+    top:34%;
     right:10%;
+   
     background-color:white;
 }
 
