@@ -56,26 +56,15 @@ class userController extends Controller
 
    }
 
-   public function agregarFotoPortada(Request $request){
-
-    $usuario=User::findOrFail($request->id);
-    
-
-        $ruta=$request->file('foto_portada')->store("public");
-        $nombreArchivo=basename($ruta);
-        $usuario->foto_portada=$nombreArchivo;
-        $usuario->save();
-        return redirect('/perfil');
-
-    }
+  
    //creo la funcion para controlar el guardado de la imagen
    public function agregarFotoyBio(Request $request){
 
     $usuario=User::findOrFail($request->id);
     if($request->foto_perfil==null){
         $usuario->bio=$request['bio'];
-    $usuario->save();
-    return redirect('/perfil');
+        $usuario->save();
+        return redirect('/perfil');
     }else{
 
         $ruta=$request->file('foto_perfil')->store("public");
@@ -87,7 +76,23 @@ class userController extends Controller
 
     }
     
-   
-  
  }
+
+ public function agregarFotoPortada(Request $request){
+
+    $usuario=User::findOrFail($request->id);
+        
+    if($request->foto_portada!=null){
+        $ruta=$request->file('foto_portada')->store("public");
+        $nombreArchivo=basename($ruta);
+        $usuario->foto_portada=$nombreArchivo;
+        $usuario->save();
+        return redirect('/perfil');
+    }else{
+
+        return redirect('/perfil');
+
+    }
+
+    }
 }

@@ -56,7 +56,7 @@ Route::post('/user', 'userController@destroy');
 Route::POST("/perfil", 'userController@agregarFotoyBio');
 
 //ruta para cambiar foto de portada
-Route::POST("/perfil", 'userController@agregarFotoPortada');
+Route::POST("/CambiarFotoPortada", 'userController@agregarFotoPortada');
 
 Route::post('/createpost',[
   'uses' => 'PostController@CreatePost',

@@ -146,7 +146,7 @@
               </button>
             </div>
             <div class="cambiarImagen my-3">
-                <form action="/perfil" method='POST' enctype='multipart/form-data'>
+                <form action="/CambiarFotoPortada" method='POST' enctype='multipart/form-data'>
                     @csrf
                     <h4>Elige tu foto de Portada:</h4>
                     <input type='hidden' name='id' value='{{Auth::user()->id}}'>
