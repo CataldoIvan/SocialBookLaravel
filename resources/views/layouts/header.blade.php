@@ -25,7 +25,7 @@
             <div class="dropdown">
                 <span class="dropdown-toggle" role="button" id="dropdownSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                   <span class="d-none d-lg-block">Configuracion</span>
-                  <i class="fa fa-cogs .d-none .d-md-block .d-xl-none" aria-hidden="true"></i>
+                  <i class="fa fa-cogs d-lg-none .d-xl-block" aria-hidden="true"></i>
                 </span>
                 <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSettings">
                     <li>
@@ -60,12 +60,12 @@
         <div class="second-icon dropdown menu-icon">
               <span class="dropdown-toggle" role="button" id="dropdownNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           <span class="d-none d-lg-block">Notificaciones</span>
-          <i class="fa fa-bell-o .d-none .d-md-block .d-xl-none" aria-hidden="true"></i>
+          <i class="fa fa-bell-o d-lg-none .d-xl-block" aria-hidden="true"></i>
           <span class="badge">2</span>
               </span>
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownNotification">
             @if (Session::has('message'))
-            <li> {{Session::get('message')}} </li>  
+            <li> {{Session::get('message')}} </li>
               @endif
                 <li class="new-not">
                     <a href="#" title="Nombre de usuario comment"><img src="img/Amigo2.jpg" alt="Imagen de perfil del usuario" class="img-circle img-user-mini"> User comments your post</a>
@@ -82,13 +82,15 @@
         </div>
         <div class="second-icon menu-icon">
             <span><a href="perfil" title="Perfil"><span class="d-none d-lg-block">Perfil</span>
-                <i class="fa fa-user .d-none .d-md-block .d-xl-none" aria-hidden="true"></i></a>
+                <i class="fa fa-user d-lg-none .d-xl-block" aria-hidden="true"></i></a>
             </span>
         </div>
         <div class="second-icon menu-icon">
-            <span><a href="home" title="Wall"><span class="d-none d-lg-block">Home</span>
-              <i class="fa fa-database .d-none .d-md-block .d-xl-none" aria-hidden="true"></i>
-              </a></span>
+            <span>
+              <a href="home" title="Wall"><span class="d-none d-lg-block">Home</span>
+              <i class="fa fa-database d-lg-none .d-xl-block" aria-hidden="true"></i>
+              </a>
+            </span>
         </div>
     </header>
 
@@ -184,7 +186,7 @@
               <button type='submit'>Guardar Cambios</button>
           </form>
       </div>
-      
+
     </div>
   </div>
  </div>
@@ -278,7 +280,6 @@
         });
 
     </script>
-
 
 
 </body>

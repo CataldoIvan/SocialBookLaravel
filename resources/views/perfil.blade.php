@@ -155,7 +155,7 @@
                     <button type='submit'>Guardar Cambios</button>
                 </form>
             </div>
-            
+
           </div>
         </div>
       </div>
@@ -166,10 +166,10 @@
                     <div class="card-post">
                         <ul class="profile-data">
                             <li><b>Nombre : </b>{{Auth::user()->name}}</li>
-                          
+
                             <li><b>Apellido:</b> {{Auth::user()->surname}}</li>
                             <li><b>Email: </b> {{Auth::user()->email}}   </li>
-                            <li><b>Nacionalidad: </b> {{Auth::user()->nationality->country}}   </li>
+                            <li><b>Nacionalidad: </b> {{Auth::user()->country}}   </li>
                             <li> aca deben ir los libros favoritos </li>
                         </ul>
                     </div>

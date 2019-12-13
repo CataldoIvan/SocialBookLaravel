@@ -109,6 +109,7 @@ header .fa {
     font-size: 18px;
 }
 
+
 header div {
     float: right;
 }
@@ -267,16 +268,16 @@ header .badge {
     background-size: cover;
     height: 200px;
     overflow: hidden;
-    
+
     width: 100%;
-     background-image: url('../img/wallp1.jpg'); 
-    
+     background-image: url('../img/wallp1.jpg');
+
 }
 .texto_sobre_img{
     position: absolute ;
     top:34%;
     right:10%;
-   
+
     background-color:white;
 }
 
@@ -337,9 +338,28 @@ textarea.post-textarea {
 
 .modal-dialog  { width:700px;}
 
-.modal-header { background: #4F5467;
+.modal-body {
+  background: #83a4d4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.modal-footer {
+  background: #D3CCE3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* .modal-header { background: #4F5467;
                 color: #ffffff;
-               }
+               } */
+
+.modal-header {
+  background: #D3CCE3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 .modal-row  { margin-top:25px; }
 
