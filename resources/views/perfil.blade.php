@@ -7,7 +7,7 @@
       <div >
         <img  class="banner-profile" src="/storage/{{Auth::user()->foto_portada??'../img/wallp1.jpg'}}" alt="">
         <div class="texto_sobre_img fixed"> <a href="#" title="Editar portada" data-toggle="modal" data-target="#modifyPhotoPort">
-        Edite su foto portada
+        Cambiar imagen de portada
         </a></div>
      </div>
         <!-- Tab Panel -->
@@ -145,14 +145,17 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="cambiarImagen my-3">
+            <div class="modal-body">
                 <form action="/CambiarFotoPortada" method='POST' enctype='multipart/form-data'>
                     @csrf
                     <h4>Elige tu foto de Portada:</h4>
                     <input type='hidden' name='id' value='{{Auth::user()->id}}'>
                     <input type="file" name='foto_portada' value="" >
                     <br>
-                    <button type='submit'>Guardar Cambios</button>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type='submit'class="btn btn-primary">Guardar Cambios</button>
+                    </div>
                 </form>
             </div>
 

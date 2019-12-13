@@ -8,11 +8,11 @@
           <div id="posts-container" class="container-fluid container-posts py-3">
 
             <div class="resenia mb-3">
-              <button data-target="#crearPosteo" type="button" class="btn btn-outline-danger btn-lg btn-block text-white" data-toggle="modal">¿Ganas de escribir un posteo?</button>
+              <button data-target="#crearPosteo" type="button" class="btn btn-outline-danger btn-lg btn-block text-black" data-toggle="modal">¿Ganas de escribir un posteo?</button>
             </div>
 
             @foreach ($posts as $post)
-               
+
 
                 <div class="card-post py-5">
                     <div class="row">

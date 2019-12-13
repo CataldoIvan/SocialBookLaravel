@@ -165,7 +165,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modifique su Bio y/o Foto de perfil</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Cambia tu foto de perfil y tu descripción</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -174,10 +174,10 @@
               @csrf
         <div class="modal-body">
           <div class="modal-row">
-            <div class="fotoUser">
+            <div class="fotoUser pb-3">
               <h4>Elige tu foto de Perfil:</h4>
               <input type='hidden' name='id' value='{{Auth::user()->id}}'>
-              <input type="file" name='foto_perfil' value="" style="color: transparent;width:100%;">
+              <input type="file" name='foto_perfil' value="">
             </div>
               <div class="bioUser">
                 <h4>Biografia:</h4>
