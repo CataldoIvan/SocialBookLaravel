@@ -135,9 +135,9 @@
           <img alt="ImagenPerfil" class="img-thumbnail img-fluid" src="/storage/{{Auth::user()->foto_perfil??null}}"style=" width: 100%;border-radius: 50%;"></a>
     </div>
 
-    <div class="">
+    <div class="text-center user-description d-none d-lg-block">
       <a href="#" title="Editar usuario" data-toggle="modal" data-target="#modifyPhotoBio">
-        <b>Editá tu foto y tu descripción!</b>
+        <b>Edita tu foto y tu descripción!</b>
       </a>
     </div>
 
@@ -220,31 +220,27 @@
           <label for="message-text" class="col-form-label">Tu mensaje:</label>
           <textarea name="review" id="new-post" class="form-control" id="message-text"></textarea>
         </div>
-        <div class="adjuntarImagen">
+        {{-- COMENTO AGREGAR IMAGEN AL POSTEO <div class="adjuntarImagen">
              <h5 class="text-center col-12">Adjuntar imagen</h5>
                <div class="col-12 text-center">
                  <input type="file" name="imagen" >
               </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn btn-primary">Postear!</button>
-          <input type="hidden" name="_token" value="{{ Session::token() }}">
-        </div>
-      </form>
-
+        </div> --}}
+      </div>
       {{-- donde corno meto el codigo de mensajes de error y mensaje exitoso? --}}
-      @if (Session::has('message'))
+      {{-- @if (Session::has('message'))
             {{Session::get('message')}}
+          @endif --}}
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <input type="hidden" name="_token" value="{{ Session::token() }}">
           </div>
         </div>
-      @endif
-      {{-- donde corno meto el codigo de mensajes de error y mensaje exitoso? --}}
-
+      </form>
   </div>
 </div>
-</div>
-</div>
+
 
 
 
