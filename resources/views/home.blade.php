@@ -12,7 +12,7 @@
             </div>
 
             @foreach ($posts as $post)
-
+               
 
                 <div class="card-post py-5">
                     <div class="row">

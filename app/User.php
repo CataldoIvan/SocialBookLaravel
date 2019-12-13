@@ -15,7 +15,7 @@ class User extends Authenticatable
 
 
     protected $fillable = [
-        'name','surname',  'email', 'password','foto_perfil','foto_portada'
+        'name','surname',  'email', 'password','foto_perfil','foto_portada','nationality'
     ];
     //agrego el aatributo para borrado logico
     protected $date=['deleted_at'];
@@ -39,4 +39,7 @@ class User extends Authenticatable
     public function comment() {
         return $this->hasMany('App\Comment');
       }
+    public function nationality(){
+        return $this->belongsTo('App\Nationality');
+    }
 }

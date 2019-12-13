@@ -165,14 +165,13 @@
                 <div class="container-fluid container-posts">
                     <div class="card-post">
                         <ul class="profile-data">
-                            <li><b>Nombre y apellido: </b>{{Auth::user()->name}} {{Auth::user()->surname}} </li>
+                            <li><b>Nombre : </b>{{Auth::user()->name}}</li>
+                          
+                            <li><b>Apellido:</b> {{Auth::user()->surname}}</li>
                             <li><b>Email: </b> {{Auth::user()->email}}   </li>
-                            <li><b>Hobbies:</b> </li>
-                            <li><b>Mis libros favoritos:</b> </li>
-                            <li><b>Trabajo:</b> </li>
-                            <li><b>Descripcion:  {{Auth::user()->name}} {{Auth::user()->surname}}</b> </li>
+                            <li><b>Nacionalidad: </b> {{Auth::user()->nationality->country}}   </li>
+                            <li> aca deben ir los libros favoritos </li>
                         </ul>
-                        <p><a href="" title="edit profile"><i class="fa fa-pencil" aria-hidden="true"></i> Editar mi informacion</a></p>
                     </div>
                 </div>
             </div>

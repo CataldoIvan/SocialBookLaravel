@@ -48,8 +48,9 @@ Route::get("/perfil", function(){
 
 //Ruta para el borrado de el perfil
 Route::post("/perfil",'userController@destroy');
+//ruta para enviar editar datos de perfil
+Route::post('/editUserData', 'userController@edit');
 
-Route::post('/user', 'userController@edit');
 Route::post('/user', 'userController@destroy');
 
 //ruta para cambiar foto de perfil o bio

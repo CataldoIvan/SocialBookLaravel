@@ -10,4 +10,9 @@ class Nationality extends Model
     public $primaryKey='id';
     public $guarded=[];
     public $timestamps=true;
+
+
+    public function user() {
+        return $this->hasMany('App\User');
+      }
 }

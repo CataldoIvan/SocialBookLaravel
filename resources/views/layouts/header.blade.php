@@ -102,60 +102,28 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="" method='POST'>
+      <form action="/editUserData" method='POST'>
           @csrf
       <div class="modal-body">
         <div class="row modal-row">
-          <div class="col-sm-3">
-          <label>Nombre y apellido:</label>
-          </div>
-          <div class="col-sm-9">
-          <input type="text" name='name' value='{{Auth::user()->name??"Usuario"}} {{Auth::user()->surname??"anonimo"}}'>
-          </div>
-          {{-- <div class="col-sm-3">
-            <a href="#" title="Editar Usuario"><i class="fa fa-pencil" aria-hidden="true"></i> <i>Edit</i></a>
-          </div> --}}
-        </div>
-        <div class="row modal-row">
-          <div class="col-sm-3">
-            <p>
-             <label>Email: </label>
-            </p>
-          </div>
-          <div class="col-sm-9">
-            <p>
-            <input type="text" name='name' value='{{Auth::user()->email??"dadodebaja@email.com"}}'>
-            </p>
-          </div>
-          {{-- <div class="col-sm-3">
-            <p>
-              <a href="#" title="Editar Email"><i class="fa fa-pencil" aria-hidden="true"></i> <i>Edit</i></a>
-            </p>
-          </div> --}}
-        </div>
-        <div class="row modal-row">
-          <div class="col-sm-3">
-            <p>
-              <label for="password">Cambiar contrasenia: </label>
-            </p>
-          </div>
-          <div class="col-sm-9">
-            <p>*********</p>
-          </div>
-          {{-- <div class="col-sm-3">
-            <a href="#" title="Editar Password"><i class="fa fa-pencil" aria-hidden="true"></i> <i>Edit</i></a>
-          </div> --}}
+              <ul>
+                 <li><b>Nombre : </b><input name='name'type="text" value='{{Auth::user()->name}}'></li>
+                  <li><b>Apellido:</b><input name='surname'type="text" value='{{Auth::user()->surname}}'></li>
+                  <li><b>Email: </b><input name='email'type="text" value='{{Auth::user()->email}}'> </li>
+              </ul>
         </div>
       </div>
-      <div class="modal-footer">
+       <div class="modal-footer">
           <input type="hidden" name="id" value="{{Auth::user()->id??null}}">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
       </div>
-    </div>
+     </div>
+    </form>
   </div>
 </div>
-</form>
+</div>
+
 
 <!--Barra de costado con el Perfil -->
 <div class="sidebar-nav">
