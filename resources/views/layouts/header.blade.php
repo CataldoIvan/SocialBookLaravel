@@ -183,14 +183,13 @@
                 <h4>Biografia:</h4>
                 <textarea name="bio" rows="6">{{Auth::user()->bio??"Ingrese su nueva Bio"}}</textarea>
                </div>
-               <div class="modal-footer">
-                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                 <button type='submit' class="btn btn-primary">Guardar</button>
-               </div>
             </div>
          </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+           <button type='submit' class="btn btn-primary">Guardar</button>
+         </div>
         </form>
-
     </div>
   </div>
  </div>

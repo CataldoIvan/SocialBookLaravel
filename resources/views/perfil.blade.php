@@ -152,10 +152,10 @@
                     <input type='hidden' name='id' value='{{Auth::user()->id}}'>
                     <input type="file" name='foto_portada' value="" >
                     <br>
-                    <div class="modal-footer">
+            </div>
+            <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type='submit'class="btn btn-primary">Guardar Cambios</button>
-                    </div>
                 </form>
             </div>
 
