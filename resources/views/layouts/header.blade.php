@@ -56,8 +56,8 @@
                 </ul>
             </div>
         </div>
-            <!-- Esta solapa es la de Notificaciones de nuevos comentarios. Hay que ver como hacerla dinamica sin complicarnos mucho -->
-        <div class="second-icon dropdown menu-icon">
+            <!-- Esta solapa es la de Notificaciones de nuevos comentarios. Hay que ver como hacerla dinamica sin complicarnos mucho LA DEJO COMENTADA PORQUE NO ES UTIL POR EL MOMENTO-->
+        {{-- <div class="second-icon dropdown menu-icon">
               <span class="dropdown-toggle" role="button" id="dropdownNotification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           <span class="d-none d-lg-block">Notificaciones</span>
           <i class="fa fa-bell-o d-lg-none .d-xl-block" aria-hidden="true"></i>
@@ -79,7 +79,7 @@
                 <li role="separator" class="divider"></li>
                 <li><a href="#" title="All notifications">All Notifications</a></li>
             </ul>
-        </div>
+        </div> --}}
         <div class="second-icon menu-icon">
             <span><a href="perfil" title="Perfil"><span class="d-none d-lg-block">Perfil</span>
                 <i class="fa fa-user d-lg-none .d-xl-block" aria-hidden="true"></i></a>
@@ -124,7 +124,7 @@
     </form>
   </div>
 </div>
-</div>
+
 
 
 <!--Barra de costado con el Perfil -->
@@ -132,13 +132,14 @@
 
     <div class="ImagenPerfil">
       <a href="perfil" title="Perfil">
-          <img alt="ImagenPerfil" class="img-thumbnail img-fluid" src="/storage/{{Auth::user()->foto_perfil??null}}"style=" width: 100%;border-radius: 50%;">
+          <img alt="ImagenPerfil" class="img-thumbnail img-fluid" src="/storage/{{Auth::user()->foto_perfil??null}}"style=" width: 100%;border-radius: 50%;"></a>
+    </div>
+
+    <div class="">
+      <a href="#" title="Editar usuario" data-toggle="modal" data-target="#modifyPhotoBio">
+        <b>Editá tu foto y tu descripción!</b>
       </a>
     </div>
-    <a href="#" title="Editar usuario" data-toggle="modal" data-target="#modifyPhotoBio">
-       Edite su foto de perfil y/o bio
-    </a>
-
 
     <div class="nombreYBio">
       <h2 class="text-center d-none d-lg-block"><a href="perfil" title="Perfil"></a>{{Auth::user()->name??"Usuario" }} {{Auth::user()->surname??"anonimo" }}</h2>
@@ -157,10 +158,6 @@
      </form>
     </div> --}}
 
-    {{-- <div class="resenia mb-3">
-      <button data-target="#crearPosteo" type="button" class="btn btn-primary" data-toggle="modal">Crear resenia sin spoiler</button>
-    </div> --}}
-
 </div>
 
  <!-- Modal Bootstrap para Editar bio o la foto de perfil -->
@@ -168,24 +165,31 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <p class="modal-title" id="exampleModalLabel">Modifique su Bio y/o Foto de perfil</p>
+        <h5 class="modal-title" id="exampleModalLabel">Modifique su Bio y/o Foto de perfil</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="cambiarImagen my-3">
-          <form action="/perfil" method='POST' enctype='multipart/form-data'>
+      <form action="/perfil" method='POST' enctype='multipart/form-data'>
               @csrf
-              <h4>Elige tu foto de Peril:</h4>
+        <div class="modal-body">
+          <div class="modal-row">
+            <div class="fotoUser">
+              <h4>Elige tu foto de Perfil:</h4>
               <input type='hidden' name='id' value='{{Auth::user()->id}}'>
-              <input type="file" name='foto_perfil' value="" >
-              <br>
-              <h4>Biografia:</h4>
-              <textarea name="bio" rows="6">{{Auth::user()->bio??"Ingrese su nueva Bio"}}</textarea>
-               <br>
-              <button type='submit'>Guardar Cambios</button>
-          </form>
-      </div>
+              <input type="file" name='foto_perfil' value="" style="color: transparent;width:100%;">
+            </div>
+              <div class="bioUser">
+                <h4>Biografia:</h4>
+                <textarea name="bio" rows="6">{{Auth::user()->bio??"Ingrese su nueva Bio"}}</textarea>
+               </div>
+               <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                 <button type='submit' class="btn btn-primary">Guardar</button>
+               </div>
+            </div>
+         </div>
+        </form>
 
     </div>
   </div>
