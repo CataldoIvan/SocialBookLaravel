@@ -29,111 +29,76 @@
             <!-- Tab Posts -->
             <div class="tab-pane fade active in" role="tabpanel" id="posts" aria-labelledby="postsTab">
                 <div id="posts-container" class="container-fluid container-posts">
+                  @foreach ($posts as $post)
+
+                  @if ($post -> user_id == Auth::user()->id)
 
                     <div class="card-post">
                         <div class="row">
                             <div class="col-xs-3 col-sm-2">
-                                <a href="perfil" title="Profile">
-                                    <img src="/storage/{{Auth::user()->foto_perfil}}" alt="User name" class="img-circle img-user">
-                                </a>
+                              <a href="Perfil del usuario" title="Perfil">
+                                  <img src="/storage/{{$post->user->foto_perfil??null}}" alt="Imagen de perfil del usuario" class="img" style=" width: 120px; height: 120px;border-radius: 50%;">
+                              </a>
                             </div>
-                            <div class="col-xs-9 col-sm-10 info-user">
-                                <h3><a href="perfil" title="Profile"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h3>
-                                <p><i>2h</i></p>
+                            <div class="col-xs-9 col-sm-8 info-user">
+                                <h3><a href="perfilDelUsuario.php" title="Profile"></a></h3>
+                                <h2>{{$post->user->name??"usuario " }} {{$post->user->surname??" Anonimo"}}</h2>
+                                <p><i>{{$post->created_at}}</i></p>
                             </div>
+                        </div>
+                        <div class="col-xs-3 col-sm-2">
+                          <h3>{{$post->title}}</h3>
                         </div>
                         <div class="row">
                             <div class="col-sm-8 col-sm-offset-2 data-post">
-                                <p>Lorem Ipsum Dolor si amet</p>
+                                <p>{{$post->review}}</p>
                                 <div class="reaction">
-                                    &#x2764; 156 &#x1F603; 54
+                                    <img draggable="false" class="emoji" alt="❤" src="https://twemoji.maxcdn.com/16x16/2764.png"> 156 <img draggable="false" class="emoji" alt="😃" src="https://twemoji.maxcdn.com/16x16/1f603.png"> 54
                                 </div>
                                 <div class="comments">
                                     <div class="more-comments">Ver mas comentarios</div>
-                                    <ul>
-                                        <li><b>User1</b> Lorem Ipsum Dolor si amet</li>
-                                        <li><b>User2</b> Lorem Ipsum Dolor si amet &#x1F602;</li>
-                                    </ul>
-                                    <form>
-                                        <input type="text" class="form-control" placeholder="Add a comment">
+                                     @foreach($post->comment as $comentario )
+
+                                        <ul>
+                                            <li>
+                                             <img src="/storage/{{$comentario->user->foto_perfil??null}}" id="foto_comentario"alt="Imagen de perfil del usuario" class="img"  style=" width: 60px; height: 60px;border-radius: 50%;">
+                                              <b>{{$comentario->user->name??"usuario"}} {{$comentario->user->surname??" Anonimo"}} Comentó:</b> <br>
+                                              {{$comentario['comment']}}
+                                            </li>
+                                        </ul>
+                                    @endforeach
+                                    <form action="/home" method="POST">
+                                        @csrf
+                                        <input type="text" name="post_id" value="{{$post->id??'Anonimo'}}" hidden>
+                                        <input type="text" name="user_id" value="{{Auth::user()->id??'Anonimo'}}" hidden>
+                                        <input type="text" name="comment" placeholder="Comentar">
+                                        <button type="submit">comentar</button>
+
                                     </form>
+                                    <!-- Este es el boton de borrar comentario -->
+                                    <div class="borrarPost mt-1">
+                                        <form action="/home" method="POST">
+                                        @csrf
+                                            <input type="text" name="id" hidden value="{{$post->id}}">
+                                            <button type="submit " class="btn btn-primary">Borrar comentario</button>
+                                        </form>
+                                    </div>
+                                    <!-- Termina el boton -->
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card-post">
-                        <div class="row">
-                            <div class="col-xs-3 col-sm-2">
-                                <a href="perfil" title="Profile">
-                                    <img src="/storage/{{Auth::user()->foto_perfil}}" alt="My User" class="img-circle img-user">
-                                </a>
-                            </div>
-                            <div class="col-xs-9 col-sm-10 info-user">
-                                <h3><a href="perfil" title="Profile"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h3>
-                                <p><i>2h</i></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class=" col-sm-8 col-sm-offset-2 data-post">
-                                <p>Lorem Ipsum Dolor si amet</p>
-                                <img src="img/post.jpg" alt="image post" class="img-post">
-                                <div class="reaction">
-                                    &#x2764; 1234 &#x1F603; 54
-                                </div>
-                                <div class="comments">
-                                    <div class="more-comments">Ver mas comentarios</div>
-                                    <ul>
-                                        <li><b>User1</b> Lorem Ipsum Dolor si amet</li>
-                                        <li><b>User2</b> Lorem Ipsum Dolor si amet &#x1F602;</li>
-                                    </ul>
-                                    <form>
-                                        <input type="text" class="form-control" placeholder="Add a comment">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  @endif
+                  @endforeach
 
-                    <div class="card-post">
-                        <div class="row">
-                            <div class="col-xs-3 col-sm-2">
-                                <a href="perfil" title="Profile">
-                                    <img src="/storage/{{Auth::user()->foto_perfil}}" alt="User name" class="img-circle img-user">
-                                </a>
-                            </div>
-                            <div class="col-xs-9 col-sm-10 info-user">
-                                <h3><a href="perfil" title="Profile"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h3>
-                                <p><i>2h</i></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-8 col-sm-offset-2 data-post">
-                                <p>Lorem Ipsum Dolor si amet</p>
-                                <video controls>
-                                  <source src="img/post-video.mp4" type="video/mp4">
-                                  Your browser does not support the video tag.
-                                </video>
-                                <div class="reaction">
-                                    &#x2764; 1234 &#x1F603; 54
-                                </div>
-                                <div class="comments">
-                                    <div class="more-comments">Ver mas comentarios</div>
-                                    <ul>
-                                        <li><b>User1</b> Lorem Ipsum Dolor si amet</li>
-                                        <li><b>User2</b> Lorem Ipsum Dolor si amet &#x1F602;</li>
-                                    </ul>
-                                    <form>
-                                        <input type="text" class="form-control" placeholder="Add a comment">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+
+                  <!--Esto es un spinner que tiene que aparecer antes de seguir cargando posteos-->
+                    <div class="d-flex justify-content-center mt-3">
+                      <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
                     </div>
-                </div>
-                <div id="loading">
-                    <img src="img/load.gif" alt="loader">
-                </div>
             </div><!-- fin del Tab Posts -->
        <!-- Modal Bootstrap para Editar la foto de portada -->
       <div class="modal fade" id="modifyPhotoPort" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

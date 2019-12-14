@@ -31,7 +31,7 @@ FAQ - SocialBook
             </div>
             <div class="col-md-12 text-white m-1" id="op">
               <h2>¿Puedo publicitar en Social Book?</h2>
-                <p>Si podes, comunícate con <a href="nosotros@socialbook.com">nosotros@socialbook.com</a> para que podamos informarte sobre las condiciones.</p>
+                <p>Si podes, comunícate con nosotros@socialbook.com para que podamos informarte sobre las condiciones.</p>
             </div>
             <div class="col-md-12 text-white m-1" id="op">
               <h2>En el caso que otro usuario haya ofendido o roto las reglas de SocialBook ¿Que se puede hacer?</h2>

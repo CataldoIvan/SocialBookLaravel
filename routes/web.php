@@ -31,6 +31,9 @@ Route::get("/faq", function(){
 Auth::routes();
 
 Route::get('/home', 'PostController@index')->name('home');
+
+Route::get('/perfil', 'PostController@indexPerfil');
+
 //Esta ruta es para borrar comentario
 Route::post('/home', 'PostController@destroy');
 
@@ -42,9 +45,9 @@ Route::post('/home', 'commentController@create');
     return view("home");
 }); */
 
-Route::get("/perfil", function(){
-    return view("perfil");
-});
+// Route::get("/perfil", function(){
+//     return view("perfil");
+// });
 
 //Ruta para el borrado de el perfil
 Route::post("/perfil",'userController@destroy');

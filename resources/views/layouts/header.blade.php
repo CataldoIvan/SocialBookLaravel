@@ -137,7 +137,7 @@
 
     <div class="text-center user-description d-none d-lg-block">
       <a href="#" title="Editar usuario" data-toggle="modal" data-target="#modifyPhotoBio">
-        <b>Edita tu foto y tu descripción!</b>
+        Edita tu foto y tu descripción!
       </a>
     </div>
 
@@ -218,7 +218,7 @@
         </div>
         <div class="form-group">
           <label for="message-text" class="col-form-label">Tu mensaje:</label>
-          <textarea name="review" id="new-post" class="form-control" id="message-text"></textarea>
+          <textarea name="review" id="new-post" class="form-control" id="message-text" maxlength="100000"></textarea>
         </div>
         {{-- COMENTO AGREGAR IMAGEN AL POSTEO <div class="adjuntarImagen">
              <h5 class="text-center col-12">Adjuntar imagen</h5>

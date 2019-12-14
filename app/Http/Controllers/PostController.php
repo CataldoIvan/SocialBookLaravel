@@ -15,17 +15,26 @@ class PostController extends Controller
      {
 
          $posts = Post::orderBy('id','DESC')->get();
-         
+
          return view('home',['posts' => $posts]);
      }
 
-   
+     public function indexPerfil()
+     {
+
+         $posts = Post::orderBy('id','DESC')->get();
+
+         return view('perfil',['posts' => $posts]);
+     }
+
+
+
     public function create()
     {
         //
     }
 
-   
+
     public function CreatePost(Request $request)
     {
         $this->validate($request, [
@@ -43,19 +52,19 @@ class PostController extends Controller
         return redirect()->route('home')->with(['message' => $message]);
     }
 
-    
+
     public function show($id)
     {
         //
     }
 
-   
+
     public function edit($id)
     {
         //
     }
 
- 
+
     public function update(Request $request, $id)
     {
         //
@@ -64,7 +73,7 @@ class PostController extends Controller
 
     public function destroy(Request $id)
     {
-      
+
        $post=Post::find($id['id']);
        $post->comment->delete();
        $post->delete();
