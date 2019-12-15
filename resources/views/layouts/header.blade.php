@@ -18,8 +18,9 @@
 
     <!--Header-->
     <header class="text-right">
-        <form class="text-left search" method="GET">
-            <input name="q" type="text" placeholder="Buscar..">
+        <form  action="{{route('search')}}" class="text-left search" method="POST">
+            @csrf
+            <input name="search" type="text" placeholder="Buscar..">
         </form>
         <div class="menu-icon">
             <div class="dropdown">
@@ -170,7 +171,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="/perfil" method='POST' enctype='multipart/form-data'>
+      <form action="/usuarioFotoBio" method='POST' enctype='multipart/form-data'>
               @csrf
         <div class="modal-body">
           <div class="modal-row">

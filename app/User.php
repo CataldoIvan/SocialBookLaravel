@@ -42,4 +42,9 @@ class User extends Authenticatable
     public function nationality(){
         return $this->belongsTo('App\Nationality');
     }
+    public function followers(){
+        return $this->hasMany('App\Follower');
+    }
+
+
 }
