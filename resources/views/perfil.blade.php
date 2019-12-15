@@ -1,3 +1,4 @@
+
 @extends('layouts.header')
 
 @section('perfil')
@@ -29,7 +30,7 @@
             <!-- Tab Posts -->
             <div class="tab-pane fade active in" role="tabpanel" id="posts" aria-labelledby="postsTab">
                 <div id="posts-container" class="container-fluid container-posts">
-                  @foreach ($posts as $post)
+                @foreach ($posts as $post)
 
                   @if ($post -> user_id == Auth::user()->id)
 
@@ -37,7 +38,7 @@
                         <div class="row">
                             <div class="col-xs-3 col-sm-2">
                               <a href="Perfil del usuario" title="Perfil">
-                                  <img src="/storage/{{$post->user->foto_perfil??null}}" alt="Imagen de perfil del usuario" class="img" style=" width: 120px; height: 120px;border-radius: 50%;">
+                                  <img src="/storage/{{$post->user->foto_perfil??null}}" alt="Imagen de perfil del usuario" class="img" style=" width: 120px; 					height: 120px;border-radius: 50%;">
                               </a>
                             </div>
                             <div class="col-xs-9 col-sm-8 info-user">
@@ -93,12 +94,110 @@
                   @endforeach
 
 
-                  <!--Esto es un spinner que tiene que aparecer antes de seguir cargando posteos-->
-                    <div class="d-flex justify-content-center mt-3">
-                      <div class="spinner-border" role="status">
-                        <span class="sr-only">Loading...</span>
-                      </div>
+                    <!-- <div class="card-post">
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-2">
+                                <a href="perfil" title="Profile">
+                                    <img src="/storage/{{Auth::user()->foto_perfil}}" alt="User name" class="img-circle img-user">
+                                </a>
+                            </div>
+                            <div class="col-xs-9 col-sm-10 info-user">
+                                <h3><a href="perfil" title="Profile"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h3>
+                                <p><i>2h</i></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2 data-post">
+                                <p>Lorem Ipsum Dolor si amet</p>
+                                <div class="reaction">
+                                    &#x2764; 156 &#x1F603; 54
+                                </div>
+                                <div class="comments">
+                                    <div class="more-comments">Ver mas comentarios</div>
+                                    <ul>
+                                        <li><b>User1</b> Lorem Ipsum Dolor si amet</li>
+                                        <li><b>User2</b> Lorem Ipsum Dolor si amet &#x1F602;</li>
+                                    </ul>
+                                    <form>
+                                        <input type="text" class="form-control" placeholder="Add a comment">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="card-post">
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-2">
+                                <a href="perfil" title="Profile">
+                                    <img src="/storage/{{Auth::user()->foto_perfil}}" alt="My User" class="img-circle img-user">
+                                </a>
+                            </div>
+                            <div class="col-xs-9 col-sm-10 info-user">
+                                <h3><a href="perfil" title="Profile"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h3>
+                                <p><i>2h</i></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-sm-8 col-sm-offset-2 data-post">
+                                <p>Lorem Ipsum Dolor si amet</p>
+                                <img src="img/post.jpg" alt="image post" class="img-post">
+                                <div class="reaction">
+                                    &#x2764; 1234 &#x1F603; 54
+                                </div>
+                                <div class="comments">
+                                    <div class="more-comments">Ver mas comentarios</div>
+                                    <ul>
+                                        <li><b>User1</b> Lorem Ipsum Dolor si amet</li>
+                                        <li><b>User2</b> Lorem Ipsum Dolor si amet &#x1F602;</li>
+                                    </ul>
+                                    <form>
+                                        <input type="text" class="form-control" placeholder="Add a comment">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-post">
+                        <div class="row">
+                            <div class="col-xs-3 col-sm-2">
+                                <a href="perfil" title="Profile">
+                                    <img src="/storage/{{Auth::user()->foto_perfil}}" alt="User name" class="img-circle img-user">
+                                </a>
+                            </div>
+                            <div class="col-xs-9 col-sm-10 info-user">
+                                <h3><a href="perfil" title="Profile"></a>{{Auth::user()->name }} {{Auth::user()->surname }}</h3>
+                                <p><i>2h</i></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2 data-post">
+                                <p>Lorem Ipsum Dolor si amet</p>
+                                <video controls>
+                                  <source src="img/post-video.mp4" type="video/mp4">
+                                  Your browser does not support the video tag.
+                                </video>
+                                <div class="reaction">
+                                    &#x2764; 1234 &#x1F603; 54
+                                </div>
+                                <div class="comments">
+                                    <div class="more-comments">Ver mas comentarios</div>
+                                    <ul>
+                                        <li><b>User1</b> Lorem Ipsum Dolor si amet</li>
+                                        <li><b>User2</b> Lorem Ipsum Dolor si amet &#x1F602;</li>
+                                    </ul>
+                                    <form>
+                                        <input type="text" class="form-control" placeholder="Add a comment">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="loading">
+                    <img src="img/load.gif" alt="loader"> -->
+                </div>
             </div><!-- fin del Tab Posts -->
        <!-- Modal Bootstrap para Editar la foto de portada -->
       <div class="modal fade" id="modifyPhotoPort" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -249,3 +348,5 @@
 
 
 @endsection
+
+
