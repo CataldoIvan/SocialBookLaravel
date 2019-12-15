@@ -12,9 +12,9 @@
         </a></div>
      </div>
         <!-- Tab Panel -->
-        <ul class="nav nav-tabs" role="tablist">
+        <ul class="nav nav-tabs" role="tablist" id="misTabs">
             <li class="">
-              <a href="#posts" role="tab" id="postsTab" data-toggle="tab" aria-controls="posts" aria-expanded="true" style="background-color:white;">Mis ultimos posteos</a>
+              <a href="#posts" role="tab" id="postsTab" data-toggle="tab1" aria-controls="posts" aria-expanded="true" style="background-color:white;">Mis ultimos posteos</a>
             </li>
             <li class="">
               <a href="#profile" role="tab" id="profileTab" data-toggle="tab" aria-controls="profile" aria-expanded="true">Mi informacion</a>
@@ -339,14 +339,24 @@
 
     <!-- **** SCRIPT DE JS PARA MANTENER LA TABS ACTIVAS EN EL PERFIL CUANDO SELECCIONAMOS ALGUNA DE LAS SOLAPAS*** !-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
-    <script type="text/javascript">
+  <script type="text/javascript">
           $("a").click(function() {
             $("a").css("background-color","");
             $(this).css("background-color","white");
           });
   </script>
 
+  <script>
+    $(document).ready(function(){
+	  $('a[data-toggle="tab1"]').on('show.bs.tab', function(e) {
+		localStorage.setItem('activeTab', $(e.target).attr('href'));
+	});
+	  var activeTab = localStorage.getItem('activeTab');
+	  if(activeTab){
+		$('#misTabs a[href="' + activeTab + '"]').tab('show');
+	}
+});
+</script>
+
 
 @endsection
-
-
