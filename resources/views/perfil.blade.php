@@ -14,7 +14,7 @@
         <!-- Tab Panel -->
         <ul class="nav nav-tabs" role="tablist" id="misTabs">
             <li class="">
-              <a href="#posts" role="tab" id="postsTab" data-toggle="tab1" aria-controls="posts" aria-expanded="true" style="background-color:white;">Mis ultimos posteos</a>
+              <a href="#posts" role="tab" id="postsTab" data-toggle="tab" aria-controls="posts" aria-expanded="true" style="background-color:white;">Mis ultimos posteos</a>
             </li>
             <li class="">
               <a href="#profile" role="tab" id="profileTab" data-toggle="tab" aria-controls="profile" aria-expanded="true">Mi informacion</a>
@@ -348,7 +348,7 @@
 
   <script>
     $(document).ready(function(){
-	  $('a[data-toggle="tab1"]').on('show.bs.tab', function(e) {
+	  $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
 		localStorage.setItem('activeTab', $(e.target).attr('href'));
 	});
 	  var activeTab = localStorage.getItem('activeTab');
