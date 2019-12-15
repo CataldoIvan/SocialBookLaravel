@@ -23,6 +23,17 @@ Route::get("/faq", function(){
     return view("faq");
 });
 
+//Ruta para el borrado de el perfil
+Route::post("/perfil",'userController@destroy');
+
+//Ruta para seguir usuarios
+Route::post("/seguir",'FollowerController@store');
+
+
+//ruta para la funcion de busqueda de usuario
+Route::post("/search",'SearchController@search')->name('search');
+
+
 // Route::get("/registracion", "RegistracionController@index");
 // Route::post("/registracion", "RegistracionController@store");
 
@@ -49,18 +60,16 @@ Route::post('/home', 'commentController@create');
 //     return view("perfil");
 // });
 
-//Ruta para el borrado de el perfil
-Route::post("/perfil",'userController@destroy');
 //ruta para enviar editar datos de perfil
 Route::post('/editUserData', 'userController@edit');
 
 Route::post('/user', 'userController@destroy');
 
 //ruta para cambiar foto de perfil o bio
-Route::POST("/perfil", 'userController@agregarFotoyBio');
+Route::post("/usuarioFotoBio", 'userController@agregarFotoyBio');
 
 //ruta para cambiar foto de portada
-Route::POST("/CambiarFotoPortada", 'userController@agregarFotoPortada');
+Route::post("/CambiarFotoPortada", 'userController@agregarFotoPortada');
 
 Route::post('/createpost',[
   'uses' => 'PostController@CreatePost',

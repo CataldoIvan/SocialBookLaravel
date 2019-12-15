@@ -26,7 +26,16 @@
                             <h3><a href="perfilDelUsuario.php" title="Profile"></a></h3>
                             <h2>{{$post->user->name??"usuario " }} {{$post->user->surname??" Anonimo"}}</h2>
                             <p><i>{{$post->created_at}}</i></p>
-                        </div>
+                            <!-- funcion de seguir a usuario -->
+                            @if($post->user->id!=Auth::user()->id)
+                            <form action="/seguir" method="post">
+                                <input type="text" hidden name='follower' value='{{Auth::user()->id}}'>
+                                <input type="text" hidden name='user' value='{{$post->user->id }}'>
+                                <button type='submit'>Seguir</button>
+                             </form>
+                             @endif
+                            </div>
+                        
                     </div>
                     <div class="col-xs-3 col-sm-2">
                       <h3>{{$post->title}}</h3>

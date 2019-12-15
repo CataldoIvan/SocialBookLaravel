@@ -10,4 +10,6 @@ class Book extends Model
     public $primaryKey='id';
     public $guarded=[];
     public $timestamps=true;
+
+    
 }
