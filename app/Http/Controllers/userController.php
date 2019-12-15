@@ -9,22 +9,7 @@ class userController extends Controller
 {
 
   
-   public function create()
-   {
-       //
-   }
 
-
-   public function store(Request $request)
-   {
-       //
-   }
-
- 
-   public function show($id)
-   {
-       //
-   }
 
 
    public function edit(Request $request)
@@ -36,11 +21,6 @@ class userController extends Controller
        $usuario->email= $request ['email'];
        $usuario->save();
        return redirect('/perfil');
-   }
-
-   public function update(Request $request, $id)
-   {
-       //
    }
 
   
