@@ -20,7 +20,10 @@
               <a href="#profile" role="tab" id="profileTab" data-toggle="tab" aria-controls="profile" aria-expanded="true">Mi informacion</a>
             </li>
             <li class="">
-              <a href="#seguidores" role="tab" id="seguidoresTab" data-toggle="tab" aria-controls="seguidores" aria-expanded="true">Seguidores</a>
+              <a href="#Seguidos" role="tab" id="SeguidosTab" data-toggle="tab" aria-controls="Seguidos" aria-expanded="true">Seguidos</a>
+            </li>
+            <li class="">
+              <a href="#follower" role="tab" id="followerTab" data-toggle="tab" aria-controls="follower" aria-expanded="true">Mis Seguidores</a>
             </li>
             <li class="">
               <a href="#profileDelete" role="tab" id="profileTab" data-toggle="tab" aria-controls="profileDelete" aria-expanded="true">Borrar mi cuenta</a>
@@ -153,47 +156,84 @@
                         </div>
                 </div>
             </div>
-            <!-- Empieza el TAB Seguidores-->
-                        <div class="tab-pane fade" role="tabpanel" id="seguidores" aria-labelledby="seguidoresTab">
+            <!-- Empieza el TAB Seguidos-->
+                        <div class="tab-pane fade" role="tabpanel" id="Seguidos" aria-labelledby="SeguidosTab">
                             <div class="container-fluid container-posts">
                                 <div class="card-post">
                                     <div class="scrollbar-container">
                                         <?php
-                                        $seguidores=App\Follower::where('follower_id','=',Auth::user()->id)->get();
-                                     
-                                        if($seguidores){
+                                        $seguidos=App\Follower::where('user_id','=',Auth::user()->id)->get();
+                                        
+                                        if($seguidos){
                                           
                                         ?> 
-                                            @foreach($seguidores as $seguidor)
-                                                  
-                                              
+                                            @foreach($seguidos as $seguido => $usuario)
+                                                 
+                                            <?php $usuarioSeguido = App\User::find($usuario->follower_id); ?>
+                                            
                                                 <div class="row row-user-list">
                                                 <div class="col-sm-2 col-xs-3">
-                                                    <img src="/storage/{{$seguidor->user->foto_perfil??null}}" alt="User name" class="img-circle img-user">
+                                                    <img src="/storage/{{$usuarioSeguido->foto_perfil??null}}" alt="User name" class="img-circle img-user">
                                                 </div>
                                                 <div class="col-sm-7 col-xs-9">
-                                                    <p><b>{{$seguidor->user->name}} {{$seguidor->user->surname}} </b> <span class="badge">1</span></p>
-                                                    <p class="chat-time">Te sigue desde : {{$seguidor->created_at}}</p>
-                                                    <p>{{$seguidor->user->bio}}</p>
+                                                    <p><b>{{$usuarioSeguido->name}} {{$usuarioSeguido->surname}} </b> <span class="badge">1</span></p>
+                                                    <p class="chat-time">Te sigue desde : {{$usuarioSeguido->created_at}}</p>
+                                                    <p>{{$usuarioSeguido->bio}}</p>
                                                 </div>
                                                 <div class="col-sm-3 hidden-xs">
                                                     <p><a href="#" title="Replay"><span class="badge badge-replay">Ver perfil ></span></a></p>
                                                 </div>
 
                                             @endforeach
-                                        <?php } ?>
-                                        
-                                        
+                                        <?php } else {?>
+                                          <h1>Aun no estas siguiendo a nadie</h1>
+                                          <?php } ?>
                                     </div>
                                 </div>
                             </div>
-                        </div><!-- fin del tab seguidores-->
-
+                        </div><!-- fin del tab Seguidos-->                          
 
             <!-- fin del tab Profile -->
           </div><!-- Se cierra el Tab Content-->
+          
 
   </div><!--Se cierra el content posts-->
+   <!-- Empieza el TAB follower-->
+   <div class="tab-pane fade" role="tabpanel" id="follower" aria-labelledby="followerTab">
+                            <div class="container-fluid container-posts">
+                                <div class="card-post">
+                                    <div class="scrollbar-container">
+                                        <?php
+                                        $seguidores=App\Follower::where('follower_id','=',Auth::user()->id)->get();
+                                        
+                                        if($seguidores){
+                                          
+                                        ?> 
+                                            @foreach($seguidores as $seguidor => $usuario)
+                                                 
+                                            <?php $usuarioSeguidor = App\User::find($usuario->user_id); ?>
+                                            
+                                                <div class="row row-user-list">
+                                                <div class="col-sm-2 col-xs-3">
+                                                    <img src="/storage/{{$usuarioSeguidor->foto_perfil??null}}" alt="User name" class="img-circle img-user">
+                                                </div>
+                                                <div class="col-sm-7 col-xs-9">
+                                                    <p><b>{{$usuarioSeguidor->name}} {{$usuarioSeguidor->surname}} </b> <span class="badge">1</span></p>
+                                                    <p class="chat-time">Te sigue desde : {{$usuarioSeguidor->created_at}}</p>
+                                                    <p>{{$usuarioSeguidor->bio}}</p>
+                                                </div>
+                                                <div class="col-sm-3 hidden-xs">
+                                                    <p><a href="#" title="Replay"><span class="badge badge-replay">Ver perfil ></span></a></p>
+                                                </div>
+
+                                            @endforeach
+                                        <?php } else {?>
+                                          <h1>Aun no estas siguiendo a nadie</h1>
+                                          <?php } ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- fin del tab Seguidores-->   
 
 
 
