@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 class Follower extends Model
 {
     use Notifiable;
-    use SoftDeletes;
+    
 
 
     protected $fillable = [

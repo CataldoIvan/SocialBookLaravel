@@ -26,12 +26,15 @@ Route::get("/faq", function(){
 //Ruta para el borrado de el perfil
 Route::post("/perfil",'userController@destroy');
 
-//Ruta para seguir usuarios
-Route::post("/seguir",'FollowerController@store');
+/* //Ruta para seguir usuarios
+Route::post("/seguir",'FollowerController@store'); */
 
 
 //ruta para la funcion de busqueda de usuario
 Route::post("/search",'SearchController@search')->name('search');
+
+//ruta para seguir a un usuario
+Route::get('/follow/{id}','FollowerController@following')->name('follow');
 
 
 // Route::get("/registracion", "RegistracionController@index");
