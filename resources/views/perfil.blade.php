@@ -158,58 +158,32 @@
                             <div class="container-fluid container-posts">
                                 <div class="card-post">
                                     <div class="scrollbar-container">
-                                        <div class="row row-user-list">
-                                            <div class="col-sm-2 col-xs-3">
-                                                <img src="img/user2.jpg" alt="User name" class="img-circle img-user">
-                                            </div>
-                                            <div class="col-sm-7 col-xs-9">
-                                                <p><b>User Name</b> <span class="badge">1</span></p>
-                                                <p class="chat-time">An hour ago</p>
-                                                <p>Lorem ipsum</p>
-                                            </div>
-                                            <div class="col-sm-3 hidden-xs">
-                                                <p><a href="" title="Replay"><span class="badge badge-replay">Ver perfil ></span></a></p>
-                                            </div>
-                                        </div>
-                                        <div class="row row-user-list">
-                                            <div class="col-sm-2 col-xs-3">
-                                                <img src="img/user3.jpg" alt="User name" class="img-circle img-user">
-                                            </div>
-                                            <div class="col-sm-7 col-xs-9">
-                                                <p><b>User Name</b></p>
-                                                <p class="chat-time">Yesterday</p>
-                                                <p>Lorem ipsum</p>
-                                            </div>
-                                            <div class="col-sm-3 hidden-xs">
-                                                <p><a href="" title="Ver perfil"><span class="badge badge-message">Ver perfil ></span></a></p>
-                                            </div>
-                                        </div>
-                                        <div class="row row-user-list">
-                                            <div class="col-sm-2 col-xs-3">
-                                                <img src="img/user4.jpg" alt="User name" class="img-circle img-user">
-                                            </div>
-                                            <div class="col-sm-7 col-xs-9">
-                                                <p><b>User Name</b></p>
-                                                <p class="chat-time">2 days ago</p>
-                                                <p>Lorem ipsum</p>
-                                            </div>
-                                            <div class="col-sm-3 hidden-xs">
-                                                <p><a href="" title="Ver perfil"><span class="badge badge-message">Ver perfil ></span></a></p>
-                                            </div>
-                                        </div>
-                                        <div class="row row-user-list">
-                                            <div class="col-sm-2 col-xs-3">
-                                                <img src="img/user5.jpg" alt="User name" class="img-circle img-user">
-                                            </div>
-                                            <div class="col-sm-7 col-xs-9">
-                                                <p><b>User Name</b></p>
-                                                <p class="chat-time">2 days ago</p>
-                                                <p>Lorem ipsum</p>
-                                            </div>
-                                            <div class="col-sm-3 hidden-xs">
-                                                <p><a href="" title="Ver perfil"><span class="badge badge-message">Ver perfil ></span></a></p>
-                                            </div>
-                                        </div>
+                                        <?php
+                                        $seguidores=App\Follower::where('follower_id','=',Auth::user()->id)->get();
+                                     
+                                        if($seguidores){
+                                          
+                                        ?> 
+                                            @foreach($seguidores as $seguidor)
+                                                  
+                                              
+                                                <div class="row row-user-list">
+                                                <div class="col-sm-2 col-xs-3">
+                                                    <img src="/storage/{{$seguidor->user->foto_perfil??null}}" alt="User name" class="img-circle img-user">
+                                                </div>
+                                                <div class="col-sm-7 col-xs-9">
+                                                    <p><b>{{$seguidor->user->name}} {{$seguidor->user->surname}} </b> <span class="badge">1</span></p>
+                                                    <p class="chat-time">Te sigue desde : {{$seguidor->created_at}}</p>
+                                                    <p>{{$seguidor->user->bio}}</p>
+                                                </div>
+                                                <div class="col-sm-3 hidden-xs">
+                                                    <p><a href="#" title="Replay"><span class="badge badge-replay">Ver perfil ></span></a></p>
+                                                </div>
+
+                                            @endforeach
+                                        <?php } ?>
+                                        
+                                        
                                     </div>
                                 </div>
                             </div>

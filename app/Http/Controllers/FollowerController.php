@@ -10,7 +10,10 @@ use Auth;
 
 class FollowerController extends Controller
 {
-    
+    public function allFollowers()
+    {       
+        
+    }
 
     public function following($id)
     {
