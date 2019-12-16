@@ -3,9 +3,9 @@
 
 @section('perfil')
 
-    $usua
+
     <div class="content-posts profile-content">
-      <div >
+      <div>
         <img  class="banner-profile" src="/storage/{{Auth::user()->foto_portada??'../img/wallp1.jpg'}}" alt="">
         <div class="texto_sobre_img fixed"> <a href="#" title="Editar portada" data-toggle="modal" data-target="#modifyPhotoPort">
         Cambiar imagen de portada
@@ -18,6 +18,9 @@
             </li>
             <li class="">
               <a href="#profile" role="tab" id="profileTab" data-toggle="tab" aria-controls="profile" aria-expanded="true">Mi informacion</a>
+            </li>
+            <li class="">
+              <a href="#seguidores" role="tab" id="seguidoresTab" data-toggle="tab" aria-controls="seguidores" aria-expanded="true">Seguidores</a>
             </li>
             <li class="">
               <a href="#profileDelete" role="tab" id="profileTab" data-toggle="tab" aria-controls="profileDelete" aria-expanded="true">Borrar mi cuenta</a>
@@ -129,7 +132,6 @@
                     <div class="card-post">
                         <ul class="profile-data">
                             <li><b>Nombre : </b>{{Auth::user()->name}}</li>
-
                             <li><b>Apellido:</b> {{Auth::user()->surname}}</li>
                             <li><b>Email: </b> {{Auth::user()->email}}   </li>
                             <li><b>Nacionalidad: </b> {{Auth::user()->country}}   </li>
@@ -151,55 +153,73 @@
                         </div>
                 </div>
             </div>
+            <!-- Empieza el TAB Seguidores-->
+                        <div class="tab-pane fade" role="tabpanel" id="seguidores" aria-labelledby="seguidoresTab">
+                            <div class="container-fluid container-posts">
+                                <div class="card-post">
+                                    <div class="scrollbar-container">
+                                        <div class="row row-user-list">
+                                            <div class="col-sm-2 col-xs-3">
+                                                <img src="img/user2.jpg" alt="User name" class="img-circle img-user">
+                                            </div>
+                                            <div class="col-sm-7 col-xs-9">
+                                                <p><b>User Name</b> <span class="badge">1</span></p>
+                                                <p class="chat-time">An hour ago</p>
+                                                <p>Lorem ipsum</p>
+                                            </div>
+                                            <div class="col-sm-3 hidden-xs">
+                                                <p><a href="" title="Replay"><span class="badge badge-replay">Ver perfil ></span></a></p>
+                                            </div>
+                                        </div>
+                                        <div class="row row-user-list">
+                                            <div class="col-sm-2 col-xs-3">
+                                                <img src="img/user3.jpg" alt="User name" class="img-circle img-user">
+                                            </div>
+                                            <div class="col-sm-7 col-xs-9">
+                                                <p><b>User Name</b></p>
+                                                <p class="chat-time">Yesterday</p>
+                                                <p>Lorem ipsum</p>
+                                            </div>
+                                            <div class="col-sm-3 hidden-xs">
+                                                <p><a href="" title="Ver perfil"><span class="badge badge-message">Ver perfil ></span></a></p>
+                                            </div>
+                                        </div>
+                                        <div class="row row-user-list">
+                                            <div class="col-sm-2 col-xs-3">
+                                                <img src="img/user4.jpg" alt="User name" class="img-circle img-user">
+                                            </div>
+                                            <div class="col-sm-7 col-xs-9">
+                                                <p><b>User Name</b></p>
+                                                <p class="chat-time">2 days ago</p>
+                                                <p>Lorem ipsum</p>
+                                            </div>
+                                            <div class="col-sm-3 hidden-xs">
+                                                <p><a href="" title="Ver perfil"><span class="badge badge-message">Ver perfil ></span></a></p>
+                                            </div>
+                                        </div>
+                                        <div class="row row-user-list">
+                                            <div class="col-sm-2 col-xs-3">
+                                                <img src="img/user5.jpg" alt="User name" class="img-circle img-user">
+                                            </div>
+                                            <div class="col-sm-7 col-xs-9">
+                                                <p><b>User Name</b></p>
+                                                <p class="chat-time">2 days ago</p>
+                                                <p>Lorem ipsum</p>
+                                            </div>
+                                            <div class="col-sm-3 hidden-xs">
+                                                <p><a href="" title="Ver perfil"><span class="badge badge-message">Ver perfil ></span></a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- fin del tab seguidores-->
+
 
             <!-- fin del tab Profile -->
           </div><!-- Se cierra el Tab Content-->
 
   </div><!--Se cierra el content posts-->
-
-            {{-- <!-- Modal Bootstrap para Editar Perfil. Lo dejo comentado para no borrarlo hasta estae seguro que haya quedado bien escrito en HEADER.BLADE.PHP-->
-    <div class="modal fade" id="settingsmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Editar perfil</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-        <form action="" method='POST'>
-            @csrf
-          <div class="modal-body">
-            <div class="row modal-row">
-              <div class="col-sm-3">
-                <label>Nombre: <input type="text" name='name' value='{{Auth::user()->name}}'> </label>
-              </div>
-            </div>
-
-            <div class="row modal-row">
-              <div class="col-sm-3">
-                <p>
-                 <label>Apellido: <input type="text" name='surname' value='{{Auth::user()->surname}}'> </label>
-                </p>
-              </div>
-            </div>
-            <div class="row modal-row">
-              <div class="col-sm-3">
-                <p>
-                 <label>Email: <input type="text" name='email' value='{{Auth::user()->email}}'> </label>
-                </p>
-              </div>
-            </div>
-
-          <div class="modal-footer">
-            <input type="hidden" name="id" value="{{Auth::user()->id}}">
-            <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Guardar</button>
-          </div>
-         </form>
-        </div>
-      </div>
-    </div> Cerrado del modal boostrap de editar perfil--}}
 
 
 
@@ -229,6 +249,8 @@
     </div>
   </div>
 </div>
+
+
 
 
 
