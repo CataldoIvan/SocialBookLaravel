@@ -163,14 +163,14 @@
                                     <div class="scrollbar-container">
                                         <?php
                                         $seguidos=App\Follower::where('user_id','=',Auth::user()->id)->get();
-                                        
+
                                         if($seguidos){
-                                          
-                                        ?> 
+
+                                        ?>
                                             @foreach($seguidos as $seguido => $usuario)
-                                                 
+
                                             <?php $usuarioSeguido = App\User::find($usuario->follower_id); ?>
-                                            
+
                                                 <div class="row row-user-list">
                                                 <div class="col-sm-2 col-xs-3">
                                                     <img src="/storage/{{$usuarioSeguido->foto_perfil??null}}" alt="User name" class="img-circle img-user">
@@ -191,13 +191,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!-- fin del tab Seguidos-->                          
+                        </div><!-- fin del tab Seguidos-->
 
-            <!-- fin del tab Profile -->
-          </div><!-- Se cierra el Tab Content-->
-          
 
-  </div><!--Se cierra el content posts-->
    <!-- Empieza el TAB follower-->
    <div class="tab-pane fade" role="tabpanel" id="follower" aria-labelledby="followerTab">
                             <div class="container-fluid container-posts">
@@ -205,14 +201,14 @@
                                     <div class="scrollbar-container">
                                         <?php
                                         $seguidores=App\Follower::where('follower_id','=',Auth::user()->id)->get();
-                                        
+
                                         if($seguidores){
-                                          
-                                        ?> 
+
+                                        ?>
                                             @foreach($seguidores as $seguidor => $usuario)
-                                                 
+
                                             <?php $usuarioSeguidor = App\User::find($usuario->user_id); ?>
-                                            
+
                                                 <div class="row row-user-list">
                                                 <div class="col-sm-2 col-xs-3">
                                                     <img src="/storage/{{$usuarioSeguidor->foto_perfil??null}}" alt="User name" class="img-circle img-user">
@@ -233,9 +229,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!-- fin del tab Seguidores-->   
+                        </div><!-- fin del tab Seguidores-->
+
+                        <!-- fin del tab Profile -->
+                      </div><!-- Se cierra el Tab Content-->
 
 
+                    </div><!--Se cierra el content posts-->
 
     <!-- Modal Bootstrap para confirmar el borrado de la cuenta -->
 
