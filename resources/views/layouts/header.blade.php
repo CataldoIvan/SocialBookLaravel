@@ -133,7 +133,7 @@
 
     <div class="ImagenPerfil">
       <a href="perfil" title="Perfil">
-          <img alt="ImagenPerfil" class="img-thumbnail img-fluid" src="/storage/{{Auth::user()->foto_perfil??null}}"style=" width: 100%;border-radius: 50%;"></a>
+          <img alt="ImagenPerfil" class="img-thumbnail img-fluid" src="/storage/{{Auth::user()->foto_perfil??'../img/defaultavatar.jpg'}}"style=" width: 100%;border-radius: 50%;"></a>
     </div>
 
     <div class="text-center user-description d-none d-lg-block">

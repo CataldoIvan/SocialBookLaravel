@@ -34,7 +34,7 @@ Route::get('/home', 'PostController@index')->name('home');
 Route::get('/perfil', 'PostController@indexPerfil');
 
 //Esta ruta es para borrar comentario
-Route::post('/home', 'PostController@destroy');
+Route::post('/borrarpost', 'PostController@destroy');
 
 //Esta ruta es para hacer un comentario
 Route::post('/home', 'commentController@create');

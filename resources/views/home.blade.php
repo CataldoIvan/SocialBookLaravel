@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-xs-3 col-sm-3">
                             <a href="Perfil del usuario" title="Perfil">
-                                <img src="/storage/{{$post->user->foto_perfil??null}}" alt="Imagen de perfil del usuario" class="img" style=" width: 120px; height: 120px;border-radius: 50%;">
+                                <img src="/storage/{{$post->user->foto_perfil??'../img/defaultavatar.jpg'}}" alt="Imagen de perfil del usuario" class="img" style=" width: 120px; height: 120px;border-radius: 50%;">
                             </a>
                         </div>
 
@@ -68,7 +68,7 @@
                                 </form>
                                 <!-- Este es el boton de borrar comentario -->
                                 <div class="borrarPost mt-1">
-                                    <form action="/home" method="POST">
+                                    <form action="/borrarpost" method="POST">
                                     @csrf
                                         <input type="text" name="id" hidden value="{{$post->id}}">
                                         <button type="submit " class="btn btn-primary">Borrar comentario</button>

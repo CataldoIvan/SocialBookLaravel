@@ -72,11 +72,9 @@ class RegisterController extends Controller
     {
       $request = app('request');
 
-    if($request->hasfile('foto_perfil')){
+      if($request->hasfile('foto_perfil')){
         $ruta = $request->file('foto_perfil')->store('public');
         $nombreArchivo = basename($ruta);
-      }
-
         return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
@@ -84,5 +82,15 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'foto_perfil' => $nombreArchivo,
         ]);
+      }else{
+        return User::create([
+            'name' => $data['name'],
+            'surname' => $data['surname'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'foto_perfil' => null,
+            ]);
+
+      }
     }
   }

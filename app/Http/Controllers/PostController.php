@@ -74,8 +74,14 @@ class PostController extends Controller
     public function destroy(Request $id)
     {
 
+        $comentarios = Comment::where('post_id',$id['id'])->get();
+        foreach($comentarios as $come){
+            $come->delete();
+        }
+       
+
        $post=Post::find($id['id']);
-       $post->comment->delete();
+       /* $post->comment->delete(); */
        $post->delete();
 
 
