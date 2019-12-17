@@ -136,15 +136,15 @@
           <img alt="ImagenPerfil" class="img-thumbnail img-fluid" src="/storage/{{Auth::user()->foto_perfil??'../img/defaultavatar.jpg'}}"style=" width: 100%;border-radius: 50%;"></a>
     </div>
 
-    <div class="text-center user-description d-none d-lg-block">
+    <div class="text-center user-description d-none d-md-block">
       <a href="#" title="Editar usuario" data-toggle="modal" data-target="#modifyPhotoBio">
         Edita tu foto y tu descripción!
       </a>
     </div>
 
     <div class="nombreYBio">
-      <h2 class="text-center d-none d-lg-block"><a href="perfil" title="Perfil"></a>{{Auth::user()->name??"Usuario" }} {{Auth::user()->surname??"anonimo" }}</h2>
-      <p class="text-center user-description d-none d-lg-block">
+      <h2 class="text-center d-none d-md-block"><a href="perfil" title="Perfil"></a>{{Auth::user()->name??"Usuario" }} {{Auth::user()->surname??"anonimo" }}</h2>
+      <p class="text-center user-description d-none d-md-block">
           <i>{{Auth::user()->bio??"Ingrese una Bio para su perfil"}}</i>
       </p>
     </div>

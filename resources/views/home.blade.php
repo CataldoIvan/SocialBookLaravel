@@ -30,7 +30,7 @@
                             @if($post->user->id!=Auth::user()->id)
                             <!--aca verifico configuro los botones de seguimiento -->
                                 <?php
-                                dd($post->user->name);
+                                // dd($post->user->name);
                                 $if_null=App\Follower::where('follower_id','=',$post->user->id)->first();
                                 if(is_null($if_null)){
                                 ?>
@@ -43,7 +43,7 @@
                                 ?>
                              @endif
                         </div>
-                        
+
                     </div>
                     <div class="col-xs-3 col-sm-2">
                       <h3>{{$post->title}}</h3>
