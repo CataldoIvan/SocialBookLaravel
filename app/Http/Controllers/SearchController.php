@@ -12,12 +12,14 @@ class SearchController extends Controller
 
         $searchinput=$request->input('search');
        // dd($searchinput);//
-
+       // busqueda del apellido
          $searchOfUser=User::where('name','Like','%'.$searchinput.'%')->get();
-         // no puedo hacer que busque en el modelo de libro en conjut=nto con usuarios, solo busca usuarios o libros
-       // $searchOfUser=Book::where('name','Like','%'.$searchinput.'%')->get();
+         // busqueda del apellido
+        $searchOfUserSurname=User::where('surname','Like','%'.$searchinput.'%')->get();
+         // busqueda de libro
+        $searchOfBook=Book::where('name','Like','%'.$searchinput.'%')->get();
 
-        return view('search.result',compact('searchOfUser'));
+        return view('search.result',compact('searchOfUser','searchOfUserSurname','searchOfBook'));
 
     }
 }

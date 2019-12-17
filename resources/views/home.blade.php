@@ -28,13 +28,21 @@
                             <p><i>{{$post->created_at}}</i></p>
                             <!-- funcion de seguir a usuario -->
                             @if($post->user->id!=Auth::user()->id)
-                            <form action="/seguir" method="post">
-                                <input type="text" hidden name='follower' value='{{Auth::user()->id}}'>
-                                <input type="text" hidden name='user' value='{{$post->user->id }}'>
-                                <button type='submit'>Seguir</button>
-                             </form>
+                            <!--aca verifico configuro los botones de seguimiento -->
+                                <?php
+                                dd($post->user->name);
+                                $if_null=App\Follower::where('follower_id','=',$post->user->id)->first();
+                                if(is_null($if_null)){
+                                ?>
+                                <a href="{{route('follow', $post->user->id)}}"> Follow</a>
+                                <?php
+                                }else{ ?>
+                                <a href="{{route('follow',$post->user->id)}}"> Siguientdo</a>
+                                <?php
+                                }
+                                ?>
                              @endif
-                            </div>
+                        </div>
                         
                     </div>
                     <div class="col-xs-3 col-sm-2">
@@ -71,7 +79,7 @@
                                     <form action="/borrarpost" method="POST">
                                     @csrf
                                         <input type="text" name="id" hidden value="{{$post->id}}">
-                                        <button type="submit " class="btn btn-primary">Borrar comentario</button>
+                                        <button type="submit " class="btn btn-primary">Borrar Post</button>
                                     </form>
                                 </div>
                                 <!-- Termina el boton -->
