@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('content')
+@section("titulo")
+Resetea tu clave - SocialBook
+@endsection
+
+@section("content")
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

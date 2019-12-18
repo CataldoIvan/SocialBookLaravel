@@ -414,8 +414,18 @@ textarea.post-textarea {
     margin-top: 25px;
 }
 
+.modal-row input {
+  color: red;
+}
+
 .modal-row p {
     margin-top: 8px;
+}
+
+.modal-row ul li {
+  list-style-type: none;
+    width: 70%;
+    margin: auto;
 }
 
 /* css perfil faltante */

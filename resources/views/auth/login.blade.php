@@ -53,7 +53,7 @@
               </div>
             </form>
         </div>
-    </div>
+
     </section>
 
 </main>
