@@ -182,7 +182,7 @@
             </div>
               <div class="bioUser">
                 <h4>Biografia:</h4>
-                <textarea name="bio" rows="6">{{Auth::user()->bio??"Ingrese su nueva Bio"}}</textarea>
+                <textarea maxlength="200" name="bio" rows="6">{{Auth::user()->bio??"Ingrese su nueva Bio"}}</textarea>
                </div>
             </div>
          </div>
