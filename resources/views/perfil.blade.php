@@ -165,7 +165,7 @@
                         <?php
                             $seguidos=App\Follower::where('user_id','=',Auth::user()->id)->get();
 
-                            if(count($seguidos)<1){
+                            if(!empty($seguidos)){
 
                                         ?>
                         @foreach($seguidos as $seguido => $usuario)
@@ -174,12 +174,12 @@
 
                         <div class="row row-user-list">
                             <div class="col-sm-2 col-xs-3">
-                                <img src="/storage/{{$usuarioSeguido->foto_perfil??null}}" alt="User name" class="img-circle img-user">
+                                <img src="/storage/{{$usuarioSeguido->foto_perfil??'../img/defaultavatar.jpg'}}" alt="User name" class="img-circle img-user">
                             </div>
                             <div class="col-sm-7 col-xs-9">
-                                <p><b>{{$usuarioSeguido->name}} {{$usuarioSeguido->surname}} </b> <span class="badge">1</span></p>
-                                <p class="chat-time">Te sigue desde : {{$usuarioSeguido->created_at}}</p>
-                                <p>{{$usuarioSeguido->bio}}</p>
+                                <p><b>{{$usuarioSeguido['name']??'usuario'}} {{$usuarioSeguido['surname']??'eliminado'}} </b> <span class="badge">1</span></p>
+                                <p class="chat-time">Te sigue desde : {{$usuarioSeguido['created_at']}}</p>
+                                <p>{{$usuarioSeguido['bio']}}</p>
                             </div>
                             <div class="col-sm-3 hidden-xs">
                                 <p><a href="#" title="Replay"><span class="badge badge-replay">Ver perfil ></span></a></p>
@@ -204,7 +204,7 @@
                         <?php
                             $seguidores=App\Follower::where('follower_id','=',Auth::user()->id)->get();
 
-                            if(count($seguidos)<1){
+                            if(!empty($seguidos)){
 
                             ?>
                         @foreach($seguidores as $seguidor => $usuario)
@@ -226,7 +226,7 @@
 
                             @endforeach
                             <?php } else {?>
-                            <h1>Aun no estas siguiendo a nadie</h1>
+                            <h1>Aun no estas siendo seguido por nadie :( </h1>
                             <?php } ?>
                         </div>
                     </div>
