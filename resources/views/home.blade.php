@@ -29,6 +29,7 @@
                             <!-- funcion de seguir a usuario -->
                             @if($post->user->id!=Auth::user()->id)
                             <!--aca verifico configuro los botones de seguimiento -->
+
                             <?php
                                 try{
                                     $if_null=App\Follower::where('follower_id','=',$post->id)
@@ -41,6 +42,9 @@
                                 
                                 /*  dd(empty($if_null));      */        
                                 if(empty($if_null[0]->user_id) ){
+
+                                
+
                                 ?>
                                 <a href="{{route('follow', $post->id)}}"> Follow</a>
                                 <?php
@@ -51,7 +55,7 @@
                                 ?>
                              @endif
                         </div>
-                        
+
                     </div>
                     <div class="col-xs-3 col-sm-2">
                       <h3>{{$post->title}}</h3>

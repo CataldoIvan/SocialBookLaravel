@@ -14,7 +14,6 @@ Color principal
 /*----------------------------------------------------------------
  Body
 -----------------------------------------------------------------*/
-
 html, body, .sidebar-nav, .content-posts {
     height: 100%;
 }
@@ -35,22 +34,32 @@ b, strong {
     font-weight: 600;
 }
 
-h1, h2, h3 { font-weight: 600; }
+h1, h2, h3 {
+    font-weight: 600;
+}
 
-h2 {  font-size:22px; }
+h2 {
+    font-size: 22px;
+}
 
-h3 { font-size: 15px;
-     margin-top:0;
-     margin-bottom:5px;}
+h3 {
+    font-size: 15px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
 
 video, img {
     width: 100%;
     height: auto;
 }
 
-.emoji  { width:16px;}
+.emoji {
+    width: 16px;
+}
 
-.btn:focus,.btn:active, .btn:active:focus  { outline:none; }
+.btn:focus, .btn:active, .btn:active:focus {
+    outline: none;
+}
 
 .content-posts {
     margin-left: 240px;
@@ -62,10 +71,14 @@ video, img {
     margin-left: 5%;
 }
 
-.card-post .img-user  { max-width: 110px;
-                        min-width: 60px;}
+.card-post .img-user {
+    max-width: 110px;
+    min-width: 60px;
+}
 
-.card-post .chat-row .img-user { min-width:inherit; }
+.card-post .chat-row .img-user {
+    min-width: inherit;
+}
 
 .img-user-mini {
     width: 30px;
@@ -73,14 +86,12 @@ video, img {
 }
 
 .popular-img {
-   margin-top:10px;
+    margin-top: 10px;
 }
-
 
 /*----------------------------------------------------------------
  Header
 -----------------------------------------------------------------*/
-
 header {
     min-height: 50px;
     background: #3d3d3f;
@@ -93,12 +104,19 @@ header {
 }
 
 header li a:hover {
-  background-color: grey;
+    background-color: grey;
 }
 
-header, header a, header a:link, header a:visited, header a:focus {
+header, header a:link, header a:visited, header a:focus {
     color: #ffffff;
     text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+    border-bottom: 1px solid;
+}
+
+header .text-right {
+    border-bottom: 1px solid;
 }
 
 header .search {
@@ -110,7 +128,6 @@ header .fa {
     font-size: 18px;
 }
 
-
 header div {
     float: right;
 }
@@ -119,11 +136,12 @@ header .second-icon {
     margin-right: 60px;
 }
 
-header .menu-icon { margin-top:3px;
-  margin-right: 60px;
-  -moz-box-shadow:    inset 0 0 10px #000000;
- -webkit-box-shadow: inset 0 0 10px #000000;
- box-shadow:         inset 0 0 10px #000000;
+header .menu-icon {
+    margin-top: 3px;
+    margin-right: 60px;
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
 }
 
 header .dropdown-menu, header .dropdown-menu a, header .dropdown-menu a:link, header .dropdown-menu a:focus, header .dropdown-menu a:visited {
@@ -136,12 +154,18 @@ header .dropdown-menu {
     text-align: center;
 }
 
-header .dropdown-menu li, header .dropdown-menu li a { display: block;
-                                                       overflow: hidden;}
+header .dropdown-menu li, header .dropdown-menu li a {
+    display: block;
+    overflow: hidden;
+}
 
-.dropdown-menu>li>a  {  padding: 8px 20px; }
+.dropdown-menu>li>a {
+    padding: 8px 20px;
+}
 
-.dropdown-menu .divider {margin:0px;}
+.dropdown-menu .divider {
+    margin: 0px;
+}
 
 .dropdown-toggle {
     cursor: pointer;
@@ -178,16 +202,14 @@ header .badge {
     width: 240px;
     top: 0px;
     padding: 50px 10px 0px 10px;
-    background:white;
+    background: white;
     z-index: 99;
 }
-
 
 
 /*----------------------------------------------------------------
  Muro
 -----------------------------------------------------------------*/
-
 .card-post {
     background: #ffffff;
     padding: 15px;
@@ -199,20 +221,21 @@ header .badge {
 .container-posts {
     padding: 0 130px;
 }
+
 /* #foto_comentario{
         height: 60px;
         width: 60px;
         border-radius: 50%;
 } */
-
 /* .img {
    width: 300px;
    height: 300px;
    border-radius: 50%;
 
 }  */
-
-.info-user i { color:#929292; }
+.info-user i {
+    color: #929292;
+}
 
 .reaction {
     padding: 10px 0;
@@ -236,7 +259,7 @@ header .badge {
     color: #ababab;
 }
 
- #loading {
+#loading {
     width: 36px;
     margin: auto;
     margin-bottom: 20px;
@@ -247,49 +270,61 @@ header .badge {
     line-height: 22px;
 }
 
-.info-user { margin-top:15px; }
+.info-user {
+    margin-top: 15px;
+}
 
-.info-user p {margin:0px; }
+.info-user p {
+    margin: 0px;
+}
 
-.primary-content { width:70%;
-                   float: left; }
+.primary-content {
+    width: 70%;
+    float: left;
+}
 
-.sidebar-right  { width:28%;
-                  float: left; }
+.sidebar-right {
+    width: 28%;
+    float: left;
+}
 
 .primary-content .container-posts {
     padding: 0 40px;
 }
 
-.fa-database {
-
-}
+.fa-database {}
 
 /*----------------------------------------------------------------
 4. User Profile
 -----------------------------------------------------------------*/
-
-.banner-profile {
-    position: relative ;
-    background-size: cover;
-    height: 200px;
+.contenedor-imagen {
+    position: relative;
+    background-size: contain;
+    height: 160px;
     overflow: hidden;
-
     width: 100%;
-     background-image: url('../img/wallp1.jpg');
-
+    background-image: url('../img/wallp1.jpg');
+    background-position: center;
+    text-align: center;
+    border-bottom: 1px solid;
 }
-.texto_sobre_img{
-    position: absolute ;
-    top:34%;
-    right:10%;
 
-    background-color:white;
+.texto_sobre_img {
+    position: absolute;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    bottom: 0px;
+    right: 0px;
+}
+
+.botonaso:hover {
+    background-color: grey;
 }
 
 .profile-content {
     padding-top: 50px;
-    margin-top:0px;
+    margin-top: 0px;
 }
 
 .profile-content .nav-tabs {
@@ -301,7 +336,6 @@ header .badge {
     padding: 0px;
     line-height: 25px;
 }
-
 
 .scrollbar-container {
     height: 340px;
@@ -341,38 +375,58 @@ textarea.post-textarea {
 /*----------------------------------------------------------------
  Settings
 -----------------------------------------------------------------*/
-
 .modal-header {
-  background: #200122;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: #200122;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6f0000, #200122);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6f0000, #200122);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .modal-body {
-  background: #232526;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #232526;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .modal-footer {
-  background: #200122;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: #200122;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6f0000, #200122);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6f0000, #200122);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 /* .modal-header { background: #4F5467;
                 color: #ffffff;
                } */
+.modal-dialog {
+    width: 700px;
+    color: white;
+}
 
+.modal-row {
+    margin-top: 25px;
+}
 
-.modal-dialog  { width:700px;
-color: white;}
+.modal-row input {
+  color: red;
+}
 
-.modal-row  { margin-top:25px; }
+.modal-row p {
+    margin-top: 8px;
+}
 
-.modal-row p { margin-top: 8px;}
+.modal-row ul li {
+  list-style-type: none;
+    width: 70%;
+    margin: auto;
+}
 
 /* css perfil faltante */
 .nav-tabs>li>a {
@@ -399,21 +453,19 @@ color: white;}
 .nav-tabs>li.active>a:hover {
   background-color: #fff;
 } */
-
 /*----------------------------------------------------------------
  Scrollbar
 -----------------------------------------------------------------*/
-
- ::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 5px;
 }
 
- ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
 
- ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
@@ -421,101 +473,163 @@ color: white;}
 /*----------------------------------------------------------------
 8. Small Devices
 -----------------------------------------------------------------*/
+@media screen and (max-width:1199px) {
+    header {
+        padding: 15px 30px 10px 220px;
+    }
 
-@media screen and (max-width:1199px)  {   header { padding: 15px 30px 10px 220px;  }
+    .sidebar-nav {
+        width: 190px;
+    }
 
-                                          .sidebar-nav {  width:190px;  }
+    .content-posts {
+        margin-left: 190px;
+    }
 
-                                          .content-posts {  margin-left:190px;}
+    .container-posts {
+        padding: 0px 30px;
+    }
+}
 
-                                          .container-posts { padding:0px 30px;  }
-                                      }
+@media screen and (max-width:991px) {
+    .img-user {
+        width: 100%;
+        margin: 0px;
+    }
 
-@media screen and (max-width:991px) {  .img-user { width: 100%;
-                                                   margin: 0px;}
+    header .dropdown-menu {
+        top: 33px;
+    }
 
-                                        header .dropdown-menu { top:33px; }
+    .primary-content {
+        width: 100%;
+    }
+}
 
-                                        .primary-content { width:100%;}
-                                     }
+@media screen and (max-width:767px) {
+    header {
+        padding: 0px;
+        min-height: 104px;
+        padding-left: 125px;
+    }
 
-@media screen and (max-width:767px)  {
+    header .search, header .search input, header .dropdown {
+        width: 100%;
+    }
 
-  header { padding:0px;
-           min-height: 104px;
-           padding-left:125px;}
+    header .search input {
+        border-radius: 0px;
+        height: 40px;
+        margin-left: 33px;
+    }
 
-  header .search, header .search input, header .dropdown { width:100%; }
+    header .dropdown-menu {
+        top: 36px;
+    }
 
-  header .search input  { border-radius:0px;
-                          height: 40px;}
+    .sidebar-nav {
+        width: 125px;
+        height: auto;
+        padding: 10px;
+    }
 
-  header .dropdown-menu { top:36px; }
-
-  .sidebar-nav {  width:125px;
-                  height: auto;
-                  padding: 10px;}
-
-  /* .img-user   { width:80%;
+    /* .img-user   { width:80%;
                 margin-left:10%;  }
 
   .card-post .img-user { width:70%;
                         margin-left:15%; } */
+    .card-post .chat-row .img-user {
+        width: 100%;
+        margin: 0px;
+    }
 
-  .card-post .chat-row .img-user  { width:100%;
-                                    margin:0px;}
+    header .menu-icon {
+        margin: 0px;
+        margin-top: 25px;
+        width: 25%;
+        text-align: center;
+    }
 
-  header .menu-icon { margin:0px;
-                      margin-top:25px;
-                      width:25%;
-                      text-align: center;}
+    header .menu-icon .fa {
+        font-size: 20px;
+    }
 
-  header .menu-icon .fa  {  font-size: 20px;  }
+    header .badge {
+        position: relative;
+        right: 15px;
+        top: -12px;
+    }
 
-  header .badge { position: relative;
-                  right: 15px;
-                  top:-12px;}
+    .content-posts {
+        margin: 0px;
+        margin-top: 120px;
+    }
 
-  .content-posts  {  margin:0px;
-                     margin-top:120px;}
+    .container-posts, .primary-content .container-posts {
+        padding: 0px 15px;
+    }
 
-  .container-posts, .primary-content .container-posts { padding:0px 15px;  }
+    .data-post {
+        margin-top: 15px;
+    }
 
-  .data-post { margin-top:15px;}
+    .profile-content {
+        margin-top: 0px;
+        padding-top: 100px;
+    }
 
-  .profile-content  {  margin-top: 0px;
-                       padding-top: 100px;}
+    .profile-content .nav-tabs {
+        padding-left: 15px;
+    }
 
-  .profile-content .nav-tabs  { padding-left:15px; }
+    .chat-message .chat-time {
+        top: 6px;
+        right: 10px;
+    }
 
-  .chat-message .chat-time {   top: 6px;
-                               right: 10px;}
+    .form-box {
+        margin-bottom: 60px;
+    }
 
-  .form-box  {margin-bottom:60px;}
-
-  .modal-dialog  { width:auto;}
-
+    .modal-dialog {
+        width: auto;
+    }
 }
 
-@media screen and (max-width:479px)  {
-                                          header { padding-left: 100px;
-                                                   min-height:100px; }
+@media screen and (max-width:479px) {
+    header {
+        padding-left: 100px;
+        min-height: 100px;
+    }
 
-                                          header .dropdown-menu { top:32px; }
+    header .dropdown-menu {
+        top: 32px;
+    }
 
-                                           .img-user {  width:100%;
-                                                        margin: 0px;}
+    .img-user {
+        width: 100%;
+        margin: 0px;
+    }
 
-                                          .card-post  .img-user  {width:90%;
-                                                                  margin-left:5%;}
+    .card-post .img-user {
+        width: 90%;
+        margin-left: 5%;
+    }
 
-                                          .sidebar-nav { width: 100px;}
+    .sidebar-nav {
+        width: 133px;
+    }
 
-                                          .form-box  {width: 310px;
-                                                      margin-top: -225px;}
+    .form-box {
+        width: 310px;
+        margin-top: -225px;
+    }
 
-                                                      *, ::after, ::before {
-                                                          box-sizing: border-box;
-                                                      }
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
 
-                                      }
+    .texto_sobre_img {
+      font-size: 10px;
+    }
+}

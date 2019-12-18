@@ -4,10 +4,10 @@
 
 
 <div class="content-posts profile-content">
-    <div>
+    <div class="contenedor-imagen">
         <img class="banner-profile" src="/storage/{{Auth::user()->foto_portada??'../img/wallp1.jpg'}}" alt="">
         <div class="texto_sobre_img fixed"> <a href="#" title="Editar portada" data-toggle="modal" data-target="#modifyPhotoPort">
-                Cambiar imagen de portada
+                <button class="botonaso">Cambiar imagen de portada</button>
             </a></div>
     </div>
     <!-- Tab Panel -->
