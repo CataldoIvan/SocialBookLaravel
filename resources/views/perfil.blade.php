@@ -163,9 +163,9 @@
                 <div class="card-post">
                     <div class="scrollbar-container">
                         <?php
-                                        $seguidos=App\Follower::where('user_id','=',Auth::user()->id)->get();
+                            $seguidos=App\Follower::where('user_id','=',Auth::user()->id)->get();
 
-                                        if($seguidos){
+                            if(count($seguidos)<1){
 
                                         ?>
                         @foreach($seguidos as $seguido => $usuario)
@@ -202,11 +202,11 @@
                 <div class="card-post">
                     <div class="scrollbar-container">
                         <?php
-                                        $seguidores=App\Follower::where('follower_id','=',Auth::user()->id)->get();
+                            $seguidores=App\Follower::where('follower_id','=',Auth::user()->id)->get();
 
-                                        if($seguidores){
+                            if(count($seguidos)<1){
 
-                                        ?>
+                            ?>
                         @foreach($seguidores as $seguidor => $usuario)
 
                         <?php $usuarioSeguidor = App\User::find($usuario->user_id); ?>

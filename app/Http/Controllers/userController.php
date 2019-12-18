@@ -44,7 +44,7 @@ class userController extends Controller
     if($request->foto_perfil==null){
         $usuario->bio=$request['bio'];
         $usuario->save();
-        return redirect('/perfil');
+        return back();
     }else{
 
         $ruta=$request->file('foto_perfil')->store("public");
@@ -52,7 +52,7 @@ class userController extends Controller
         $usuario->foto_perfil=$nombreArchivo;
         $usuario->bio=$request['bio'];
         $usuario->save();
-        return redirect('/perfil');
+        return back();
 
     }
     
@@ -84,7 +84,7 @@ class userController extends Controller
         $usuario->surname = $request ['surname'];
         $usuario->email= $request ['email'];
         $usuario->save();
-        return redirect('/perfil');
+        return back();
     }
 
 }

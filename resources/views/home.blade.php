@@ -25,19 +25,27 @@
                         <div class="col-xs-9 col-sm-8 info-user">
                             <h3><a href="perfilDelUsuario.php" title="Profile"></a></h3>
                             <h2>{{$post->user->name??"usuario " }} {{$post->user->surname??" Anonimo"}}</h2>
-                            <p><i>{{$post->created_at}}</i></p>
+                            <p><i>{{$post->created_at}} id: {{$post->user->id}}</i></p>
                             <!-- funcion de seguir a usuario -->
                             @if($post->user->id!=Auth::user()->id)
                             <!--aca verifico configuro los botones de seguimiento -->
-                                <?php
-                                dd($post->user->name);
-                                $if_null=App\Follower::where('follower_id','=',$post->user->id)->first();
-                                if(is_null($if_null)){
+                            <?php
+                                try{
+                                    $if_null=App\Follower::where('follower_id','=',$post->id)
+                                                        ->where('user_id','=',Auth::user()->id)
+                                                        ->get();
+
+                                } catch (Exception $e) {
+                                    echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+                                }
+                                
+                                /*  dd(empty($if_null));      */        
+                                if(empty($if_null[0]->user_id) ){
                                 ?>
-                                <a href="{{route('follow', $post->user->id)}}"> Follow</a>
+                                <a href="{{route('follow', $post->id)}}"> Follow</a>
                                 <?php
                                 }else{ ?>
-                                <a href="{{route('follow',$post->user->id)}}"> Siguientdo</a>
+                                <a href="{{route('unFollow', $post->id)}}"> UnFollow</a>
                                 <?php
                                 }
                                 ?>

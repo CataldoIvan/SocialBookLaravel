@@ -13,7 +13,7 @@ class FollowerController extends Controller
     public function allFollowers()
     {       
         
-    }
+     }
 
     public function following($id)
     {
@@ -23,6 +23,16 @@ class FollowerController extends Controller
         $follow-> follower_id=$id;
         $follow->save();
        return redirect('/perfil');
+
+    }
+
+
+    public function UnFollow($id)
+    {
+       Follower::Where('user_id',Auth::user()->id)
+                ->where('follower_id',$id)
+                ->delete();
+            return redirect('/home');
 
     }
 

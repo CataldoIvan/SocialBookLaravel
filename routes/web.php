@@ -23,6 +23,9 @@ Route::post("/search",'SearchController@search')->name('search');
 //ruta para seguir a un usuario
 Route::get('/follow/{id}','FollowerController@following')->name('follow');
 
+//ruta para dejar de seguir a un usuario
+Route::get('/unfollow/{id}','FollowerController@UnFollow')->name('unFollow');
+
 
 
  Route::get("/login", "LoginController@index");

@@ -10,7 +10,7 @@ class AddFotoPerfilTable extends Migration
      public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('foto_perfil')->default('');
+            $table->string('foto_perfil')->nullable();
         });
     }
 
@@ -18,7 +18,7 @@ class AddFotoPerfilTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('foto_perfil')->nullable();
+            $table->dropColumn('foto_perfil');
          });
     } 
 }

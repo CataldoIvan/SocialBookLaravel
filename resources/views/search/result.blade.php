@@ -15,13 +15,22 @@
                     <a href="#" class="btn btn-secondary">ir al perfil</a>
                     <!--aca verifico configuro los botones de seguimiento -->
                     <?php
-                    $if_null=App\Follower::where('follower_id','=',$value->id)->first();
-                    if(is_null($if_null)){
+                    try{
+                        $if_null=App\Follower::where('follower_id','=',$value->id)
+                                            ->where('user_id','=',Auth::user()->id)
+                                            ->get();
+
+                    } catch (Exception $e) {
+                        echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+                    }
+                    
+                     /*  dd(empty($if_null));      */        
+                    if(empty($if_null[0]->user_id) ){
                     ?>
                     <a href="{{route('follow', $value->id)}}"> Follow</a>
                      <?php
                      }else{ ?>
-                    <a href="{{route('follow', $value->id)}}"> Siguientdo</a>
+                    <a href="{{route('unFollow', $value->id)}}"> UnFollow</a>
                     <?php
                     }
                     ?>
