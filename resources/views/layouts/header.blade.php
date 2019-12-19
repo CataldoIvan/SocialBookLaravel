@@ -137,9 +137,9 @@
     </div>
 
     <div class="text-center user-description d-none d-md-block">
-      <a href="#" title="Editar usuario" data-toggle="modal" data-target="#modifyPhotoBio">
+    <button class="btn btn-outline-info"><a href="#" title="Editar usuario" data-toggle="modal" data-target="#modifyPhotoBio">
         Edita tu foto y tu descripción!
-      </a>
+      </a></button>  
     </div>
 
     <div class="nombreYBio">

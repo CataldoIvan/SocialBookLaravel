@@ -52,12 +52,14 @@
                             <p><i>{{$post->created_at}}</i></p>
                         </div>
                     </div>
-                    <div class="col-xs-3 col-sm-2">
+                    <div class="col-xs-3 col-sm-offset-2 mt-3">
+                        <h5><u>Titulo:</u></h5>
                         <h3>{{$post->title}}</h3>
                     </div>
                     <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2 data-post">
-                            <p>{{$post->review}}</p>
+                      <div class="col-sm-8 col-sm-offset-2 data-post">
+                          <h5><u>Resenia:</u></h5>
+                          <h3>{{$post->review}}</h3>
                             <div class="reaction">
                                 <img draggable="false" class="emoji" alt="❤" src="https://twemoji.maxcdn.com/16x16/2764.png"> 156 <img draggable="false" class="emoji" alt="😃" src="https://twemoji.maxcdn.com/16x16/1f603.png"> 54
                             </div>
@@ -137,8 +139,8 @@
                         <li><b>Nombre : </b>{{Auth::user()->name}}</li>
                         <li><b>Apellido:</b> {{Auth::user()->surname}}</li>
                         <li><b>Email: </b> {{Auth::user()->email}} </li>
-                       
-                        
+
+
                     </ul>
                 </div>
             </div>

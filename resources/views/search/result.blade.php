@@ -12,7 +12,7 @@
                     <div class="card-body">
                     <h5 class="card-title">{{ $value->name }} {{ $value->surname }}</h5>
                     <p class="card-text">{{ $value->bio }} </p>
-                    <a href="#" class="btn btn-secondary">ir al perfil</a>
+                    <a href="#" class="btn btn-secondary">Ir al perfil</a>
                     <!--aca verifico configuro los botones de seguimiento -->
                     <?php
                     try{
@@ -23,14 +23,14 @@
                     } catch (Exception $e) {
                         echo 'Excepción capturada: ',  $e->getMessage(), "\n";
                     }
-                    
-                     /*  dd(empty($if_null));      */        
+
+                     /*  dd(empty($if_null));      */
                     if(empty($if_null[0]->user_id) ){
                     ?>
-                    <a href="{{route('follow', $value->id)}}"> Follow</a>
+                    <button class="btn btn-primary mt-1"><a href="{{route('follow', $value->id)}}">Seguir</a></button>
                      <?php
                      }else{ ?>
-                    <a href="{{route('unFollow', $value->id)}}"> UnFollow</a>
+                    <button class="btn btn-primary mt-1"><a href="{{route('unFollow', $value->id)}}">Dejar de seguir</a></button>
                     <?php
                     }
                     ?>
@@ -46,23 +46,23 @@
                     <div class="card-body">
                     <h5 class="card-title">{{ $value->name }} {{ $value->surname }}</h5>
                     <p class="card-text">{{ $value->bio }} </p>
-                    <a href="#" class="btn btn-secondary">ir al perfil</a>
+                    <a href="#" class="btn btn-secondary">Ir al perfil</a>
                     <!--aca verifico configuro los botones de seguimiento -->
                     <?php
                     $if_null=App\Follower::where('follower_id','=',$value->id)->first();
                     if(is_null($if_null)){
                     ?>
-                    <a href="{{route('follow', $value->id)}}"> Follow</a>
+                    <button class="btn btn-primary mt-1"><a href="{{route('follow', $value->id)}}"> Follow</a></button>
                      <?php
                      }else{ ?>
-                    <a href="{{route('follow', $value->id)}}"> Siguientdo</a>
+                    <button class="btn btn-primary mt-1"><a href="{{route('unFollow', $value->id)}}">Dejar de seguir</a></button>
                     <?php
                     }
                     ?>
                 </div>
                 </div>
             @empty
-                
+
             @endforelse
             <h2 class='mt-3'>En Libros</h2>
             @forelse ($searchOfBook as $value)
@@ -72,13 +72,13 @@
                     <h5 class="card-title">{{ $value->name }} </h5>
                     <p class="card-text">{{ $value->description }} </p>
                     <a href="#" class="btn btn-secondary">Ver resenia</a>
-                   
+
                 </div>
                 </div>
             @empty
                 <p>No se encontraron resultados </p>
             @endforelse
-            <a href="/home" class='btn btn-secondary mt-5'> Volver al Home</a>
+            <a href="/home" class='btn btn-secondary mb-5'>Volver al Home</a>
         </div>
     </div>
 </div>
