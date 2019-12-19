@@ -69,9 +69,9 @@
                 <div class="col-sm-8 col-sm-offset-2 data-post">
                     <h5><u>Resenia:</u></h5>
                     <h3>{{$post->review}}</h3>
-                    <div class="reaction">
+                    {{-- <div class="reaction">
                         <img draggable="false" class="emoji" alt="❤" src="https://twemoji.maxcdn.com/16x16/2764.png"> 156 <img draggable="false" class="emoji" alt="😃" src="https://twemoji.maxcdn.com/16x16/1f603.png"> 54
-                    </div>
+                    </div> --}}
                     <div class="comments">
                         <div class="more-comments">Ver mas comentarios</div>
                         @foreach($post->comment as $comentario )
@@ -82,6 +82,9 @@
                                     <b>{{$comentario->user->name??"usuario"}} {{$comentario->user->surname??" Anonimo"}} Comentó:</b> <br>
                                     {{$comentario['comment']}}
                                 </li>
+                                <li>
+                                  <p><i>{{$post->created_at}}</i></p>
+                                </li>
                             </ul>
                             @endforeach
                             <form action="/home" method="POST">
@@ -89,7 +92,7 @@
                                 <input type="text" name="post_id" value="{{$post->id??'Anonimo'}}" hidden>
                                 <input type="text" name="user_id" value="{{Auth::user()->id??'Anonimo'}}" hidden>
                                 <input type="text" name="comment" placeholder="Comentar">
-                                <button type="submit">comentar</button>
+                                <button type="submit">Comentar</button>
 
                             </form>
                             <!-- Este es el boton de borrar comentario -->
@@ -97,7 +100,7 @@
                                 <form action="/borrarpost" method="POST">
                                     @csrf
                                     <input type="text" name="id" hidden value="{{$post->id}}">
-                                    <button type="submit " class="btn btn-primary">Borrar Post</button>
+                                    <button type="submit " class="btn btn-primary">Borrar resenia</button>
                                 </form>
                             </div>
                             <!-- Termina el boton -->

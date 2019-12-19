@@ -60,9 +60,9 @@
                       <div class="col-sm-8 col-sm-offset-2 data-post">
                           <h5><u>Resenia:</u></h5>
                           <h3>{{$post->review}}</h3>
-                            <div class="reaction">
+                            {{-- <div class="reaction">
                                 <img draggable="false" class="emoji" alt="❤" src="https://twemoji.maxcdn.com/16x16/2764.png"> 156 <img draggable="false" class="emoji" alt="😃" src="https://twemoji.maxcdn.com/16x16/1f603.png"> 54
-                            </div>
+                            </div> --}}
                             <div class="comments">
                                 <div class="more-comments">Ver mas comentarios</div>
                                 @foreach($post->comment as $comentario )
@@ -180,7 +180,7 @@
                             </div>
                             <div class="col-sm-7 col-xs-9">
                                 <p><b>{{$usuarioSeguido['name']??'usuario'}} {{$usuarioSeguido['surname']??'eliminado'}} </b> <span class="badge"></span></p>
-                                <p class="chat-time">Te sigue desde : {{$usuarioSeguido['created_at']}}</p>
+                                <p class="chat-time">Lo sigues desde : {{$usuarioSeguido['created_at']}}</p>
                                 <p>{{$usuarioSeguido['bio']}}</p>
                             </div>
                             {{-- <div class="col-sm-3 hidden-xs">
