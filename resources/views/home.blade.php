@@ -25,9 +25,10 @@
                         <div class="col-xs-9 col-sm-8 info-user">
                             <h3><a href="perfilDelUsuario.php" title="Profile"></a></h3>
                             <h2>{{$post->user->name??"usuario " }} {{$post->user->surname??" Anonimo"}}</h2>
-                            <p><i>{{$post->created_at}} id: {{$post->user->id}}</i></p>
+                            <p><i>{{$post->created_at}} id: {{$post->user['id']}}</i></p>
+                            
                             <!-- funcion de seguir a usuario -->
-                            @if($post->user->id!=Auth::user()->id)
+                            @if($post->user_id != Auth::user()->id)
                             <!--aca verifico configuro los botones de seguimiento -->
 
                             <?php
@@ -54,6 +55,7 @@
                                 }
                                 ?>
                              @endif
+
                         </div>
 
                     </div>
