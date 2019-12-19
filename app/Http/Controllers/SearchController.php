@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Book;
+use App\Post;
 
 class SearchController extends Controller
 {
@@ -17,7 +17,7 @@ class SearchController extends Controller
          // busqueda del apellido
         $searchOfUserSurname=User::where('surname','Like','%'.$searchinput.'%')->get();
          // busqueda de libro
-        $searchOfBook=Book::where('name','Like','%'.$searchinput.'%')->get();
+        $searchOfBook=Post::where('title','Like','%'.$searchinput.'%')->get();
 
         return view('search.result',compact('searchOfUser','searchOfUserSurname','searchOfBook'));
 

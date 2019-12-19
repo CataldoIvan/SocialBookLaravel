@@ -75,9 +75,13 @@ class PostController extends Controller
     {
 
         $comentarios = Comment::where('post_id',$id['id'])->get();
-        foreach($comentarios as $come){
-            $come->delete();
+        dd($comentarios);
+        if(!empty($comentarios)){
+            foreach($comentarios as $come){
+                $come->delete();
+            }
         }
+        
        
 
        $post=Post::find($id['id']);

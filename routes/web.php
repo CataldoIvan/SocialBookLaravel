@@ -43,7 +43,8 @@ Route::post('/borrarpost', 'PostController@destroy');
 
 //Esta ruta es para hacer un comentario
 Route::post('/home', 'commentController@create');
-
+//Esta ruta es para hacer un comentario desde el search
+Route::post('/comentar', 'commentController@create');
 
 //ruta para enviar editar datos de perfil
 Route::post('/editUserData', 'userController@edit');
