@@ -16,12 +16,17 @@ class commentController extends Controller
   
    public function create(Request $request)
    {   
+      /*  dd($request->comment); */
+       if($request->comment==null){
+           return redirect('/home');
+       }else{
        $comment=new Comment();
         $comment->comment=$request['comment'];
         $comment->user_id=$request['user_id'];
         $comment->post_id=$request['post_id'];
         $comment->save();
         return redirect('/home');
+       }
    }
 
     
