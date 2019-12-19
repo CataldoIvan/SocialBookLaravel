@@ -88,7 +88,7 @@
         </div>
         <div class="second-icon menu-icon">
             <span>
-              <a href="home" title="Wall"><span class="d-none d-lg-block">Home</span>
+              <a href="/home" title="Wall"><span class="d-none d-lg-block">Home</span>
               <i class="fa fa-database d-lg-none .d-xl-block" aria-hidden="true"></i>
               </a>
             </span>

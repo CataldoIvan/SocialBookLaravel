@@ -13,31 +13,32 @@
     <!-- Tab Panel -->
     <ul class="nav nav-tabs" role="tablist" id="misTabs">
         <li class="">
-            <a href="#posts" role="tab" id="postsTab" data-toggle="tab" aria-controls="posts" aria-expanded="true" style="background-color:white;">Mis ultimos posteos</a>
+            <a href="#posts" role="tab" id="postsTab" data-toggle="tab" aria-controls="posts" aria-expanded="true" style="background-color:white;">Ultimos posteos</a>
         </li>
         <li class="">
-            <a href="#profile" role="tab" id="profileTab" data-toggle="tab" aria-controls="profile" aria-expanded="true">Mi informacion</a>
+            <a href="#profile" role="tab" id="profileTab" data-toggle="tab" aria-controls="profile" aria-expanded="true">Informacion</a>
         </li>
         <li class="">
             <a href="#Seguidos" role="tab" id="SeguidosTab" data-toggle="tab" aria-controls="Seguidos" aria-expanded="true">Seguidos</a>
         </li>
         <li class="">
-            <a href="#follower" role="tab" id="followerTab" data-toggle="tab" aria-controls="follower" aria-expanded="true">Mis Seguidores</a>
+            <a href="#follower" role="tab" id="followerTab" data-toggle="tab" aria-controls="follower" aria-expanded="true">Sus Seguidores</a>
         </li>
-        <li class="">
-            <a href="#profileDelete" role="tab" id="profileTab" data-toggle="tab" aria-controls="profileDelete" aria-expanded="true">Borrar mi cuenta</a>
-        </li>
+        
     </ul>
 
     <!--Empieza el Tab Content-->
     <div class="tab-content">
-
+    
         <!-- Tab Posts -->
         <div class="tab-pane fade active in" role="tabpanel" id="posts" aria-labelledby="postsTab">
             <div id="tab-pane fade active in" class="container-fluid container-posts">
+            @if(empty($posts))
+                <h2>{{$usuario->name}} No haz realizado ningun posteo por el  momento</h2>
+            @else
                 @foreach ($posts as $post)
 
-                @if ($post -> user_id == Auth::user()->id)
+                
 
                 <div class="card-post">
                     <div class="row">
@@ -95,9 +96,9 @@
                     </div>
                 </div>
 
-                @endif
+             
                 @endforeach
-
+            @endif
             </div>
         </div><!-- fin del Tab Posts -->
 
@@ -134,42 +135,32 @@
             <div class="container-fluid container-posts">
                 <div class="card-post">
                     <ul class="profile-data">
-                        <li><b>Nombre : </b>{{Auth::user()->name}}</li>
-                        <li><b>Apellido:</b> {{Auth::user()->surname}}</li>
-                        <li><b>Email: </b> {{Auth::user()->email}} </li>
-                       
-                        
+                        <li><b>Nombre : </b>{{$usuario[0]->name}}</li>
+                        <li><b>Apellido:</b> {{$usuario[0]->surname}}</li>
+                        <li><b>Email: </b> {{$usuario[0]->email}} </li>
+                        @if(!is_null($usuario[0]->country))
+                        <li><b>Nacionalidad: </b> {{$usuario[0]->country}} </li>
+                       @endif
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!--Empieza el Tab Borrar cuenta-->
-        <div class="tab-pane fade" role="tabpanel" id="profileDelete" aria-labelledby="profileTab">
-            <div class="container-fluid container-posts">
-                <div class="card-post">
-                    <span>Deseo borrar mi cuenta de SocialBook y todo el contenido de la misma.</span>
-                </div>
-                <div>
-                    <a href="#" title="Delete" data-toggle="modal" data-target="#delete">
-                        <button type="submit" name="button">Confirmar</button>
-                    </a>
-                </div>
-            </div>
-        </div>
+        
         <!-- Empieza el TAB Seguidos-->
         <div class="tab-pane fade" role="tabpanel" id="Seguidos" aria-labelledby="SeguidosTab">
             <div class="container-fluid container-posts">
                 <div class="card-post">
                     <div class="scrollbar-container">
                         <?php
-                            $seguidos=App\Follower::where('user_id','=',Auth::user()->id)->get();
+                        
+                            /* $seguidos=App\Follower::where('user_id','=',$usuario[0]->id)->get();
 
                             if(!empty($seguidos)){
 
                                         ?>
-                        @foreach($seguidos as $seguido => $usuario)
-
+                                 @foreach($seguidos as $seguido => $usuario)
+ 
                         <?php $usuarioSeguido = App\User::find($usuario->follower_id); ?>
 
                         <div class="row row-user-list">
@@ -182,13 +173,13 @@
                                 <p>{{$usuarioSeguido['bio']}}</p>
                             </div>
                             <div class="col-sm-3 hidden-xs">
-                                <p><a href="#" title="Replay"><span class="badge badge-replay">Ver perfil ></span></a></p>
+                                <p><a href="{{route('perfil_usuario',$usuarioSeguido['id'])}}" " title="Replay"><span class="badge badge-replay">Ver perfil ></span></a></p>
                             </div>
 
                             @endforeach
                             <?php } else {?>
                             <h1>Aun no estas siguiendo a nadie</h1>
-                            <?php } ?>
+                            <?php } */?>
                         </div>
                     </div>
                 </div>
@@ -202,15 +193,17 @@
                 <div class="card-post">
                     <div class="scrollbar-container">
                         <?php
-                            $seguidores=App\Follower::where('follower_id','=',Auth::user()->id)->get();
+                            $seguidores=App\Follower::where('follower_id','=',$usuario->id)->get();
 
                             if(!empty($seguidos)){
 
                             ?>
-                        @foreach($seguidores as $seguidor => $usuario)
-
-                        <?php $usuarioSeguidor = App\User::find($usuario->user_id); ?>
-
+                            @foreach($seguidores as $seguidor => $usuario)
+                                
+                            <?php $usuarioSeguidor = App\User::find($usuario->user_id); ?>
+                            @if(is_null($usuarioSeguidor))
+                                <h2>No cuentas con seguidores :( </h2>
+                                @else
                         <div class="row row-user-list">
                             <div class="col-sm-2 col-xs-3">
                                 <img src="/storage/{{$usuarioSeguidor->foto_perfil??null}}" alt="User name" class="img-circle img-user">
@@ -221,9 +214,9 @@
                                 <p>{{$usuarioSeguidor->bio}}</p>
                             </div>
                             <div class="col-sm-3 hidden-xs">
-                                <p><a href="#" title="Replay"><span class="badge badge-replay">Ver perfil ></span></a></p>
+                                <p><a href="{{route('perfil_usuario',$usuarioSeguidor['id'])}}" title="Replay"><span class="badge badge-replay">Ver perfil ></span></a></p>
                             </div>
-
+                                @endif
                             @endforeach
                             <?php } else {?>
                             <h1>Aun no estas siendo seguido por nadie :( </h1>

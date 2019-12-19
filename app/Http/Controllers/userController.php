@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Post;
+use Auth;
+
 
 class userController extends Controller
 {
 
-  
+   
 
    public function edit(Request $request)
    {
@@ -35,7 +38,33 @@ class userController extends Controller
 
 
    }
+   public function mostrarUsuario($user)
+   {
+    if($user ==Auth::user()->id){
+        return redirect('/perfil');
+    }elseif( $user == null ){
+        return redirect('/home');
+    }else{
+        $posts = Post::where('user_id','Like',$user )->get();
+        $usuario=User::where('id','Like',$user )->get();
+        if(is_null($posts)){
+            return view('perfil_usuario',compact('usuario'));
+        }else{
+            return view('perfil_usuario',compact('posts','usuario'));
+        }
+   
+    /* return view('perfil_usuario',compact(['posts' => $posts],['usuario' => $usuario]));
+    */ 
 
+
+}
+    /* $searchOfUser=User::where('name','Like','%'.$searchinput.'%')->get() */
+  
+           
+
+
+   }
+   
   
    //creo la funcion para controlar el guardado de la imagen
    public function agregarFotoyBio(Request $request){

@@ -17,14 +17,16 @@
                 <div class="card-post py-5">
                     <div class="row">
                         <div class="col-xs-3 col-sm-3">
-                            <a href="Perfil del usuario" title="Perfil">
+                            <a href="perfil_usuario" title="Perfil">
                                 <img src="/storage/{{$post->user->foto_perfil??'../img/defaultavatar.jpg'}}" alt="Imagen de perfil del usuario" class="img" style=" width: 120px; height: 120px;border-radius: 50%;">
                             </a>
                         </div>
-
+                        
                         <div class="col-xs-9 col-sm-8 info-user">
-                            <h3><a href="perfilDelUsuario.php" title="Profile"></a></h3>
+                        <!-- <a href="{{route('perfil_usuario',$post->user_id)}}" title="Profile" "> -->
+                            <a href="#" title="Profile" ">
                             <h2>{{$post->user->name??"usuario " }} {{$post->user->surname??" Anonimo"}}</h2>
+                            </a>
                             <p><i>{{$post->created_at}} id: {{$post->user['id']}}</i></p>
                             
                             <!-- funcion de seguir a usuario -->
