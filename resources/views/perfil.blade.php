@@ -22,7 +22,7 @@
             <a href="#Seguidos" role="tab" id="SeguidosTab" data-toggle="tab" aria-controls="Seguidos" aria-expanded="true">Seguidos</a>
         </li>
         <li class="">
-            <a href="#follower" role="tab" id="followerTab" data-toggle="tab" aria-controls="follower" aria-expanded="true">Mis Seguidores</a>
+            <a href="#follower" role="tab" id="followerTab" data-toggle="tab" aria-controls="follower" aria-expanded="true">Mis seguidores</a>
         </li>
         <li class="">
             <a href="#profileDelete" role="tab" id="profileTab" data-toggle="tab" aria-controls="profileDelete" aria-expanded="true">Borrar mi cuenta</a>
@@ -179,13 +179,13 @@
                                 <img src="/storage/{{$usuarioSeguido->foto_perfil??'../img/defaultavatar.jpg'}}" alt="User name" class="img-circle img-user">
                             </div>
                             <div class="col-sm-7 col-xs-9">
-                                <p><b>{{$usuarioSeguido['name']??'usuario'}} {{$usuarioSeguido['surname']??'eliminado'}} </b> <span class="badge">1</span></p>
+                                <p><b>{{$usuarioSeguido['name']??'usuario'}} {{$usuarioSeguido['surname']??'eliminado'}} </b> <span class="badge"></span></p>
                                 <p class="chat-time">Te sigue desde : {{$usuarioSeguido['created_at']}}</p>
                                 <p>{{$usuarioSeguido['bio']}}</p>
                             </div>
-                            <div class="col-sm-3 hidden-xs">
+                            {{-- <div class="col-sm-3 hidden-xs">
                                 <p><a href="#" title="Replay"><span class="badge badge-replay">Ver perfil ></span></a></p>
-                            </div>
+                            </div> --}}
 
                             @endforeach
                             <?php } else {?>
@@ -218,13 +218,13 @@
                                 <img src="/storage/{{$usuarioSeguidor->foto_perfil??null}}" alt="User name" class="img-circle img-user">
                             </div>
                             <div class="col-sm-7 col-xs-9">
-                                <p><b>{{$usuarioSeguidor->name}} {{$usuarioSeguidor->surname}} </b> <span class="badge">1</span></p>
+                                <p><b>{{$usuarioSeguidor->name}} {{$usuarioSeguidor->surname}} </b> <span class="badge"></span></p>
                                 <p class="chat-time">Te sigue desde : {{$usuarioSeguidor->created_at}}</p>
                                 <p>{{$usuarioSeguidor->bio}}</p>
                             </div>
-                            <div class="col-sm-3 hidden-xs">
+                            {{-- <div class="col-sm-3 hidden-xs">
                                 <p><a href="#" title="Replay"><span class="badge badge-replay">Ver perfil ></span></a></p>
-                            </div>
+                            </div> --}}
 
                             @endforeach
                             <?php } else {?>
