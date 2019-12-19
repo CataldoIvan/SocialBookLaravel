@@ -4,6 +4,7 @@
 
 
 <div class="content-posts profile-content">
+
     <div class="contenedor-imagen">
         <img class="banner-profile" src="/storage/{{Auth::user()->foto_portada??'../img/wallp1.jpg'}}" alt="">
         <div class="texto_sobre_img fixed"> <a href="#" title="Editar portada" data-toggle="modal" data-target="#modifyPhotoPort">
@@ -28,6 +29,7 @@
             <a href="#profileDelete" role="tab" id="profileTab" data-toggle="tab" aria-controls="profileDelete" aria-expanded="true">Borrar mi cuenta</a>
         </li>
     </ul>
+
 
     <!--Empieza el Tab Content-->
     <div class="tab-content">
@@ -183,15 +185,13 @@
                                 <p class="chat-time">Lo sigues desde : {{$usuarioSeguido['created_at']}}</p>
                                 <p>{{$usuarioSeguido['bio']}}</p>
                             </div>
-                            {{-- <div class="col-sm-3 hidden-xs">
-                                <p><a href="#" title="Replay"><span class="badge badge-replay">Ver perfil ></span></a></p>
-                            </div> --}}
-
+                            </div>
                             @endforeach
+                            
                             <?php } else {?>
                             <h1>Aun no estas siguiendo a nadie</h1>
                             <?php } ?>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -225,12 +225,12 @@
                             {{-- <div class="col-sm-3 hidden-xs">
                                 <p><a href="#" title="Replay"><span class="badge badge-replay">Ver perfil ></span></a></p>
                             </div> --}}
-
+                            </div>     
                             @endforeach
                             <?php } else {?>
                             <h1>Aun no estas siendo seguido por nadie :( </h1>
                             <?php } ?>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -241,8 +241,7 @@
 
 
 
-</div>
-<!--Se cierra el content posts-->
+
 
 <!-- Modal Bootstrap para confirmar el borrado de la cuenta -->
 
