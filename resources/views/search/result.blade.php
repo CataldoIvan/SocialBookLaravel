@@ -30,7 +30,7 @@
                     <button class="btn btn-primary mt-1"><a href="{{route('follow', $value->id)}}">Seguir</a></button>
                      <?php
                      }else{ ?>
-                    <button class="btn btn-primary mt-1"><a href="{{route('unFollow', $value->id)}}">Dejar de seguir</a></button>
+                    <button class="btn btn-warning mt-1"><a href="{{route('unFollow', $value->id)}}">Dejar de seguir</a></button>
                     <?php
                     }
                     ?>
@@ -55,7 +55,7 @@
                     <button class="btn btn-primary mt-1"><a href="{{route('follow', $value->id)}}"> Follow</a></button>
                      <?php
                      }else{ ?>
-                    <button class="btn btn-primary mt-1"><a href="{{route('unFollow', $value->id)}}">Dejar de seguir</a></button>
+                    <button class="btn btn-warning mt-1"><a href="{{route('unFollow', $value->id)}}">Dejar de seguir</a></button>
                     <?php
                     }
                     ?>
